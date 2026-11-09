@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>CheezML</title><style>
+:root{--bg:#fbfaf6;--fg:#23201a;--muted:#6b6457;--rule:#e4ded1;--accent:#a8650b;--code:#f3efe4}
+@media (prefers-color-scheme:dark){:root{--bg:#191712;--fg:#ece6d8;--muted:#a59d8c;--rule:#3a352b;--accent:#e9a23b;
+--code:#262219}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 system-ui,-apple-system,
+"Segoe UI",Roboto,sans-serif}main{max-width:52rem;margin:0 auto;padding:2rem 1rem 4rem}h1,h2,h3{line-height:1.25;
+text-wrap:balance}h1{font-size:1.9rem;margin:.2rem 0 .4rem}h2{font-size:1.3rem;margin-top:2.4rem;padding-bottom:.3rem;
+border-bottom:1px solid var(--rule)}h3{font-size:1.05rem;margin:1.6rem 0 .3rem;scroll-margin-top:1rem}
+a{color:var(--accent)}code{font:.88em ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;background:var(--code);
+padding:.05em .3em;border-radius:3px;overflow-wrap:anywhere}.muted{color:var(--muted)}.badge{display:inline-block;
+font-size:.75rem;letter-spacing:.04em;text-transform:uppercase;border:1px solid var(--rule);border-radius:3px;
+padding:.05rem .4rem;color:var(--muted)}dl{display:grid;grid-template-columns:max-content 1fr;gap:.2rem 1rem;
+margin:.4rem 0}dt{color:var(--muted)}dd{margin:0}.term{border-left:2px solid var(--rule);padding-left:.9rem}
+table{border-collapse:collapse;width:100%}td,th{text-align:left;padding:.35rem .5rem;border-bottom:1px solid
+var(--rule);vertical-align:top}.wrap{overflow-x:auto}nav a{margin-right:.8rem}
+</style></head><body><main><nav class="muted"><a href="./">CheezML</a><a href="core.html">core</a><a href="cubby.html">cubby</a><a href="mowm.html">mowm</a><a href="cubelang.html">cubelang</a></nav><p class="badge">draft v0.1</p><h1>CheezML</h1>
+<p>One record vocabulary for <a href="https://github.com/Grillcheese-AI/CubbyLLM">CubbyLLM</a>, MoWM and CubeLang:
+an answer and its certificate, a refusal and its reason, a routing choice, a world split, a rejected helper, a
+document field reviewed by a person. Each record is written by the host from what actually ran, so it can only say
+what happened.</p>
+<p><strong>In plain words:</strong> every answer comes with a receipt you can check, in the same format as every
+routing choice and reviewed document behind it. Nothing in a record is a claim the system makes about itself: no
+truth score, no status declared by hand, no prose rationale.</p>
+<h2>Modules</h2><div class="wrap"><table><tr><th>Module</th><th>Namespace</th><th>Covers</th></tr><tr><td><a href="core.html">core</a></td><td><code>https://w3id.org/cheezml/core#</code></td><td>Records, hashes, the two clocks, thresholds with their calibration, check runs, certificates, decisions and retirement.</td></tr><tr><td><a href="cubby.html">cubby</a></td><td><code>https://w3id.org/cheezml/cubby#</code></td><td>Conversation turns, answers and refusals with their reasons, proposers, helpers in a sandbox, and documents reviewed by a person.</td></tr><tr><td><a href="mowm.html">mowm</a></td><td><code>https://w3id.org/cheezml/mowm#</code></td><td>Worlds, routing decisions (route or spawn) and world splits at depth z + 1.</td></tr><tr><td><a href="cubelang.html">cubelang</a></td><td><code>https://w3id.org/cheezml/cubelang#</code></td><td>Programs by hash and VM runs with their outcome (return, error or ask).</td></tr></table></div>
+<h2>Files</h2><ul><li><a href="context.jsonld">context.jsonld</a>: the JSON-LD 1.1 context
+(<code>https://w3id.org/cheezml/context.jsonld</code>)</li><li><a href="shapes.ttl">shapes.ttl</a>: SHACL shapes for the six record
+types (<code>https://w3id.org/cheezml/shapes</code>)</li><li><a href="examples/">examples/</a>: six records that conform, and ten broken
+ones that must fail</li><li></li></ul>
+<h2>Status</h2><p>Draft v0.1, 2026-11-09. Terms may still change before the first release; changed terms are
+retired with a note, never deleted. Source and tests:
+<a href="https://github.com/Grillcheese-AI/cheezml">github.com/Grillcheese-AI/cheezml</a>.</p>
+<p class="muted">Nicolas Cloutier, GrillCheese Research Lab. <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p></main></body></html>

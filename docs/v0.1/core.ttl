@@ -1,0 +1,327 @@
+@prefix cheez: <https://w3id.org/cheezml/core#> .
+@prefix cubby: <https://w3id.org/cheezml/cubby#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dec: <http://example.com/ns/dec#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix time: <http://www.w3.org/2006/time#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cheez:CheckKinds a skos:ConceptScheme ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    skos:prefLabel "Check kinds"@en .
+
+cheez:Pruned a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    skos:inScheme cheez:RetirementKinds ;
+    skos:prefLabel "pruned"@en .
+
+cheez:Rejected a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    skos:inScheme cheez:RetirementKinds ;
+    skos:prefLabel "rejected"@en .
+
+cheez:Retired a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    skos:inScheme cheez:RetirementKinds ;
+    skos:prefLabel "retired"@en .
+
+cheez:Rule a owl:Class ;
+    rdfs:label "Rule"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:subClassOf prov:Plan,
+        cheez:Artifact ;
+    skos:definition "A rule applied by a program run, by hash."@en .
+
+cheez:Satisfied a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    skos:inScheme cheez:CheckOutcomes ;
+    skos:prefLabel "satisfied"@en .
+
+cheez:Violated a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    skos:inScheme cheez:CheckOutcomes ;
+    skos:prefLabel "violated"@en .
+
+cheez:calibrationData a owl:ObjectProperty ;
+    rdfs:label "calibrationData"@en ;
+    rdfs:domain cheez:Calibration ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range cheez:Artifact ;
+    rdfs:subPropertyOf prov:used ;
+    skos:definition "Data (corpus) the screen ran on."@en .
+
+cheez:certifies a owl:ObjectProperty ;
+    rdfs:label "certifies"@en ;
+    rdfs:domain cheez:Certificate ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range cubby:Answer ;
+    skos:definition "The answer a certificate covers."@en .
+
+cheez:check a owl:ObjectProperty ;
+    rdfs:label "check"@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( prov:Activity cheez:Certificate ) ] ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range cheez:CheckRun ;
+    skos:definition "A check that ran for this record."@en .
+
+cheez:chosenOption a owl:ObjectProperty ;
+    rdfs:label "chosenOption"@en ;
+    rdfs:domain cheez:Decision ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range cheez:Option ;
+    skos:definition "The option the decision took."@en .
+
+cheez:deployment a owl:ObjectProperty ;
+    rdfs:label "deployment"@en ;
+    rdfs:domain cheez:Calibration ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range prov:Entity ;
+    skos:definition "Deployment a calibration holds for."@en .
+
+cheez:encoder a owl:ObjectProperty ;
+    rdfs:label "encoder"@en ;
+    rdfs:domain prov:Activity ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range cheez:Artifact ;
+    rdfs:subPropertyOf prov:used ;
+    skos:definition "Exact encoder an activity used; a threshold holds only for its calibration's encoder."@en .
+
+cheez:hasResult a owl:ObjectProperty ;
+    rdfs:label "hasResult"@en ;
+    rdfs:domain cheez:Question ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range cheez:Decision ;
+    skos:closeMatch dec:has_result ;
+    skos:definition "The decision reached on the question."@en ;
+    skos:editorialNote "direction unverified"@en .
+
+cheez:hash a owl:DatatypeProperty ;
+    rdfs:label "hash"@en ;
+    rdfs:domain cheez:Artifact ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range xsd:string ;
+    skos:definition "Content hash; the bytes are never embedded."@en ;
+    skos:editorialNote "minted: no standard hash property verified"@en .
+
+cheez:hashAlgorithm a owl:DatatypeProperty ;
+    rdfs:label "hashAlgorithm"@en ;
+    rdfs:domain cheez:Artifact ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range xsd:string ;
+    skos:definition "Algorithm of cheez:hash (not given in the brief)."@en .
+
+cheez:isSatisfiedBy a owl:ObjectProperty ;
+    rdfs:label "isSatisfiedBy"@en ;
+    rdfs:domain cheez:CheckRun ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range cheez:Option ;
+    skos:definition "This criterion (check run) is satisfied by the option."@en ;
+    skos:editorialNote "absent from the published Decision Ontology, so minted with no alignment"@en,
+        "brief's is_satisfied_by"@en .
+
+cheez:isViolatedBy a owl:ObjectProperty ;
+    rdfs:label "isViolatedBy"@en ;
+    rdfs:domain cheez:CheckRun ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range cheez:Option ;
+    skos:definition "This criterion (check run) is violated by the option."@en ;
+    skos:editorialNote "brief's is_violated_by"@en,
+        "same note"@en .
+
+cheez:observedValue a owl:DatatypeProperty ;
+    rdfs:label "observedValue"@en ;
+    rdfs:domain cheez:CheckRun ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range xsd:decimal ;
+    skos:definition "A measured score or count; never a threshold."@en .
+
+cheez:option a owl:ObjectProperty ;
+    rdfs:label "option"@en ;
+    rdfs:domain cheez:Question ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range cheez:Option ;
+    skos:closeMatch dec:involves_choosing ;
+    skos:definition "An option considered for the question."@en ;
+    skos:editorialNote "direction unverified"@en .
+
+cheez:outcome a owl:ObjectProperty ;
+    rdfs:label "outcome"@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( prov:Activity prov:Entity ) ] ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range skos:Concept ;
+    skos:definition "Observed, coded outcome of a check, run, review or routing decision."@en .
+
+cheez:retirementReason a owl:ObjectProperty ;
+    rdfs:label "retirementReason"@en ;
+    rdfs:domain cheez:Retirement ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range skos:Concept ;
+    skos:definition "Coded reason for a retirement."@en .
+
+cheez:screen a owl:ObjectProperty ;
+    rdfs:label "screen"@en ;
+    rdfs:domain cheez:Calibration ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range cheez:Artifact ;
+    rdfs:subPropertyOf prov:used ;
+    skos:definition "The screen that set the threshold."@en .
+
+cheez:template a owl:ObjectProperty ;
+    rdfs:label "template"@en ;
+    rdfs:domain cheez:RenderedText ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range cheez:Template ;
+    skos:definition "The template that produced the text."@en .
+
+cheez:threshold a owl:ObjectProperty ;
+    rdfs:label "threshold"@en ;
+    rdfs:domain cheez:CheckRun ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range cheez:Threshold ;
+    skos:definition "The threshold a check compared against."@en .
+
+cheez:thresholdValue a owl:DatatypeProperty ;
+    rdfs:label "thresholdValue"@en ;
+    rdfs:domain cheez:Threshold ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range xsd:decimal ;
+    skos:definition "The boundary value."@en .
+
+cheez:validTime a owl:ObjectProperty ;
+    rdfs:label "validTime"@en ;
+    rdfs:domain cheez:FactVersion ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range time:Interval ;
+    skos:definition "Clock 1: when the statement held."@en ;
+    skos:editorialNote "OWL-Time range"@en .
+
+cheez:writtenBy a owl:ObjectProperty ;
+    rdfs:label "writtenBy"@en ;
+    rdfs:domain cheez:Record ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range cheez:Host ;
+    skos:definition "The host that wrote this record."@en ;
+    skos:editorialNote "no single PROV term covers both entities and activities"@en .
+
+cheez:FactVersion a owl:Class ;
+    rdfs:label "FactVersion"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:subClassOf prov:Entity ;
+    skos:definition "One version of a stored statement, with both clocks; a correction closes it and never overwrites it."@en ;
+    skos:editorialNote "recorded time = prov:generatedAtTime, closure = prov:invalidatedAtTime, successor prov:wasRevisionOf"@en .
+
+cheez:Host a owl:Class ;
+    rdfs:label "Host"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:subClassOf prov:SoftwareAgent ;
+    skos:definition "The host process that writes every record."@en .
+
+cheez:Record a owl:Class ;
+    rdfs:label "Record"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    skos:definition "Root node of a document the host wrote from what ran."@en ;
+    skos:editorialNote "deliberately not ⊑ prov:Entity, since activities are records too"@en,
+        "marker class"@en .
+
+cheez:RenderedText a owl:Class ;
+    rdfs:label "RenderedText"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:subClassOf prov:Entity ;
+    skos:definition "A readable sentence produced by a template from a coded record: the only place prose may appear."@en ;
+    skos:editorialNote "text in schema:text, source in prov:wasDerivedFrom"@en .
+
+cheez:Retirement a owl:Class ;
+    rdfs:label "Retirement"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:subClassOf prov:Activity ;
+    skos:definition "Retiring, rejecting or pruning something. The thing stays and is prov:invalidated by this activity. Kind via dcterms:type."@en .
+
+cheez:Template a owl:Class ;
+    rdfs:label "Template"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:subClassOf cheez:Artifact ;
+    skos:definition "A sentence template, by hash."@en .
+
+cheez:Certificate a owl:Class ;
+    rdfs:label "Certificate"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:subClassOf prov:Entity ;
+    skos:definition "VM-produced record that an answer follows from the facts and rules used, under the recorded checks. Not a claim of correctness, never a truth score."@en .
+
+cheez:CheckOutcomes a skos:ConceptScheme ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    skos:prefLabel "Check outcomes"@en .
+
+cheez:Decision a owl:Class ;
+    rdfs:label "Decision"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:subClassOf prov:Entity ;
+    skos:closeMatch dec:Decision ;
+    skos:definition "The answer or the refusal."@en .
+
+cheez:Question a owl:Class ;
+    rdfs:label "Question"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:subClassOf prov:Entity ;
+    skos:closeMatch dec:Question ;
+    skos:definition "The question a decision is about."@en .
+
+cheez:Threshold a owl:Class ;
+    rdfs:label "Threshold"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:subClassOf prov:Entity ;
+    skos:definition "A decision boundary with its calibration. Never a score."@en ;
+    skos:editorialNote "parameter via dcterms:type"@en,
+        "prov:wasGeneratedBy its cheez:Calibration"@en .
+
+cheez:Calibration a owl:Class ;
+    rdfs:label "Calibration"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:subClassOf prov:Activity ;
+    skos:definition "The screen run that set one or more thresholds for one encoder, data set and deployment, on a date (prov:endedAtTime)."@en .
+
+cheez:RetirementKinds a skos:ConceptScheme ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    skos:prefLabel "Retirement kinds"@en .
+
+cheez:Option a owl:Class ;
+    rdfs:label "Option"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:subClassOf prov:Entity ;
+    skos:closeMatch dec:Option ;
+    skos:definition "A candidate: one proposer's program."@en .
+
+cheez:CheckRun a owl:Class ;
+    rdfs:label "CheckRun"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:subClassOf prov:Activity ;
+    skos:definition "One execution of a check. It exists only if the check ran. Kind via dcterms:type."@en .
+
+cheez:Artifact a owl:Class ;
+    rdfs:label "Artifact"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:subClassOf prov:Entity ;
+    skos:definition "External payload known only by its hash: program, vector, weights, data, document, encoder table."@en .
+
+<https://w3id.org/cheezml/core> a owl:Ontology ;
+    dcterms:created "2026-11-07"^^xsd:date ;
+    dcterms:creator [ a schema:Person ;
+            schema:affiliation "GrillCheese Research Lab" ;
+            schema:name "Nicolas Cloutier" ] ;
+    dcterms:description "Records, hashes, the two clocks, thresholds with their calibration, check runs, certificates, decisions and retirement."@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2026-11-09"^^xsd:date ;
+    dcterms:title "CheezML core"@en ;
+    vann:preferredNamespacePrefix "cheez" ;
+    vann:preferredNamespaceUri "https://w3id.org/cheezml/core#" ;
+    owl:versionIRI <https://w3id.org/cheezml/core/v0.1> ;
+    owl:versionInfo "0.1 (draft)" .
+

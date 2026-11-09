@@ -1,0 +1,64 @@
+@prefix cheez: <https://w3id.org/cheezml/core#> .
+@prefix cube: <https://w3id.org/cheezml/cubelang#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cube:Ask a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubelang> ;
+    skos:inScheme cube:RunOutcomes ;
+    skos:prefLabel "ASK (suspended; resumed by re-execution over run-proto)"@en .
+
+cube:Error a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubelang> ;
+    skos:inScheme cube:RunOutcomes ;
+    skos:prefLabel "error"@en .
+
+cube:Program a owl:Class ;
+    rdfs:label "Program"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubelang> ;
+    rdfs:subClassOf prov:Plan,
+        cheez:Artifact ;
+    skos:definition "A CubeLang program, by hash."@en .
+
+cube:ProgramRun a owl:Class ;
+    rdfs:label "ProgramRun"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubelang> ;
+    rdfs:subClassOf prov:Activity ;
+    skos:definition "One VM execution; outcome cube:Return, cube:Error or cube:Ask (suspended, resumed by re-execution over run-proto)."@en .
+
+cube:Return a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubelang> ;
+    skos:inScheme cube:RunOutcomes ;
+    skos:prefLabel "return"@en .
+
+cube:VM a owl:Class ;
+    rdfs:label "VM"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubelang> ;
+    rdfs:subClassOf prov:SoftwareAgent ;
+    skos:definition "The CubeLang VM: the only agent whose runs can produce a certificate."@en .
+
+cube:RunOutcomes a skos:ConceptScheme ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubelang> ;
+    skos:prefLabel "VM execution outcomes"@en .
+
+<https://w3id.org/cheezml/cubelang> a owl:Ontology ;
+    dcterms:created "2026-11-07"^^xsd:date ;
+    dcterms:creator [ a schema:Person ;
+            schema:affiliation "GrillCheese Research Lab" ;
+            schema:name "Nicolas Cloutier" ] ;
+    dcterms:description "Programs by hash and VM runs with their outcome (return, error or ask)."@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2026-11-09"^^xsd:date ;
+    dcterms:title "CheezML for CubeLang"@en ;
+    vann:preferredNamespacePrefix "cube" ;
+    vann:preferredNamespaceUri "https://w3id.org/cheezml/cubelang#" ;
+    owl:imports <https://w3id.org/cheezml/core> ;
+    owl:versionIRI <https://w3id.org/cheezml/cubelang/v0.1> ;
+    owl:versionInfo "0.1 (draft)" .
+
