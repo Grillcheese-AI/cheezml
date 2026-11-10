@@ -30,8 +30,8 @@ note, never deleted.
 - Records and instances have `urn:uuid:` ids, never ids in a vocabulary namespace.
 - Standard vocabularies are reused as published: PROV-O, schema.org, OWL-Time, SKOS and DCMI terms.
 
-The site is served from `docs/` by GitHub Pages; w3id.org redirects to it, with content negotiation (HTML for a
-browser, Turtle, JSON-LD or RDF/XML for a machine).
+The site is served from `docs/` by GitHub Pages at <https://ns.grillcheeseai.com/cheezml/>. `https://w3id.org/cheezml/`
+redirects to it, with content negotiation (HTML for a browser, Turtle, JSON-LD or RDF/XML for a machine).
 
 ## The rules a record follows
 - A record says only what ran. A check that never ran has no record.
