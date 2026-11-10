@@ -184,17 +184,17 @@ margin:.4rem 0}dt{color:var(--muted)}dd{margin:0}.term{border-left:2px solid var
 table{border-collapse:collapse;width:100%}td,th{text-align:left;padding:.35rem .5rem;border-bottom:1px solid
 var(--rule);vertical-align:top}.wrap{overflow-x:auto}nav{display:flex;flex-wrap:wrap;align-items:center;gap:.2rem .8rem}
 nav .brand{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;color:var(--fg);text-decoration:none}
-nav .brand img{display:block}
+nav .brand img{display:block;object-fit:contain}
 """
 
 
 def page(title, body, root=""):
     """One page. `root` is the path back to the folder that holds the modules and the logo ("" or "../")."""
-    logo = (f'<picture><source srcset="{root}cubby-logo-white.svg" media="(prefers-color-scheme: dark)">'
-            f'<img src="{root}cubby-logo.svg" alt="" width="28" height="28"></picture>')
+    logo = (f'<picture><source srcset="{root}cubby-logo-white.png" media="(prefers-color-scheme: dark)">'
+            f'<img src="{root}cubby-logo.png" alt="" width="28" height="28"></picture>')
     return (f'<!doctype html>\n<html lang="en"><head><meta charset="utf-8">'
             f'<meta name="viewport" content="width=device-width, initial-scale=1">'
-            f'<link rel="icon" type="image/svg+xml" href="{root}cubby-logo.svg">'
+            f'<link rel="icon" type="image/png" href="{root}cubby-logo.png">'
             f"<title>{html.escape(title)}</title><style>{CSS}</style></head>"
             f'<body><main><nav class="muted"><a class="brand" href="{root or "./"}">{logo}CheezML</a>'
             + "".join(f'<a href="{root}{m}.html">{m}</a>' for m in MODULES)
@@ -292,7 +292,7 @@ def write_set(dest, graphs, frozen=False):
         (dest / f"{stem}.jsonld").write_text(g.serialize(format="json-ld", indent=2), encoding="utf-8")
         (dest / f"{stem}.rdf").write_text(g.serialize(format="xml"), encoding="utf-8")
         (dest / f"{stem}.html").write_text(module_html(stem, g), encoding="utf-8")
-    for logo in sorted((SRC / "brand").glob("*.svg")):  # the Cubby mark, light and dark
+    for logo in sorted((SRC / "brand").glob("*.png")):  # the Cubby mark, light and dark
         shutil.copy(logo, dest / logo.name)
     shutil.copy(SRC / "context.jsonld", dest / "context.jsonld")
     shutil.copy(SRC / "shapes.ttl", dest / "shapes.ttl")

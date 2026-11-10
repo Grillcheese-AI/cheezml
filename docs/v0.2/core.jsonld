@@ -1,23 +1,6 @@
 [
   {
-    "@id": "https://w3id.org/cheezml/core#RetirementKinds",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Retirement kinds"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#Query",
+    "@id": "https://w3id.org/cheezml/core#StoreSnapshot",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -29,219 +12,12 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A query sent to a remote source, by hash."
+        "@value": "A snapshot of Cubby's own store, by hash."
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
         "@id": "https://w3id.org/cheezml/core#ArtifactKinds"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#calibrationData",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/core#Calibration"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "calibrationData"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/cheezml/core#Artifact"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#used"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Data (corpus) the screen ran on."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#certifies",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/core#Certificate"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "certifies"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby#Answer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The answer a certificate covers."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#template",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/core#RenderedText"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "template"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/cheezml/core#Template"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The template that produced the text."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#Rejected",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/core#RetirementKinds"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "rejected"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Ontology"
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2026-11-07"
-      }
-    ],
-    "http://purl.org/dc/terms/creator": [
-      {
-        "@id": "_:N0e2d74840106486db1da49ccc0f71330"
-      }
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@language": "en",
-        "@value": "Records, hashes, the two clocks, thresholds with their calibration, check runs, certificates, decisions and retirement."
-      }
-    ],
-    "http://purl.org/dc/terms/license": [
-      {
-        "@id": "https://creativecommons.org/licenses/by/4.0/"
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2026-11-10"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@language": "en",
-        "@value": "CheezML core"
-      }
-    ],
-    "http://purl.org/vocab/vann/preferredNamespacePrefix": [
-      {
-        "@value": "cheez"
-      }
-    ],
-    "http://purl.org/vocab/vann/preferredNamespaceUri": [
-      {
-        "@value": "https://w3id.org/cheezml/core#"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#priorVersion": [
-      {
-        "@id": "https://w3id.org/cheezml/core/v0.1"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#versionIRI": [
-      {
-        "@id": "https://w3id.org/cheezml/core/v0.2"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#versionInfo": [
-      {
-        "@value": "0.2 (draft)"
-      }
-    ]
-  },
-  {
-    "@id": "_:N0e2d74840106486db1da49ccc0f71330",
-    "@type": [
-      "https://schema.org/Person"
-    ],
-    "https://schema.org/affiliation": [
-      {
-        "@value": "GrillCheese Research Lab"
-      }
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "Nicolas Cloutier"
       }
     ]
   },
@@ -279,73 +55,13 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/core#OntologyRelease",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A released version of an ontology (FIBO, GO...), cited with schema:version and its hash."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/core#ArtifactKinds"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#encoder",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "http://www.w3.org/ns/prov#Activity"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "encoder"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/cheezml/core#Artifact"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#used"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Exact encoder an activity used; a threshold holds only for its calibration's encoder."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#endpoint",
+    "@id": "https://w3id.org/cheezml/core#thresholdValue",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://w3id.org/cheezml/core#SourceRead"
+        "@id": "https://w3id.org/cheezml/core#Threshold"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -356,45 +72,23 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "endpoint"
+        "@value": "thresholdValue"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#anyURI"
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "The remote source's address."
+        "@value": "The boundary value."
       }
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/core#StoreSnapshot",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A snapshot of Cubby's own store, by hash."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/core#ArtifactKinds"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#CheckKinds",
+    "@id": "https://w3id.org/cheezml/core#RetirementKinds",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#ConceptScheme"
     ],
@@ -406,84 +100,7 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Check kinds"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#DatasetRelease",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A released version of a dataset or dump (the WikiKGQA 2026 dump, a GLEIF file...), cited with schema:version and its hash."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/core#ArtifactKinds"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#Question",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Question"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#Entity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#closeMatch": [
-      {
-        "@id": "http://example.com/ns/dec#Question"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The question a decision is about."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#Response",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A remote source's response, by hash."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/core#ArtifactKinds"
+        "@value": "Retirement kinds"
       }
     ]
   },
@@ -521,46 +138,13 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/core#Record",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Record"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Root node of a document the host wrote from what ran."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#editorialNote": [
-      {
-        "@language": "en",
-        "@value": "marker class"
-      },
-      {
-        "@language": "en",
-        "@value": "deliberately not ⊑ prov:Entity, since activities are records too"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#chosenOption",
+    "@id": "https://w3id.org/cheezml/core#check",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://w3id.org/cheezml/core#Decision"
+        "@id": "_:Nad622a06392f4002bfef649ee57f57a8"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -571,345 +155,23 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "chosenOption"
+        "@value": "check"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/cheezml/core#Option"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The option the decision took."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#retirementReason",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/core#Retirement"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "retirementReason"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Coded reason for a retirement."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#response",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/core#SourceRead"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "response"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/cheezml/core#Artifact"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#generated"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The answer received, by hash."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#Rule",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Rule"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/cheezml/core#Artifact"
-      },
-      {
-        "@id": "http://www.w3.org/ns/prov#Plan"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A rule applied by a program run, by hash."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#isViolatedBy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
         "@id": "https://w3id.org/cheezml/core#CheckRun"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "isViolatedBy"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/cheezml/core#Option"
-      }
-    ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "This criterion (check run) is violated by the option."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#editorialNote": [
-      {
-        "@language": "en",
-        "@value": "brief's is_violated_by"
-      },
-      {
-        "@language": "en",
-        "@value": "same note"
+        "@value": "A check that ran for this record."
       }
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/core#Pruned",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/core#RetirementKinds"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "pruned"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#Template",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Template"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/cheezml/core#Artifact"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A sentence template, by hash."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#deployment",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/core#Calibration"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "deployment"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/ns/prov#Entity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Deployment a calibration holds for."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#thresholdValue",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/core#Threshold"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "thresholdValue"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The boundary value."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#Artifact",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Artifact"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#Entity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "External payload known only by its hash: program, vector, weights, data, document, encoder table."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#outcome",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "_:Ncb8305b6d2054a6ea156b734187b4c56"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "outcome"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Observed, coded outcome of a check, run, review or routing decision."
-      }
-    ]
-  },
-  {
-    "@id": "_:Ncb8305b6d2054a6ea156b734187b4c56",
+    "@id": "_:Nad622a06392f4002bfef649ee57f57a8",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -920,74 +182,9 @@
             "@id": "http://www.w3.org/ns/prov#Activity"
           },
           {
-            "@id": "http://www.w3.org/ns/prov#Entity"
+            "@id": "https://w3id.org/cheezml/core#Certificate"
           }
         ]
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#isSatisfiedBy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/core#CheckRun"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "isSatisfiedBy"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/cheezml/core#Option"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "This criterion (check run) is satisfied by the option."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#editorialNote": [
-      {
-        "@language": "en",
-        "@value": "brief's is_satisfied_by"
-      },
-      {
-        "@language": "en",
-        "@value": "absent from the published Decision Ontology, so minted with no alignment"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#Violated",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/core#CheckOutcomes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "violated"
       }
     ]
   },
@@ -1036,9 +233,14 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/core#Host",
+    "@id": "https://w3id.org/cheezml/core#outcome",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:N2dd27dd9890246b2bc643b90ef0d8afd"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
@@ -1048,23 +250,63 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Host"
+        "@value": "outcome"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/ns/prov#SoftwareAgent"
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "The host process that writes every record."
+        "@value": "Observed, coded outcome of a check, run, review or routing decision."
       }
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/core#Threshold",
+    "@id": "_:N2dd27dd9890246b2bc643b90ef0d8afd",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "http://www.w3.org/ns/prov#Activity"
+          },
+          {
+            "@id": "http://www.w3.org/ns/prov#Entity"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#Rejected",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#RetirementKinds"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "rejected"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#Rule",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -1076,28 +318,131 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Threshold"
+        "@value": "Rule"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.w3.org/ns/prov#Entity"
+        "@id": "https://w3id.org/cheezml/core#Artifact"
+      },
+      {
+        "@id": "http://www.w3.org/ns/prov#Plan"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A decision boundary with its calibration. Never a score."
+        "@value": "A rule applied by a program run, by hash."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#Template",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Template"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/cheezml/core#Artifact"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A sentence template, by hash."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#option",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/core#Question"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "option"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/cheezml/core#Option"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "http://example.com/ns/dec#involves_choosing"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "An option considered for the question."
       }
     ],
     "http://www.w3.org/2004/02/skos/core#editorialNote": [
       {
         "@language": "en",
-        "@value": "prov:wasGeneratedBy its cheez:Calibration"
-      },
+        "@value": "direction unverified"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#calibrationData",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/core#Calibration"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "parameter via dcterms:type"
+        "@value": "calibrationData"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/cheezml/core#Artifact"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#used"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Data (corpus) the screen ran on."
       }
     ]
   },
@@ -1141,7 +486,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/core#Option",
+    "@id": "https://w3id.org/cheezml/core#Decision",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -1153,7 +498,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Option"
+        "@value": "Decision"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -1163,13 +508,117 @@
     ],
     "http://www.w3.org/2004/02/skos/core#closeMatch": [
       {
-        "@id": "http://example.com/ns/dec#Option"
+        "@id": "http://example.com/ns/dec#Decision"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A candidate: one proposer's program."
+        "@value": "The answer or the refusal."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#encoder",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Activity"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "encoder"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/cheezml/core#Artifact"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#used"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Exact encoder an activity used; a threshold holds only for its calibration's encoder."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#Calibration",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Calibration"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Activity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The screen run that set one or more thresholds for one encoder, data set and deployment, on a date (prov:endedAtTime)."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#response",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/core#SourceRead"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "response"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/cheezml/core#Artifact"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#generated"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The answer received, by hash."
       }
     ]
   },
@@ -1213,90 +662,6 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/core#FactVersion",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "FactVersion"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#Entity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "One version of a stored statement, with both clocks; a correction closes it and never overwrites it."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#editorialNote": [
-      {
-        "@language": "en",
-        "@value": "recorded time = prov:generatedAtTime, closure = prov:invalidatedAtTime, successor prov:wasRevisionOf"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#Satisfied",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/core#CheckOutcomes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "satisfied"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#Retirement",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Retirement"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#Activity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Retiring, rejecting or pruning something. The thing stays and is prov:invalidated by this activity. Kind via dcterms:type."
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/cheezml/core#writtenBy",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
@@ -1336,9 +701,14 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/core#RenderedText",
+    "@id": "https://w3id.org/cheezml/core#retirementReason",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/core#Retirement"
+      }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
@@ -1348,41 +718,18 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "RenderedText"
+        "@value": "retirementReason"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/ns/prov#Entity"
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A readable sentence produced by a template from a coded record: the only place prose may appear."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#editorialNote": [
-      {
-        "@language": "en",
-        "@value": "text in schema:text, source in prov:wasDerivedFrom"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/core#ArtifactKinds",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Artifact kinds"
+        "@value": "Coded reason for a retirement."
       }
     ]
   },
@@ -1415,7 +762,51 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/core#Decision",
+    "@id": "https://w3id.org/cheezml/core#Violated",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#CheckOutcomes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "violated"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#Pruned",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#RetirementKinds"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "pruned"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#FactVersion",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -1427,7 +818,7 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Decision"
+        "@value": "FactVersion"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
@@ -1435,26 +826,60 @@
         "@id": "http://www.w3.org/ns/prov#Entity"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+    "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@id": "http://example.com/ns/dec#Decision"
+        "@language": "en",
+        "@value": "One version of a stored statement, with both clocks; a correction closes it and never overwrites it."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#editorialNote": [
+      {
+        "@language": "en",
+        "@value": "recorded time = prov:generatedAtTime, closure = prov:invalidatedAtTime, successor prov:wasRevisionOf"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#Record",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Record"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "The answer or the refusal."
+        "@value": "Root node of a document the host wrote from what ran."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#editorialNote": [
+      {
+        "@language": "en",
+        "@value": "marker class"
+      },
+      {
+        "@language": "en",
+        "@value": "deliberately not ⊑ prov:Entity, since activities are records too"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/core#check",
+    "@id": "https://w3id.org/cheezml/core#screen",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "_:N4f44b549f8ee44b6abaaa45e5bb8bbbf"
+        "@id": "https://w3id.org/cheezml/core#Calibration"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -1465,36 +890,100 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "check"
+        "@value": "screen"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "https://w3id.org/cheezml/core#CheckRun"
+        "@id": "https://w3id.org/cheezml/core#Artifact"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#used"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A check that ran for this record."
+        "@value": "The screen that set the threshold."
       }
     ]
   },
   {
-    "@id": "_:N4f44b549f8ee44b6abaaa45e5bb8bbbf",
+    "@id": "https://w3id.org/cheezml/core#Query",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2004/02/skos/core#Concept"
     ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@list": [
-          {
-            "@id": "http://www.w3.org/ns/prov#Activity"
-          },
-          {
-            "@id": "https://w3id.org/cheezml/core#Certificate"
-          }
-        ]
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A query sent to a remote source, by hash."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#ArtifactKinds"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#template",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/core#RenderedText"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "template"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/cheezml/core#Template"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The template that produced the text."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#Retired",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#RetirementKinds"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "retired"
       }
     ]
   },
@@ -1532,7 +1021,29 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/core#Calibration",
+    "@id": "https://w3id.org/cheezml/core#OntologyRelease",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A released version of an ontology (FIBO, GO...), cited with schema:version and its hash."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#ArtifactKinds"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#Threshold",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -1544,18 +1055,253 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Calibration"
+        "@value": "Threshold"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.w3.org/ns/prov#Activity"
+        "@id": "http://www.w3.org/ns/prov#Entity"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "The screen run that set one or more thresholds for one encoder, data set and deployment, on a date (prov:endedAtTime)."
+        "@value": "A decision boundary with its calibration. Never a score."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#editorialNote": [
+      {
+        "@language": "en",
+        "@value": "prov:wasGeneratedBy its cheez:Calibration"
+      },
+      {
+        "@language": "en",
+        "@value": "parameter via dcterms:type"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#Response",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A remote source's response, by hash."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#ArtifactKinds"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#ArtifactKinds",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Artifact kinds"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#certifies",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/core#Certificate"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "certifies"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby#Answer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The answer a certificate covers."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#CheckKinds",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Check kinds"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#isViolatedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/core#CheckRun"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "isViolatedBy"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/cheezml/core#Option"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "This criterion (check run) is violated by the option."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#editorialNote": [
+      {
+        "@language": "en",
+        "@value": "brief's is_violated_by"
+      },
+      {
+        "@language": "en",
+        "@value": "same note"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#CheckOutcomes",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Check outcomes"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#isSatisfiedBy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/core#CheckRun"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "isSatisfiedBy"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/cheezml/core#Option"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "This criterion (check run) is satisfied by the option."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#editorialNote": [
+      {
+        "@language": "en",
+        "@value": "brief's is_satisfied_by"
+      },
+      {
+        "@language": "en",
+        "@value": "absent from the published Decision Ontology, so minted with no alignment"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#Question",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Question"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Entity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "http://example.com/ns/dec#Question"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The question a decision is about."
       }
     ]
   },
@@ -1631,6 +1377,61 @@
     ]
   },
   {
+    "@id": "https://w3id.org/cheezml/core#DatasetRelease",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A released version of a dataset or dump (the WikiKGQA 2026 dump, a GLEIF file...), cited with schema:version and its hash."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#ArtifactKinds"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#deployment",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/core#Calibration"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "deployment"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Entity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Deployment a calibration holds for."
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/cheezml/core#storeSnapshot",
     "@type": [
       "http://www.w3.org/2002/07/owl#ObjectProperty"
@@ -1669,41 +1470,63 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/core#CheckOutcomes",
+    "@id": "https://w3id.org/cheezml/core#Retirement",
     "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://w3id.org/cheezml/core"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+    "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Check outcomes"
+        "@value": "Retirement"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Activity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Retiring, rejecting or pruning something. The thing stays and is prov:invalidated by this activity. Kind via dcterms:type."
       }
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/core#Retired",
+    "@id": "https://w3id.org/cheezml/core#Option",
     "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://w3id.org/cheezml/core"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/core#RetirementKinds"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+    "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "retired"
+        "@value": "Option"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Entity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+      {
+        "@id": "http://example.com/ns/dec#Option"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A candidate: one proposer's program."
       }
     ]
   },
@@ -1736,14 +1559,9 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/core#screen",
+    "@id": "https://w3id.org/cheezml/core#Host",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/core#Calibration"
-      }
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
@@ -1753,23 +1571,155 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "screen"
+        "@value": "Host"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/cheezml/core#Artifact"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subPropertyOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#used"
+        "@id": "http://www.w3.org/ns/prov#SoftwareAgent"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "The screen that set the threshold."
+        "@value": "The host process that writes every record."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2026-11-07"
+      }
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@id": "_:N01b04391b9cb4afb99083721526cd971"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "en",
+        "@value": "Records, hashes, the two clocks, thresholds with their calibration, check runs, certificates, decisions and retirement."
+      }
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2026-11-10"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "CheezML core"
+      }
+    ],
+    "http://purl.org/vocab/vann/preferredNamespacePrefix": [
+      {
+        "@value": "cheez"
+      }
+    ],
+    "http://purl.org/vocab/vann/preferredNamespaceUri": [
+      {
+        "@value": "https://w3id.org/cheezml/core#"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#priorVersion": [
+      {
+        "@id": "https://w3id.org/cheezml/core/v0.1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionIRI": [
+      {
+        "@id": "https://w3id.org/cheezml/core/v0.2"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@value": "0.2 (draft)"
+      }
+    ]
+  },
+  {
+    "@id": "_:N01b04391b9cb4afb99083721526cd971",
+    "@type": [
+      "https://schema.org/Person"
+    ],
+    "https://schema.org/affiliation": [
+      {
+        "@value": "GrillCheese Research Lab"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "Nicolas Cloutier"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#Satisfied",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#CheckOutcomes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "satisfied"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#RenderedText",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "RenderedText"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Entity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A readable sentence produced by a template from a coded record: the only place prose may appear."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#editorialNote": [
+      {
+        "@language": "en",
+        "@value": "text in schema:text, source in prov:wasDerivedFrom"
       }
     ]
   },
@@ -1802,13 +1752,13 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/core#option",
+    "@id": "https://w3id.org/cheezml/core#endpoint",
     "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
-        "@id": "https://w3id.org/cheezml/core#Question"
+        "@id": "https://w3id.org/cheezml/core#SourceRead"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
@@ -1819,7 +1769,40 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "option"
+        "@value": "endpoint"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#anyURI"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The remote source's address."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#chosenOption",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/core#Decision"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "chosenOption"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
@@ -1827,21 +1810,38 @@
         "@id": "https://w3id.org/cheezml/core#Option"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#closeMatch": [
+    "http://www.w3.org/2004/02/skos/core#definition": [
       {
-        "@id": "http://example.com/ns/dec#involves_choosing"
+        "@language": "en",
+        "@value": "The option the decision took."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/core#Artifact",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Artifact"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Entity"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "An option considered for the question."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#editorialNote": [
-      {
-        "@language": "en",
-        "@value": "direction unverified"
+        "@value": "External payload known only by its hash: program, vector, weights, data, document, encoder table."
       }
     ]
   }

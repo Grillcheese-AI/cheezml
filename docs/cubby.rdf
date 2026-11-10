@@ -8,293 +8,8 @@
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:vann="http://purl.org/vocab/vann/"
 >
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#FirstApprover">
-    <skos:prefLabel xml:lang="en">first approver</skos:prefLabel>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#ReviewerRoles"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#SandboxRun">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <rdfs:label xml:lang="en">SandboxRun</rdfs:label>
-    <skos:definition xml:lang="en">A run of a helper in a locked-down VM session; its gates are cheez:check runs.</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/cheezml/cubelang#ProgramRun"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#CertifiedAnswerAct">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#DialogueActs"/>
-    <skos:prefLabel xml:lang="en">certified answer</skos:prefLabel>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N780a50c679f64970aa86a0cbd2bf9c8d">
-    <rdf:first rdf:resource="https://w3id.org/cheezml/core#Option"/>
-    <rdf:rest rdf:nodeID="N9fa162c917c44adf8206861de846668c"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#scope">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/cheezml/cubby#Helper"/>
-    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Collection"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <rdfs:label xml:lang="en">scope</rdfs:label>
-    <skos:definition xml:lang="en">The verified answers the helper must reproduce.</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#EverydayTable">
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#Proposers"/>
-    <skos:prefLabel xml:lang="en">everyday table</skos:prefLabel>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#UnreadableSource">
-    <skos:prefLabel xml:lang="en">unreadable source (order 0061)</skos:prefLabel>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#RefusalReasons"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#LogicalConflict">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:prefLabel xml:lang="en">logical</skos:prefLabel>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#ConflictKinds"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#Turn">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <rdfs:label xml:lang="en">Turn</rdfs:label>
-    <skos:definition xml:lang="en">One conversation turn, written by the host; conversation via schema:isPartOf.</skos:definition>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#HelperRejection">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <rdfs:label xml:lang="en">HelperRejection</rdfs:label>
-    <skos:definition xml:lang="en">The host's rejection of a helper after its sandbox run; reason = the failed gate's kind.</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/cheezml/core#Retirement"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#ReproductionCheck">
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:definition xml:lang="en">A helper reproduces every verified answer in its scope (0062).</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#dialogueAct">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/cheezml/cubby#Turn"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:scopeNote xml:lang="en">Values come from the code list cubby:DialogueActs.</skos:scopeNote>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <rdfs:label xml:lang="en">dialogueAct</rdfs:label>
-    <skos:definition xml:lang="en">The turn's dialogue act.</skos:definition>
-    <skos:editorialNote xml:lang="en">ISO 24617-2 mapping pending (IRIs not known)</skos:editorialNote>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#PrerequisiteCheck">
-    <skos:definition xml:lang="en">Exact prerequisite check of a story-world action (0060).</skos:definition>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N5a09c26de8654758bb84f8c33ccd9100">
-    <rdf:first rdf:resource="https://w3id.org/cheezml/cubby#Refusal"/>
-    <rdf:rest rdf:nodeID="N780a50c679f64970aa86a0cbd2bf9c8d"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#PurchaseOrderCheck">
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
-    <skos:definition xml:lang="en">Exact purchase-order check (0061).</skos:definition>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#SupplierCheck">
-    <skos:definition xml:lang="en">Exact supplier check (0061).</skos:definition>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#DatesTooCoarse">
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#RefusalReasons"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:prefLabel xml:lang="en">dates too coarse</skos:prefLabel>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#Proposers">
-    <skos:prefLabel xml:lang="en">Proposers in use</skos:prefLabel>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#TypeConflict">
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#ConflictKinds"/>
-    <skos:prefLabel xml:lang="en">type</skos:prefLabel>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#ScopeCheck">
-    <skos:definition xml:lang="en">A helper changes nothing outside its scope (0062).</skos:definition>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#NoPlan">
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#RefusalReasons"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:prefLabel xml:lang="en">no plan</skos:prefLabel>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nb0236b6cda6b4bcf9abcaa1e1a336dd1">
-    <rdf:first rdf:resource="https://w3id.org/cheezml/cubby#FieldSuggestion"/>
-    <rdf:rest rdf:nodeID="N045e50dc22f64a64ac21845a0b609480"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#ArithmeticCheck">
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:definition xml:lang="en">Exact arithmetic check (0061).</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#EpisodicMemory">
-    <skos:prefLabel xml:lang="en">episodic memory of certified chains</skos:prefLabel>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#Proposers"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#readerVersion">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/cheezml/cubby#DocumentRegion"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <rdfs:label xml:lang="en">readerVersion</rdfs:label>
-    <skos:definition xml:lang="en">Version of the reader that produced the region.</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#FormatCheck">
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:definition xml:lang="en">Exact format check of a document field (0061).</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#Refusal">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <rdfs:label xml:lang="en">Refusal</rdfs:label>
-    <skos:definition xml:lang="en">A refusal decision with a coded reason.</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/cheezml/core#Decision"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#SecondApprover">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:prefLabel xml:lang="en">second approver (above the amount)</skos:prefLabel>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#ReviewerRoles"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#turnIndex">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/cheezml/cubby#Turn"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <rdfs:label xml:lang="en">turnIndex</rdfs:label>
-    <skos:definition xml:lang="en">Host-assigned position in the conversation.</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N12c3c577d7734865bcafde305c006aa6">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="Nb0236b6cda6b4bcf9abcaa1e1a336dd1"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#Approved">
-    <skos:prefLabel xml:lang="en">approved</skos:prefLabel>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#ReviewOutcomes"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#RefusalReasons">
-    <skos:prefLabel xml:lang="en">Refusal reasons in use</skos:prefLabel>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#RelationMissing">
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#RefusalReasons"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
     <skos:prefLabel xml:lang="en">relation missing</skos:prefLabel>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#Conflict">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#RefusalReasons"/>
-    <skos:prefLabel xml:lang="en">conflict (kind in cubby:conflictKind)</skos:prefLabel>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#DatePrecisionCheck">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:definition xml:lang="en">Dates used are fine enough for the question (inferred from 'dates too coarse').</skos:definition>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-    <owl:versionIRI rdf:resource="https://w3id.org/cheezml/cubby/v0.2"/>
-    <owl:priorVersion rdf:resource="https://w3id.org/cheezml/cubby/v0.1"/>
-    <owl:versionInfo>0.2 (draft)</owl:versionInfo>
-    <dcterms:title xml:lang="en">CheezML for CubbyLLM</dcterms:title>
-    <dcterms:description xml:lang="en">Conversation turns, answers and refusals with their reasons, proposers, helpers in a sandbox, and documents reviewed by a person.</dcterms:description>
-    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-07</dcterms:created>
-    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-10</dcterms:modified>
-    <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-    <dcterms:creator rdf:nodeID="N1316cdf46d5e4c3d9c94b605bcb0f478"/>
-    <vann:preferredNamespacePrefix>cubby</vann:preferredNamespacePrefix>
-    <vann:preferredNamespaceUri>https://w3id.org/cheezml/cubby#</vann:preferredNamespaceUri>
-    <owl:imports rdf:resource="https://w3id.org/cheezml/core"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#decision">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/cheezml/cubby#Turn"/>
-    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Decision"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <rdfs:label xml:lang="en">decision</rdfs:label>
-    <skos:definition xml:lang="en">The answer or refusal the turn delivered.</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#GainCheck">
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:definition xml:lang="en">A domain change shows a gain (0058).</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#NumberInRegionCheck">
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:definition xml:lang="en">Every number in a field appears in its region's text (0061).</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Ne990fa4c5b8d42e6906179499531cac5">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="Ncc04211a2a99487bb93e02e7281211c5"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#ReviewOutcomes">
-    <skos:prefLabel xml:lang="en">Review outcomes</skos:prefLabel>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#refusalReason">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/cheezml/cubby#Refusal"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:scopeNote xml:lang="en">Values come from the code list cubby:RefusalReasons.</skos:scopeNote>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <rdfs:label xml:lang="en">refusalReason</rdfs:label>
-    <skos:definition xml:lang="en">Why the question was refused.</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#FieldSuggestion">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <rdfs:label xml:lang="en">FieldSuggestion</rdfs:label>
-    <skos:definition xml:lang="en">A value read or derived for a document field (prov:value); a suggestion until committed.</skos:definition>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#WalkFailed">
-    <skos:prefLabel xml:lang="en">walk failed</skos:prefLabel>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#RefusalReasons"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#ConflictKinds">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:prefLabel xml:lang="en">Kinds of conflict</skos:prefLabel>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#NotCertified">
-    <skos:prefLabel xml:lang="en">not certified</skos:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
     <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#RefusalReasons"/>
@@ -308,16 +23,238 @@
     <rdfs:label xml:lang="en">conflictKind</rdfs:label>
     <skos:definition xml:lang="en">Kind of conflict; required exactly when the reason is cubby:Conflict.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#FieldCommit">
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#PrerequisiteCheck">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
+    <skos:definition xml:lang="en">Exact prerequisite check of a story-world action (0060).</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#SecondApprover">
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#ReviewerRoles"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:prefLabel xml:lang="en">second approver (above the amount)</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#GainCheck">
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:definition xml:lang="en">A domain change shows a gain (0058).</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:versionIRI rdf:resource="https://w3id.org/cheezml/cubby/v0.2"/>
+    <owl:priorVersion rdf:resource="https://w3id.org/cheezml/cubby/v0.1"/>
+    <owl:versionInfo>0.2 (draft)</owl:versionInfo>
+    <dcterms:title xml:lang="en">CheezML for CubbyLLM</dcterms:title>
+    <dcterms:description xml:lang="en">Conversation turns, answers and refusals with their reasons, proposers, helpers in a sandbox, and documents reviewed by a person.</dcterms:description>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-07</dcterms:created>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-10</dcterms:modified>
+    <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dcterms:creator rdf:nodeID="N520ca96d73cd4367ae238969d5016e8e"/>
+    <vann:preferredNamespacePrefix>cubby</vann:preferredNamespacePrefix>
+    <vann:preferredNamespaceUri>https://w3id.org/cheezml/cubby#</vann:preferredNamespaceUri>
+    <owl:imports rdf:resource="https://w3id.org/cheezml/core"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#ConflictKinds">
+    <skos:prefLabel xml:lang="en">Kinds of conflict</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#refusalReason">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/cubby#Refusal"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:scopeNote xml:lang="en">Values come from the code list cubby:RefusalReasons.</skos:scopeNote>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <rdfs:label xml:lang="en">refusalReason</rdfs:label>
+    <skos:definition xml:lang="en">Why the question was refused.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#SupplierCheck">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
+    <skos:definition xml:lang="en">Exact supplier check (0061).</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#DatesTooCoarse">
+    <skos:prefLabel xml:lang="en">dates too coarse</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#RefusalReasons"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#dialogueAct">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/cubby#Turn"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:scopeNote xml:lang="en">Values come from the code list cubby:DialogueActs.</skos:scopeNote>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <rdfs:label xml:lang="en">dialogueAct</rdfs:label>
+    <skos:definition xml:lang="en">The turn's dialogue act.</skos:definition>
+    <skos:editorialNote xml:lang="en">ISO 24617-2 mapping pending (IRIs not known)</skos:editorialNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#decision">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/cubby#Turn"/>
+    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Decision"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <rdfs:label xml:lang="en">decision</rdfs:label>
+    <skos:definition xml:lang="en">The answer or refusal the turn delivered.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#Proposers">
+    <skos:prefLabel xml:lang="en">Proposers in use</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#turnIndex">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/cubby#Turn"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <rdfs:label xml:lang="en">turnIndex</rdfs:label>
+    <skos:definition xml:lang="en">Host-assigned position in the conversation.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nc6524090e8cb4cc1b9ab88681b038aad">
+    <rdf:first rdf:resource="https://w3id.org/cheezml/core#Option"/>
+    <rdf:rest rdf:nodeID="Nb9c47f4f7b2142d185c9fc023199e3cf"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#Ambiguous">
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#RefusalReasons"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:prefLabel xml:lang="en">ambiguous</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#ScopeCheck">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:definition xml:lang="en">A helper changes nothing outside its scope (0062).</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#readerVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/cubby#DocumentRegion"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <rdfs:label xml:lang="en">readerVersion</rdfs:label>
+    <skos:definition xml:lang="en">Version of the reader that produced the region.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#Answer">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <rdfs:label xml:lang="en">FieldCommit</rdfs:label>
-    <skos:definition xml:lang="en">Host commit turning an approved suggestion into a cheez:FactVersion whose source is the reviewer.</skos:definition>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdfs:label xml:lang="en">Answer</rdfs:label>
+    <skos:definition xml:lang="en">A delivered answer (value in prov:value); always has a certificate.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cheezml/core#Decision"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N045e50dc22f64a64ac21845a0b609480">
-    <rdf:first rdf:resource="https://w3id.org/cheezml/cubby#Review"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#PurchaseOrderCheck">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
+    <skos:definition xml:lang="en">Exact purchase-order check (0061).</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#LogicalConflict">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#ConflictKinds"/>
+    <skos:prefLabel xml:lang="en">logical</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#region">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:nodeID="N4d85c278bbc84948b8b397c73f4dec85"/>
+    <rdfs:range rdf:resource="https://w3id.org/cheezml/cubby#DocumentRegion"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <rdfs:label xml:lang="en">region</rdfs:label>
+    <skos:definition xml:lang="en">The region a suggestion or review refers to.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#OvernightRuleLibrary">
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#Proposers"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:prefLabel xml:lang="en">overnight rule library</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#DocumentRegion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <rdfs:label xml:lang="en">DocumentRegion</rdfs:label>
+    <skos:definition xml:lang="en">A region of a document: text as read (schema:text), reader version, document (schema:isPartOf).</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#scope">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/cubby#Helper"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Collection"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <rdfs:label xml:lang="en">scope</rdfs:label>
+    <skos:definition xml:lang="en">The verified answers the helper must reproduce.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#TypeConflict">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#ConflictKinds"/>
+    <skos:prefLabel xml:lang="en">type</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#FieldSuggestion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <rdfs:label xml:lang="en">FieldSuggestion</rdfs:label>
+    <skos:definition xml:lang="en">A value read or derived for a document field (prov:value); a suggestion until committed.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#HelperRejection">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <rdfs:label xml:lang="en">HelperRejection</rdfs:label>
+    <skos:definition xml:lang="en">The host's rejection of a helper after its sandbox run; reason = the failed gate's kind.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cheezml/core#Retirement"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#CertifiedAnswerAct">
+    <skos:prefLabel xml:lang="en">certified answer</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#DialogueActs"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N55dbf3362c334fb9a0939dce5507d517">
+    <rdf:first rdf:resource="https://w3id.org/cheezml/cubby#FieldSuggestion"/>
+    <rdf:rest rdf:nodeID="Nd2b2366a6686477fb4ade89291cb3077"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#Turn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <rdfs:label xml:lang="en">Turn</rdfs:label>
+    <skos:definition xml:lang="en">One conversation turn, written by the host; conversation via schema:isPartOf.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#TemporalConflict">
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#ConflictKinds"/>
+    <skos:prefLabel xml:lang="en">temporal</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#DatePrecisionCheck">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
+    <skos:definition xml:lang="en">Dates used are fine enough for the question (inferred from 'dates too coarse').</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N520ca96d73cd4367ae238969d5016e8e">
+    <rdf:type rdf:resource="https://schema.org/Person"/>
+    <schema:name>Nicolas Cloutier</schema:name>
+    <schema:affiliation>GrillCheese Research Lab</schema:affiliation>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N71a55fd998bd4992ba937f69f380b8e7">
+    <rdf:first rdf:resource="https://w3id.org/cheezml/cubby#Refusal"/>
+    <rdf:rest rdf:nodeID="Nc6524090e8cb4cc1b9ab88681b038aad"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#Helper">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <rdfs:label xml:lang="en">Helper</rdfs:label>
+    <skos:definition xml:lang="en">A helper program proposed by Cubby's own proposers (order 0062).</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cheezml/cubelang#Program"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#NoNewWrongAnswerCheck">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
+    <skos:definition xml:lang="en">A domain change introduces no new wrong answer (0058).</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#breakingCase">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -327,100 +264,17 @@
     <rdfs:label xml:lang="en">breakingCase</rdfs:label>
     <skos:definition xml:lang="en">The case that broke the helper.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#Ambiguous">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#RefusalReasons"/>
-    <skos:prefLabel xml:lang="en">ambiguous</skos:prefLabel>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#DuplicateCheck">
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#ConflictCheck">
     <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:definition xml:lang="en">Exact duplicate check (0061).</skos:definition>
+    <skos:definition xml:lang="en">No value, type, temporal, logical or recorded-against-derived conflict among the statements used (inferred from the refusal reasons).</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#FollowUpAct">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#DialogueActs"/>
-    <skos:prefLabel xml:lang="en">follow-up (with its rewrite)</skos:prefLabel>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#SmallTalkAct">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#DialogueActs"/>
-    <skos:prefLabel xml:lang="en">small talk</skos:prefLabel>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#EscapeCheck">
-    <skos:definition xml:lang="en">Escape attempts observed in the sandbox; must be 0 (0062).</skos:definition>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#proposer">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:nodeID="Ne990fa4c5b8d42e6906179499531cac5"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <skos:scopeNote xml:lang="en">Values come from the code list cubby:Proposers.</skos:scopeNote>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <rdfs:label xml:lang="en">proposer</rdfs:label>
-    <skos:definition xml:lang="en">The proposer behind an answer, refusal, option or helper.</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#FactMissing">
-    <skos:prefLabel xml:lang="en">fact missing</skos:prefLabel>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#NotCertified">
     <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#RefusalReasons"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#HostGrammar">
-    <skos:prefLabel xml:lang="en">host grammar</skos:prefLabel>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#Proposers"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#NoNewWrongAnswerCheck">
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:definition xml:lang="en">A domain change introduces no new wrong answer (0058).</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#ValueConflict">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:prefLabel xml:lang="en">value</skos:prefLabel>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#ConflictKinds"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#QuestionAct">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:prefLabel xml:lang="en">question</skos:prefLabel>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#DialogueActs"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#RecordedVsDerivedConflict">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#ConflictKinds"/>
-    <skos:prefLabel xml:lang="en">recorded against derived</skos:prefLabel>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#ToneCheck">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:definition xml:lang="en">Soft (tone) check of a story-world action, labelled soft (0060).</skos:definition>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#Review">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <rdfs:label xml:lang="en">Review</rdfs:label>
-    <skos:definition xml:lang="en">A human review of a suggestion; reviewer and role via prov:qualifiedAssociation.</skos:definition>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#Answer">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <rdfs:label xml:lang="en">Answer</rdfs:label>
-    <skos:definition xml:lang="en">A delivered answer (value in prov:value); always has a certificate.</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/cheezml/core#Decision"/>
+    <skos:prefLabel xml:lang="en">not certified</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#RefusalAct">
     <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#DialogueActs"/>
@@ -433,86 +287,232 @@
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
     <skos:prefLabel xml:lang="en">Reviewer roles</skos:prefLabel>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#Refusal">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <rdfs:label xml:lang="en">Refusal</rdfs:label>
+    <skos:definition xml:lang="en">A refusal decision with a coded reason.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cheezml/core#Decision"/>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#LMProgramEmitter">
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#Proposers"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:prefLabel xml:lang="en">language model's program emitter</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#NumberInRegionCheck">
+    <skos:definition xml:lang="en">Every number in a field appears in its region's text (0061).</skos:definition>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#FormatCheck">
+    <skos:definition xml:lang="en">Exact format check of a document field (0061).</skos:definition>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#Conflict">
+    <skos:prefLabel xml:lang="en">conflict (kind in cubby:conflictKind)</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#RefusalReasons"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#FirstApprover">
+    <skos:prefLabel xml:lang="en">first approver</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#ReviewerRoles"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#DuplicateCheck">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:definition xml:lang="en">Exact duplicate check (0061).</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#SmallTalkAct">
+    <skos:prefLabel xml:lang="en">small talk</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#DialogueActs"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#ClarifyingQuestionAct">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#DialogueActs"/>
+    <skos:prefLabel xml:lang="en">clarifying question</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#proposer">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:nodeID="N0aae3e2023c74b7ab6bcbcb604e222cc"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:scopeNote xml:lang="en">Values come from the code list cubby:Proposers.</skos:scopeNote>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <rdfs:label xml:lang="en">proposer</rdfs:label>
+    <skos:definition xml:lang="en">The proposer behind an answer, refusal, option or helper.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#QuestionAct">
+    <skos:prefLabel xml:lang="en">question</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#DialogueActs"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#NoPlan">
+    <skos:prefLabel xml:lang="en">no plan</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#RefusalReasons"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#RejectionRateCheck">
+    <skos:definition xml:lang="en">A proposer's helper rejection rate over a window (0062).</skos:definition>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#RecordedVsDerivedConflict">
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#ConflictKinds"/>
+    <skos:prefLabel xml:lang="en">recorded against derived</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#FollowUpAct">
+    <skos:prefLabel xml:lang="en">follow-up (with its rewrite)</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#DialogueActs"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#FactMissing">
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#RefusalReasons"/>
+    <skos:prefLabel xml:lang="en">fact missing</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#SandboxRun">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <rdfs:label xml:lang="en">SandboxRun</rdfs:label>
+    <skos:definition xml:lang="en">A run of a helper in a locked-down VM session; its gates are cheez:check runs.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cheezml/cubelang#ProgramRun"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb9c47f4f7b2142d185c9fc023199e3cf">
+    <rdf:first rdf:resource="https://w3id.org/cheezml/cubby#Helper"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nd2b2366a6686477fb4ade89291cb3077">
+    <rdf:first rdf:resource="https://w3id.org/cheezml/cubby#Review"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#EverydayTable">
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#Proposers"/>
+    <skos:prefLabel xml:lang="en">everyday table</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N051717a12fb24f429347918bb7635c6f">
+    <rdf:first rdf:resource="https://w3id.org/cheezml/cubby#Answer"/>
+    <rdf:rest rdf:nodeID="N71a55fd998bd4992ba937f69f380b8e7"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#EntityGuardCheck">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
+    <skos:definition xml:lang="en">A follow-up rewrite passes the entity guard (0059).</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#Approved">
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#ReviewOutcomes"/>
+    <skos:prefLabel xml:lang="en">approved</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N0aae3e2023c74b7ab6bcbcb604e222cc">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N051717a12fb24f429347918bb7635c6f"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#FieldCommit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <rdfs:label xml:lang="en">FieldCommit</rdfs:label>
+    <skos:definition xml:lang="en">Host commit turning an approved suggestion into a cheez:FactVersion whose source is the reviewer.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#ReproductionCheck">
+    <skos:definition xml:lang="en">A helper reproduces every verified answer in its scope (0062).</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#ReviewOutcomes">
+    <skos:prefLabel xml:lang="en">Review outcomes</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#ToneCheck">
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:definition xml:lang="en">Soft (tone) check of a story-world action, labelled soft (0060).</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#EpisodicMemory">
+    <skos:prefLabel xml:lang="en">episodic memory of certified chains</skos:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
     <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#Proposers"/>
-    <skos:prefLabel xml:lang="en">language model's program emitter</skos:prefLabel>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Ncc04211a2a99487bb93e02e7281211c5">
-    <rdf:first rdf:resource="https://w3id.org/cheezml/cubby#Answer"/>
-    <rdf:rest rdf:nodeID="N5a09c26de8654758bb84f8c33ccd9100"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#RejectionRateCheck">
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#ValueConflict">
+    <skos:prefLabel xml:lang="en">value</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#ConflictKinds"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:definition xml:lang="en">A proposer's helper rejection rate over a window (0062).</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#ArithmeticCheck">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:definition xml:lang="en">Exact arithmetic check (0061).</skos:definition>
     <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#DocumentRegion">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#UnreadableSource">
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#RefusalReasons"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <rdfs:label xml:lang="en">DocumentRegion</rdfs:label>
-    <skos:definition xml:lang="en">A region of a document: text as read (schema:text), reader version, document (schema:isPartOf).</skos:definition>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <skos:prefLabel xml:lang="en">unreadable source (order 0061)</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N4d85c278bbc84948b8b397c73f4dec85">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N55dbf3362c334fb9a0939dce5507d517"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#RefusalReasons">
+    <skos:prefLabel xml:lang="en">Refusal reasons in use</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#EscapeCheck">
+    <skos:definition xml:lang="en">Escape attempts observed in the sandbox; must be 0 (0062).</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#HostGrammar">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
+    <skos:prefLabel xml:lang="en">host grammar</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#Proposers"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#DialogueActs">
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
     <skos:prefLabel xml:lang="en">Dialogue acts (order 0059)</skos:prefLabel>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N9fa162c917c44adf8206861de846668c">
-    <rdf:first rdf:resource="https://w3id.org/cheezml/cubby#Helper"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#ConflictCheck">
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:definition xml:lang="en">No value, type, temporal, logical or recorded-against-derived conflict among the statements used (inferred from the refusal reasons).</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#Helper">
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#Review">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <rdfs:label xml:lang="en">Helper</rdfs:label>
-    <skos:definition xml:lang="en">A helper program proposed by Cubby's own proposers (order 0062).</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/cheezml/cubelang#Program"/>
+    <rdfs:label xml:lang="en">Review</rdfs:label>
+    <skos:definition xml:lang="en">A human review of a suggestion; reviewer and role via prov:qualifiedAssociation.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#TemporalConflict">
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#ConflictKinds"/>
-    <skos:prefLabel xml:lang="en">temporal</skos:prefLabel>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#WalkFailed">
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#RefusalReasons"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#OvernightRuleLibrary">
-    <skos:prefLabel xml:lang="en">overnight rule library</skos:prefLabel>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#Proposers"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#region">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:nodeID="N12c3c577d7734865bcafde305c006aa6"/>
-    <rdfs:range rdf:resource="https://w3id.org/cheezml/cubby#DocumentRegion"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <rdfs:label xml:lang="en">region</rdfs:label>
-    <skos:definition xml:lang="en">The region a suggestion or review refers to.</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N1316cdf46d5e4c3d9c94b605bcb0f478">
-    <rdf:type rdf:resource="https://schema.org/Person"/>
-    <schema:name>Nicolas Cloutier</schema:name>
-    <schema:affiliation>GrillCheese Research Lab</schema:affiliation>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#ClarifyingQuestionAct">
-    <skos:prefLabel xml:lang="en">clarifying question</skos:prefLabel>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubby#DialogueActs"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubby#EntityGuardCheck">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubby"/>
-    <skos:definition xml:lang="en">A follow-up rewrite passes the entity guard (0059).</skos:definition>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
+    <skos:prefLabel xml:lang="en">walk failed</skos:prefLabel>
   </rdf:Description>
 </rdf:RDF>
