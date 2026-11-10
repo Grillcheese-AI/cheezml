@@ -1,215 +1,5 @@
 [
   {
-    "@id": "https://w3id.org/cheezml/mowm#mergeStrategy",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm#World"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "mergeStrategy"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "How the world's HYLA transition deltas are merged."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "Values come from the code list mowm:MergeStrategies."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/mowm#routedTo",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm#RoutingDecision"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "routedTo"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm#World"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The world routed to (outcome Route only)."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/mowm#World",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "World"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#Entity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A world tree node (world.py)."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/mowm#BindComposeMerge",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm#MergeStrategies"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "BindComposeMerge"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/mowm#tau",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm#World"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "tau"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/cheezml/core#Threshold"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The world's confidence threshold for spawning sub-worlds."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/mowm#zDepth",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm#World"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "zDepth"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#integer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Depth z on the Z axis."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/mowm#Route",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm#RoutingOutcomes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "route"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/cheezml/mowm#zMax",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
@@ -243,29 +33,35 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/mowm#AnswerSupportCheck",
+    "@id": "https://w3id.org/cheezml/mowm#RoutingDecision",
     "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://w3id.org/cheezml/mowm"
       }
     ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "RoutingDecision"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Activity"
+      }
+    ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Support is at or above tau_answer (possibility oracle; inter-world query otherwise)."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/core#CheckKinds"
+        "@value": "One bridge routing decision (bridges/cubby_bridge.py): route or spawn. Mode via dcterms:type."
       }
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/mowm#RoutingOutcomes",
+    "@id": "https://w3id.org/cheezml/mowm#MergeStrategies",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#ConceptScheme"
     ],
@@ -277,12 +73,45 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Routing outcomes"
+        "@value": "HYLA merge strategies"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/mowm#TauAnswer",
+    "@id": "https://w3id.org/cheezml/mowm#runnerUpWorld",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm#RoutingDecision"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "runnerUpWorld"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm#World"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The second-highest world."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#AbsoluteFloor",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -299,12 +128,45 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "tau_answer"
+        "@value": "absolute floor (bridge)"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/mowm#Spawn",
+    "@id": "https://w3id.org/cheezml/mowm#bestWorld",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm#RoutingDecision"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "bestWorld"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm#World"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The highest-scoring world."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#Tau",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -315,13 +177,63 @@
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://w3id.org/cheezml/mowm#RoutingOutcomes"
+        "@id": "https://w3id.org/cheezml/mowm#Parameters"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "spawn"
+        "@value": "tau (world spawn confidence)"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#ZMaxCheck",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The parent world's depth is below z_max, so spawn_subworld may split."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#CheckKinds"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#WorldSplit",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "WorldSplit"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Activity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Creation of a sub-world at z+1 from a parent (prov:used) to handle a residual."
       }
     ]
   },
@@ -338,7 +250,7 @@
     ],
     "http://purl.org/dc/terms/creator": [
       {
-        "@id": "_:Nf3273530d5834fcfab98c61db6e7e7a0"
+        "@id": "_:Nf2b1c624e55c4a8a92793bcfbfb43bc8"
       }
     ],
     "http://purl.org/dc/terms/description": [
@@ -396,7 +308,7 @@
     ]
   },
   {
-    "@id": "_:Nf3273530d5834fcfab98c61db6e7e7a0",
+    "@id": "_:Nf2b1c624e55c4a8a92793bcfbfb43bc8",
     "@type": [
       "https://schema.org/Person"
     ],
@@ -408,6 +320,293 @@
     "https://schema.org/name": [
       {
         "@value": "Nicolas Cloutier"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#margin",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm#RoutingDecision"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "margin"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Best score minus runner-up score."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#worldCount",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm#RoutingDecision"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "worldCount"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Worlds in the pool when the decision ran."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#Route",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm#RoutingOutcomes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "route"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#RoutingOutcomes",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Routing outcomes"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#tau",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm#World"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "tau"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/cheezml/core#Threshold"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The world's confidence threshold for spawning sub-worlds."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#TauAnswer",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm#Parameters"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "tau_answer"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#Parameters",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Threshold parameters"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#ResidualCheck",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The residual norm exceeds tau_spawn (router.py maybe_spawn)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#CheckKinds"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#queryVector",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm#RoutingDecision"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "queryVector"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/cheezml/core#Artifact"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The encoded query, by hash."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#Spawn",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm#RoutingOutcomes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "spawn"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#bestScore",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm#RoutingDecision"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "bestScore"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Its score (a score, not a threshold)."
       }
     ]
   },
@@ -430,6 +629,122 @@
       {
         "@language": "en",
         "@value": "tau_margin"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#BestMemberRouting",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm#RoutingModes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "by best member"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#mergeStrategy",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm#World"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "mergeStrategy"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "How the world's HYLA transition deltas are merged."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "Values come from the code list mowm:MergeStrategies."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#floorThreshold",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm#RoutingDecision"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "floorThreshold"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/cheezml/core#Threshold"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The calibrated absolute floor compared with the best score."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#TauPruneSteps",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm#Parameters"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "tau_prune_steps"
       }
     ]
   },
@@ -472,90 +787,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/mowm#runnerUpWorld",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm#RoutingDecision"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "runnerUpWorld"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm#World"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The second-highest world."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/mowm#MergeStrategies",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "HYLA merge strategies"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/mowm#marginThreshold",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm#RoutingDecision"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "marginThreshold"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/cheezml/core#Threshold"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The calibrated tau_margin compared with the margin."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/mowm#ZMaxCheck",
+    "@id": "https://w3id.org/cheezml/mowm#AnswerSupportCheck",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -567,7 +799,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "The parent world's depth is below z_max, so spawn_subworld may split."
+        "@value": "Support is at or above tau_answer (possibility oracle; inter-world query otherwise)."
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -577,40 +809,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/mowm#worldId",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm#World"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "worldId"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#integer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Counter-issued numeric id: world counter from 1000, router counter from 5000. Never computed from the parent's id."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/mowm#TauPruneSteps",
+    "@id": "https://w3id.org/cheezml/mowm#TauSpawn",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -627,12 +826,56 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "tau_prune_steps"
+        "@value": "tau_spawn"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/mowm#RoutingDecision",
+    "@id": "https://w3id.org/cheezml/mowm#BindComposeMerge",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm#MergeStrategies"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "BindComposeMerge"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#CentroidRouting",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm#RoutingModes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "by centroid"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#World",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -644,30 +887,25 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "RoutingDecision"
+        "@value": "World"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.w3.org/ns/prov#Activity"
+        "@id": "http://www.w3.org/ns/prov#Entity"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "One bridge routing decision (bridges/cubby_bridge.py): route or spawn. Mode via dcterms:type."
+        "@value": "A world tree node (world.py)."
       }
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/mowm#bestScore",
+    "@id": "https://w3id.org/cheezml/mowm#WordTableEncoder",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm#RoutingDecision"
-      }
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
@@ -677,18 +915,18 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "bestScore"
+        "@value": "WordTableEncoder"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+        "@id": "https://w3id.org/cheezml/core#Artifact"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Its score (a score, not a threshold)."
+        "@value": "The word-table text encoder (FastWordEncoder), by the hash of its table; the only encoder allowed on the routing path."
       }
     ]
   },
@@ -706,255 +944,6 @@
       {
         "@language": "en",
         "@value": "Routing modes"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/mowm#queryVector",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm#RoutingDecision"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "queryVector"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/cheezml/core#Artifact"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The encoded query, by hash."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/mowm#worldCount",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm#RoutingDecision"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "worldCount"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#integer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Worlds in the pool when the decision ran."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/mowm#WorldSplit",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "WorldSplit"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#Activity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Creation of a sub-world at z+1 from a parent (prov:used) to handle a residual."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/mowm#bestWorld",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm#RoutingDecision"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "bestWorld"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm#World"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The highest-scoring world."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/mowm#floorThreshold",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm#RoutingDecision"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "floorThreshold"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/cheezml/core#Threshold"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The calibrated absolute floor compared with the best score."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/mowm#BestMemberRouting",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm#RoutingModes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "by best member"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/mowm#Parameters",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Threshold parameters"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/mowm#WorldSpawn",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "WorldSpawn"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#Activity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A spawn that ran and generated one new world (prov:generated); prov:wasInformedBy the decision."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/mowm#AbsoluteFloor",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm#Parameters"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "absolute floor (bridge)"
       }
     ]
   },
@@ -992,28 +981,6 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/mowm#ResidualCheck",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The residual norm exceeds tau_spawn (router.py maybe_spawn)."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/core#CheckKinds"
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/cheezml/mowm#runnerUpScore",
     "@type": [
       "http://www.w3.org/2002/07/owl#DatatypeProperty"
@@ -1047,31 +1014,9 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/mowm#CentroidRouting",
+    "@id": "https://w3id.org/cheezml/mowm#marginThreshold",
     "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm#RoutingModes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "by centroid"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/mowm#margin",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
     ],
     "http://www.w3.org/2000/01/rdf-schema#domain": [
       {
@@ -1086,67 +1031,23 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "margin"
+        "@value": "marginThreshold"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#range": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#decimal"
+        "@id": "https://w3id.org/cheezml/core#Threshold"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Best score minus runner-up score."
+        "@value": "The calibrated tau_margin compared with the margin."
       }
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/mowm#TauSpawn",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm#Parameters"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "tau_spawn"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/mowm#Tau",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/mowm#Parameters"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "tau (world spawn confidence)"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/mowm#WordTableEncoder",
+    "@id": "https://w3id.org/cheezml/mowm#WorldSpawn",
     "@type": [
       "http://www.w3.org/2002/07/owl#Class"
     ],
@@ -1158,18 +1059,117 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "WordTableEncoder"
+        "@value": "WorldSpawn"
       }
     ],
     "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/cheezml/core#Artifact"
+        "@id": "http://www.w3.org/ns/prov#Activity"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "The word-table text encoder (FastWordEncoder), by the hash of its table; the only encoder allowed on the routing path."
+        "@value": "A spawn that ran and generated one new world (prov:generated); prov:wasInformedBy the decision."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#worldId",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm#World"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "worldId"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Counter-issued numeric id: world counter from 1000, router counter from 5000. Never computed from the parent's id."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#routedTo",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm#RoutingDecision"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "routedTo"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm#World"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The world routed to (outcome Route only)."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/mowm#zDepth",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm#World"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/mowm"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "zDepth"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Depth z on the Z axis."
       }
     ]
   }

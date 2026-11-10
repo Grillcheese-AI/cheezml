@@ -182,16 +182,22 @@ font-size:.75rem;letter-spacing:.04em;text-transform:uppercase;border:1px solid 
 padding:.05rem .4rem;color:var(--muted)}dl{display:grid;grid-template-columns:max-content 1fr;gap:.2rem 1rem;
 margin:.4rem 0}dt{color:var(--muted)}dd{margin:0}.term{border-left:2px solid var(--rule);padding-left:.9rem}
 table{border-collapse:collapse;width:100%}td,th{text-align:left;padding:.35rem .5rem;border-bottom:1px solid
-var(--rule);vertical-align:top}.wrap{overflow-x:auto}nav a{margin-right:.8rem}
+var(--rule);vertical-align:top}.wrap{overflow-x:auto}nav{display:flex;flex-wrap:wrap;align-items:center;gap:.2rem .8rem}
+nav .brand{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;color:var(--fg);text-decoration:none}
+nav .brand img{display:block}
 """
 
 
-def page(title, body):
+def page(title, body, root=""):
+    """One page. `root` is the path back to the folder that holds the modules and the logo ("" or "../")."""
+    logo = (f'<picture><source srcset="{root}cubby-logo-white.svg" media="(prefers-color-scheme: dark)">'
+            f'<img src="{root}cubby-logo.svg" alt="" width="28" height="28"></picture>')
     return (f'<!doctype html>\n<html lang="en"><head><meta charset="utf-8">'
             f'<meta name="viewport" content="width=device-width, initial-scale=1">'
+            f'<link rel="icon" type="image/svg+xml" href="{root}cubby-logo.svg">'
             f"<title>{html.escape(title)}</title><style>{CSS}</style></head>"
-            f'<body><main><nav class="muted"><a href="./">CheezML</a>'
-            + "".join(f'<a href="{m}.html">{m}</a>' for m in MODULES)
+            f'<body><main><nav class="muted"><a class="brand" href="{root or "./"}">{logo}CheezML</a>'
+            + "".join(f'<a href="{root}{m}.html">{m}</a>' for m in MODULES)
             + f"</nav>{body}</main></body></html>\n")
 
 
@@ -286,6 +292,8 @@ def write_set(dest, graphs, frozen=False):
         (dest / f"{stem}.jsonld").write_text(g.serialize(format="json-ld", indent=2), encoding="utf-8")
         (dest / f"{stem}.rdf").write_text(g.serialize(format="xml"), encoding="utf-8")
         (dest / f"{stem}.html").write_text(module_html(stem, g), encoding="utf-8")
+    for logo in sorted((SRC / "brand").glob("*.svg")):  # the Cubby mark, light and dark
+        shutil.copy(logo, dest / logo.name)
     shutil.copy(SRC / "context.jsonld", dest / "context.jsonld")
     shutil.copy(SRC / "shapes.ttl", dest / "shapes.ttl")
     (dest / "index.html").write_text(index_html(frozen), encoding="utf-8")
@@ -296,7 +304,7 @@ def write_set(dest, graphs, frozen=False):
     listing = "".join(f'<li><a href="{p.relative_to(ex).as_posix()}">{p.relative_to(ex).as_posix()}</a></li>'
                       for p in sorted(ex.rglob("*.jsonld")))
     (ex / "index.html").write_text(page("CheezML examples", "<h1>Examples</h1><p>Files under negative/ are built to "
-                                        f"fail validation.</p><ul>{listing}</ul>"), encoding="utf-8")
+                                        f"fail validation.</p><ul>{listing}</ul>", root="../"), encoding="utf-8")
 
 
 def main():

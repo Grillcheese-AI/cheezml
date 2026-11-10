@@ -52,7 +52,8 @@ redirects to it, with content negotiation (HTML for a browser, Turtle, JSON-LD o
 
 ## Layout
 - `src/`: the source. `vocabulary.md` (the term tables and the SKOS code lists), `context.jsonld`, `shapes.ttl`,
-  `examples/` (seven records that conform, and in `negative/` thirteen that must fail) and `example-sources/`.
+  `examples/` (seven records that conform, and in `negative/` thirteen that must fail) and `example-sources/`. `brand/` holds
+  the Cubby mark shown on the site.
 - `docs/`: the built site, one page and three RDF files per module, plus a frozen copy per version. A frozen copy of an
   earlier version is never rebuilt.
 - `tools/`: the build and the checks.
