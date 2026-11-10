@@ -3,7 +3,11 @@
   "@graph": [
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000301",
-      "@type": ["cheez:Record", "mowm:RoutingDecision", "prov:Activity"],
+      "@type": [
+        "cheez:Record",
+        "mowm:RoutingDecision",
+        "prov:Activity"
+      ],
       "cheez:writtenBy": "urn:uuid:00000000-0000-0000-0000-000000000001",
       "dcterms:type": "mowm:CentroidRouting",
       "cheez:encoder": "urn:uuid:00000000-0000-0000-0000-000000000302",
@@ -22,44 +26,65 @@
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000302",
-      "@type": ["mowm:WordTableEncoder", "prov:Entity"],
+      "@type": [
+        "mowm:WordTableEncoder",
+        "prov:Entity"
+      ],
       "schema:name": "FastWordEncoder",
       "cheez:hash": "PLACEHOLDER: word-table hash",
       "cheez:hashAlgorithm": "PLACEHOLDER: hash algorithm"
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000303",
-      "@type": ["cheez:Artifact", "prov:Entity"],
+      "@type": [
+        "cheez:Artifact",
+        "prov:Entity"
+      ],
       "cheez:hash": "PLACEHOLDER: query block-code hash",
       "cheez:hashAlgorithm": "PLACEHOLDER: hash algorithm"
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000310",
-      "@type": ["mowm:World", "prov:Entity"],
+      "@type": [
+        "mowm:World",
+        "prov:Entity"
+      ],
       "mowm:worldId": 1003
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000311",
-      "@type": ["mowm:World", "prov:Entity"],
+      "@type": [
+        "mowm:World",
+        "prov:Entity"
+      ],
       "mowm:worldId": 1007
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000320",
-      "@type": ["cheez:Threshold", "prov:Entity"],
+      "@type": [
+        "cheez:Threshold",
+        "prov:Entity"
+      ],
       "dcterms:type": "mowm:AbsoluteFloor",
       "cheez:thresholdValue": "0.35",
       "prov:wasGeneratedBy": "urn:uuid:00000000-0000-0000-0000-000000000330"
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000321",
-      "@type": ["cheez:Threshold", "prov:Entity"],
+      "@type": [
+        "cheez:Threshold",
+        "prov:Entity"
+      ],
       "dcterms:type": "mowm:TauMargin",
       "cheez:thresholdValue": "0.05",
       "prov:wasGeneratedBy": "urn:uuid:00000000-0000-0000-0000-000000000330"
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000330",
-      "@type": ["cheez:Calibration", "prov:Activity"],
+      "@type": [
+        "cheez:Calibration",
+        "prov:Activity"
+      ],
       "cheez:screen": "urn:uuid:00000000-0000-0000-0000-000000000331",
       "cheez:calibrationData": "urn:uuid:00000000-0000-0000-0000-000000000332",
       "cheez:encoder": "urn:uuid:00000000-0000-0000-0000-000000000302",
@@ -68,13 +93,19 @@
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000331",
-      "@type": ["cheez:Artifact", "prov:Entity"],
+      "@type": [
+        "cheez:Artifact",
+        "prov:Entity"
+      ],
       "cheez:hash": "PLACEHOLDER: calibration screen hash",
       "cheez:hashAlgorithm": "PLACEHOLDER: hash algorithm"
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000332",
-      "@type": ["cheez:Artifact", "prov:Entity"],
+      "@type": [
+        "cheez:Artifact",
+        "prov:Entity"
+      ],
       "cheez:hash": "PLACEHOLDER: calibration data hash",
       "cheez:hashAlgorithm": "PLACEHOLDER: hash algorithm"
     },
@@ -85,19 +116,28 @@
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000340",
-      "@type": ["mowm:WorldSpawn", "prov:Activity"],
+      "@type": [
+        "mowm:WorldSpawn",
+        "prov:Activity"
+      ],
       "prov:wasInformedBy": "urn:uuid:00000000-0000-0000-0000-000000000301",
       "prov:generated": "urn:uuid:00000000-0000-0000-0000-000000000341",
       "prov:endedAtTime": "2026-11-07T14:10:01Z"
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000341",
-      "@type": ["mowm:World", "prov:Entity"],
+      "@type": [
+        "mowm:World",
+        "prov:Entity"
+      ],
       "mowm:worldId": 5000
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000001",
-      "@type": ["cheez:Host", "prov:SoftwareAgent"]
+      "@type": [
+        "cheez:Host",
+        "prov:SoftwareAgent"
+      ]
     }
   ]
 }

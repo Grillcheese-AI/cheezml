@@ -19,6 +19,7 @@ POS = {
     "04-world-split": "04-world-split.json",
     "05-helper-rejected": "05-helper-rejected.json",
     "06-invoice-review": "06-invoice-review.json",
+    "07-source-read": "07-source-read.json",
 }
 
 U = "urn:uuid:00000000-0000-0000-0000-000000000"
@@ -114,6 +115,21 @@ d = copy.deepcopy(positives["06-invoice-review"])
 node(d, "604")["prov:value"] = "1350.00"
 node(d, "620")["prov:value"] = "1350.00"
 negs["n06b-number-not-in-region"] = d
+
+# 1c (v0.2). a run that read stored facts without naming its store snapshot
+d = copy.deepcopy(positives["01-certified-answer"])
+del node(d, "106")["cheez:storeSnapshot"]
+negs["n01c-run-without-snapshot"] = d
+
+# 7 (v0.2). a source read with no response recorded
+d = copy.deepcopy(positives["07-source-read"])
+del node(d, "702")["cheez:response"]
+negs["n07-source-read-without-response"] = d
+
+# 7b (v0.2). an ontology release without its version
+d = copy.deepcopy(positives["07-source-read"])
+del node(d, "708")["schema:version"]
+negs["n07b-release-without-version"] = d
 
 for name, d in negs.items():
     write(os.path.join(NEG, name + ".jsonld"), d)

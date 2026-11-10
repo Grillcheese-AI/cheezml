@@ -3,7 +3,11 @@
   "@graph": [
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000101",
-      "@type": ["cheez:Record", "cubby:Turn", "prov:Entity"],
+      "@type": [
+        "cheez:Record",
+        "cubby:Turn",
+        "prov:Entity"
+      ],
       "cheez:writtenBy": "urn:uuid:00000000-0000-0000-0000-000000000001",
       "cubby:dialogueAct": "cubby:CertifiedAnswerAct",
       "cubby:turnIndex": 4,
@@ -13,13 +17,20 @@
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000102",
-      "@type": ["cheez:Question", "prov:Entity"],
+      "@type": [
+        "cheez:Question",
+        "prov:Entity"
+      ],
       "cheez:option": "urn:uuid:00000000-0000-0000-0000-000000000105",
       "cheez:hasResult": "urn:uuid:00000000-0000-0000-0000-000000000103"
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000103",
-      "@type": ["cubby:Answer", "cheez:Decision", "prov:Entity"],
+      "@type": [
+        "cubby:Answer",
+        "cheez:Decision",
+        "prov:Entity"
+      ],
       "prov:value": "PLACEHOLDER: answer value",
       "cubby:proposer": "cubby:HostGrammar",
       "cheez:chosenOption": "urn:uuid:00000000-0000-0000-0000-000000000105",
@@ -27,7 +38,11 @@
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000104",
-      "@type": ["cheez:Record", "cheez:Certificate", "prov:Entity"],
+      "@type": [
+        "cheez:Record",
+        "cheez:Certificate",
+        "prov:Entity"
+      ],
       "cheez:writtenBy": "urn:uuid:00000000-0000-0000-0000-000000000001",
       "cheez:certifies": "urn:uuid:00000000-0000-0000-0000-000000000103",
       "prov:wasGeneratedBy": "urn:uuid:00000000-0000-0000-0000-000000000106",
@@ -39,14 +54,21 @@
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000105",
-      "@type": ["cube:Program", "cheez:Option", "prov:Entity"],
+      "@type": [
+        "cube:Program",
+        "cheez:Option",
+        "prov:Entity"
+      ],
       "cheez:hash": "PLACEHOLDER: program hash",
       "cheez:hashAlgorithm": "PLACEHOLDER: hash algorithm",
       "cubby:proposer": "cubby:HostGrammar"
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000106",
-      "@type": ["cube:ProgramRun", "prov:Activity"],
+      "@type": [
+        "cube:ProgramRun",
+        "prov:Activity"
+      ],
       "prov:wasAssociatedWith": "urn:uuid:00000000-0000-0000-0000-000000000002",
       "prov:used": [
         "urn:uuid:00000000-0000-0000-0000-000000000105",
@@ -55,11 +77,16 @@
       ],
       "cheez:outcome": "cube:Return",
       "prov:startedAtTime": "2026-11-07T14:00:01Z",
-      "prov:endedAtTime": "2026-11-07T14:00:02Z"
+      "prov:endedAtTime": "2026-11-07T14:00:02Z",
+      "cheez:storeSnapshot": "urn:uuid:00000000-0000-0000-0000-000000000191",
+      "cheez:asOf": "2026-11-07T14:00:01Z"
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000107",
-      "@type": ["cheez:FactVersion", "prov:Entity"],
+      "@type": [
+        "cheez:FactVersion",
+        "prov:Entity"
+      ],
       "prov:hadPrimarySource": "urn:uuid:00000000-0000-0000-0000-000000000108",
       "cheez:validTime": {
         "@type": "time:Interval",
@@ -78,13 +105,19 @@
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000109",
-      "@type": ["cheez:Rule", "prov:Entity"],
+      "@type": [
+        "cheez:Rule",
+        "prov:Entity"
+      ],
       "cheez:hash": "PLACEHOLDER: rule hash",
       "cheez:hashAlgorithm": "PLACEHOLDER: hash algorithm"
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000110",
-      "@type": ["cheez:CheckRun", "prov:Activity"],
+      "@type": [
+        "cheez:CheckRun",
+        "prov:Activity"
+      ],
       "dcterms:type": "cubby:ConflictCheck",
       "cheez:outcome": "cheez:Satisfied",
       "cheez:isSatisfiedBy": "urn:uuid:00000000-0000-0000-0000-000000000105",
@@ -93,7 +126,10 @@
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000111",
-      "@type": ["cheez:CheckRun", "prov:Activity"],
+      "@type": [
+        "cheez:CheckRun",
+        "prov:Activity"
+      ],
       "dcterms:type": "cubby:DatePrecisionCheck",
       "cheez:outcome": "cheez:Satisfied",
       "cheez:isSatisfiedBy": "urn:uuid:00000000-0000-0000-0000-000000000105",
@@ -102,11 +138,27 @@
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000001",
-      "@type": ["cheez:Host", "prov:SoftwareAgent"]
+      "@type": [
+        "cheez:Host",
+        "prov:SoftwareAgent"
+      ]
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000002",
-      "@type": ["cube:VM", "prov:SoftwareAgent"]
+      "@type": [
+        "cube:VM",
+        "prov:SoftwareAgent"
+      ]
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000191",
+      "@type": [
+        "cheez:Artifact",
+        "prov:Entity"
+      ],
+      "dcterms:type": "cheez:StoreSnapshot",
+      "cheez:hash": "PLACEHOLDER: store snapshot hash",
+      "cheez:hashAlgorithm": "PLACEHOLDER: hash algorithm"
     }
   ]
 }

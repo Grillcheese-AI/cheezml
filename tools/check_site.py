@@ -1,6 +1,7 @@
 """Check the built site: every module parses in all three formats to the same graph; every CheezML IRI used by the
 context, the shapes or the examples is declared in exactly one module, in the module its namespace names; every
-declared term has a definition and an HTML anchor; the frozen copy matches the current one.
+declared term has a definition and an HTML anchor; the frozen copy of the current version matches it; each earlier
+frozen version still parses and still names itself.
 
 Usage: python -I tools/check_site.py <repo-root>
 """
@@ -20,16 +21,31 @@ NS = {"core": BASE + "core#", "cubby": BASE + "cubby#", "mowm": BASE + "mowm#", 
 DECL = {OWL.Class, OWL.ObjectProperty, OWL.DatatypeProperty, SKOS.Concept, SKOS.ConceptScheme}
 problems = []
 
-declared = {}
+declared, versions = {}, {}
 for stem, ns in NS.items():
     g = rdflib.Graph().parse(DOCS / f"{stem}.ttl", format="turtle")
     for fmt, ext in (("json-ld", "jsonld"), ("xml", "rdf")):
         other = rdflib.Graph().parse(DOCS / f"{stem}.{ext}", format=fmt)
         if not isomorphic(g, other):
             problems.append(f"{stem}.{ext} is not the same graph as {stem}.ttl")
-    frozen = rdflib.Graph().parse(DOCS / "v0.1" / f"{stem}.ttl", format="turtle")
-    if not isomorphic(g, frozen):
-        problems.append(f"v0.1/{stem}.ttl differs from {stem}.ttl")
+    ont = rdflib.URIRef(BASE + stem)
+    version = str(g.value(ont, OWL.versionIRI) or "").rsplit("/", 1)[-1]
+    versions[stem] = version
+    if not (DOCS / version / f"{stem}.ttl").exists():
+        problems.append(f"no frozen copy of {stem} at {version}/")
+    else:
+        frozen = rdflib.Graph().parse(DOCS / version / f"{stem}.ttl", format="turtle")
+        if not isomorphic(g, frozen):
+            problems.append(f"{version}/{stem}.ttl differs from {stem}.ttl")
+    for old in sorted(d for d in DOCS.iterdir() if d.is_dir() and re.fullmatch(r"v[0-9]+(\.[0-9]+)*", d.name)):
+        if old.name == version:
+            continue
+        og = rdflib.Graph().parse(old / f"{stem}.ttl", format="turtle")
+        if og.value(ont, OWL.versionIRI) != rdflib.URIRef(f"{BASE}{stem}/{old.name}"):
+            problems.append(f"{old.name}/{stem}.ttl does not name itself {BASE}{stem}/{old.name}")
+        prior = g.value(ont, OWL.priorVersion)
+        if prior is None:
+            problems.append(f"{stem} has an earlier frozen version but no owl:priorVersion")
     page = (DOCS / f"{stem}.html").read_text(encoding="utf-8")
     for s, _, t in g.triples((None, RDF.type, None)):
         if t not in DECL or not str(s).startswith(BASE):
@@ -66,6 +82,6 @@ missing = sorted(str(u) for u in used if u not in declared)
 for m in missing:
     problems.append(f"used but not declared: {m}")
 
-print(f"declared terms: {len(declared)}; CheezML IRIs used by context, shapes and examples: {len(used)}")
+print(f"current version: {sorted(set(versions.values()))}; declared terms: {len(declared)}; CheezML IRIs used by context, shapes and examples: {len(used)}")
 print("\n".join(problems) if problems else "SITE CHECK: ALL PASS")
 sys.exit(1 if problems else 0)

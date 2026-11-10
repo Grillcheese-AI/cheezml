@@ -8,95 +8,43 @@
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:vann="http://purl.org/vocab/vann/"
 >
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#FactVersion">
+  <rdf:Description rdf:nodeID="N2e3f01d2512b4441b0bcc22a283141c7">
+    <rdf:first rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdf:rest rdf:nodeID="N1bdedea5694745a694540442741e2c6c"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Retirement">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">FactVersion</rdfs:label>
-    <skos:definition xml:lang="en">One version of a stored statement, with both clocks; a correction closes it and never overwrites it.</skos:definition>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
-    <skos:editorialNote xml:lang="en">recorded time = prov:generatedAtTime, closure = prov:invalidatedAtTime, successor prov:wasRevisionOf</skos:editorialNote>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#hasResult">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#Question"/>
-    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Decision"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">hasResult</rdfs:label>
-    <skos:definition xml:lang="en">The decision reached on the question.</skos:definition>
-    <skos:closeMatch rdf:resource="http://example.com/ns/dec#has_result"/>
-    <skos:editorialNote xml:lang="en">direction unverified</skos:editorialNote>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Certificate">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">Certificate</rdfs:label>
-    <skos:definition xml:lang="en">VM-produced record that an answer follows from the facts and rules used, under the recorded checks. Not a claim of correctness, never a truth score.</skos:definition>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#outcome">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:nodeID="N6c95ef7e5b0546ebb8d508acf3ebe8c4"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">outcome</rdfs:label>
-    <skos:definition xml:lang="en">Observed, coded outcome of a check, run, review or routing decision.</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Artifact">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">Artifact</rdfs:label>
-    <skos:definition xml:lang="en">External payload known only by its hash: program, vector, weights, data, document, encoder table.</skos:definition>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Rejected">
-    <skos:prefLabel xml:lang="en">rejected</skos:prefLabel>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#RetirementKinds"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Rule">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">Rule</rdfs:label>
-    <skos:definition xml:lang="en">A rule applied by a program run, by hash.</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/cheezml/core#Artifact"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Plan"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Violated">
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckOutcomes"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <skos:prefLabel xml:lang="en">violated</skos:prefLabel>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Option">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">Option</rdfs:label>
-    <skos:definition xml:lang="en">A candidate: one proposer's program.</skos:definition>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
-    <skos:closeMatch rdf:resource="http://example.com/ns/dec#Option"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#isViolatedBy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#CheckRun"/>
-    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Option"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">isViolatedBy</rdfs:label>
-    <skos:definition xml:lang="en">This criterion (check run) is violated by the option.</skos:definition>
-    <skos:editorialNote xml:lang="en">brief's is_violated_by</skos:editorialNote>
-    <skos:editorialNote xml:lang="en">same note</skos:editorialNote>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#CheckRun">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">CheckRun</rdfs:label>
-    <skos:definition xml:lang="en">One execution of a check. It exists only if the check ran. Kind via dcterms:type.</skos:definition>
+    <rdfs:label xml:lang="en">Retirement</rdfs:label>
+    <skos:definition xml:lang="en">Retiring, rejecting or pruning something. The thing stays and is prov:invalidated by this activity. Kind via dcterms:type.</skos:definition>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#RetirementKinds">
-    <skos:prefLabel xml:lang="en">Retirement kinds</skos:prefLabel>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+  <rdf:Description rdf:nodeID="N467d0a9484c743b7b10097c2b29dc7e3">
+    <rdf:first rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdf:rest rdf:nodeID="Nd6a11849147f41cdb1c32b20e62f27f8"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:versionIRI rdf:resource="https://w3id.org/cheezml/core/v0.2"/>
+    <owl:priorVersion rdf:resource="https://w3id.org/cheezml/core/v0.1"/>
+    <owl:versionInfo>0.2 (draft)</owl:versionInfo>
+    <dcterms:title xml:lang="en">CheezML core</dcterms:title>
+    <dcterms:description xml:lang="en">Records, hashes, the two clocks, thresholds with their calibration, check runs, certificates, decisions and retirement.</dcterms:description>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-07</dcterms:created>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-10</dcterms:modified>
+    <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dcterms:creator rdf:nodeID="Nb6fa119f7e044169a9e4fb19f89a7eac"/>
+    <vann:preferredNamespacePrefix>cheez</vann:preferredNamespacePrefix>
+    <vann:preferredNamespaceUri>https://w3id.org/cheezml/core#</vann:preferredNamespaceUri>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#calibrationData">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#Calibration"/>
+    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Artifact"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">calibrationData</rdfs:label>
+    <skos:definition xml:lang="en">Data (corpus) the screen ran on.</skos:definition>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/cheezml/core#encoder">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -106,44 +54,6 @@
     <rdfs:label xml:lang="en">encoder</rdfs:label>
     <skos:definition xml:lang="en">Exact encoder an activity used; a threshold holds only for its calibration's encoder.</skos:definition>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
-    <owl:versionIRI rdf:resource="https://w3id.org/cheezml/core/v0.1"/>
-    <owl:versionInfo>0.1 (draft)</owl:versionInfo>
-    <dcterms:title xml:lang="en">CheezML core</dcterms:title>
-    <dcterms:description xml:lang="en">Records, hashes, the two clocks, thresholds with their calibration, check runs, certificates, decisions and retirement.</dcterms:description>
-    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-07</dcterms:created>
-    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-09</dcterms:modified>
-    <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-    <dcterms:creator rdf:nodeID="N06d393443fb1449f912b78e7d580b778"/>
-    <vann:preferredNamespacePrefix>cheez</vann:preferredNamespacePrefix>
-    <vann:preferredNamespaceUri>https://w3id.org/cheezml/core#</vann:preferredNamespaceUri>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#deployment">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#Calibration"/>
-    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Entity"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">deployment</rdfs:label>
-    <skos:definition xml:lang="en">Deployment a calibration holds for.</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#writtenBy">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#Record"/>
-    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Host"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">writtenBy</rdfs:label>
-    <skos:definition xml:lang="en">The host that wrote this record.</skos:definition>
-    <skos:editorialNote xml:lang="en">no single PROV term covers both entities and activities</skos:editorialNote>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Decision">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">Decision</rdfs:label>
-    <skos:definition xml:lang="en">The answer or the refusal.</skos:definition>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
-    <skos:closeMatch rdf:resource="http://example.com/ns/dec#Decision"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/cheezml/core#option">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -155,32 +65,187 @@
     <skos:closeMatch rdf:resource="http://example.com/ns/dec#involves_choosing"/>
     <skos:editorialNote xml:lang="en">direction unverified</skos:editorialNote>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Retired">
-    <skos:prefLabel xml:lang="en">retired</skos:prefLabel>
+  <rdf:Description rdf:nodeID="N805fdbf865dd4d1c9e6d2a571f56ef9a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N2e3f01d2512b4441b0bcc22a283141c7"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#CheckRun">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">CheckRun</rdfs:label>
+    <skos:definition xml:lang="en">One execution of a check. It exists only if the check ran. Kind via dcterms:type.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#hasResult">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#Question"/>
+    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Decision"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">hasResult</rdfs:label>
+    <skos:definition xml:lang="en">The decision reached on the question.</skos:definition>
+    <skos:closeMatch rdf:resource="http://example.com/ns/dec#has_result"/>
+    <skos:editorialNote xml:lang="en">direction unverified</skos:editorialNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#deployment">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#Calibration"/>
+    <rdfs:range rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">deployment</rdfs:label>
+    <skos:definition xml:lang="en">Deployment a calibration holds for.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#outcome">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:nodeID="N805fdbf865dd4d1c9e6d2a571f56ef9a"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">outcome</rdfs:label>
+    <skos:definition xml:lang="en">Observed, coded outcome of a check, run, review or routing decision.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#RetirementKinds">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <skos:prefLabel xml:lang="en">Retirement kinds</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#FactVersion">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">FactVersion</rdfs:label>
+    <skos:definition xml:lang="en">One version of a stored statement, with both clocks; a correction closes it and never overwrites it.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <skos:editorialNote xml:lang="en">recorded time = prov:generatedAtTime, closure = prov:invalidatedAtTime, successor prov:wasRevisionOf</skos:editorialNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#validTime">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#FactVersion"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2006/time#Interval"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">validTime</rdfs:label>
+    <skos:definition xml:lang="en">Clock 1: when the statement held.</skos:definition>
+    <skos:editorialNote xml:lang="en">OWL-Time range</skos:editorialNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Query">
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#ArtifactKinds"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <skos:definition xml:lang="en">A query sent to a remote source, by hash.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#CheckOutcomes">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <skos:prefLabel xml:lang="en">Check outcomes</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Artifact">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">Artifact</rdfs:label>
+    <skos:definition xml:lang="en">External payload known only by its hash: program, vector, weights, data, document, encoder table.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N1bdedea5694745a694540442741e2c6c">
+    <rdf:first rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Violated">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckOutcomes"/>
+    <skos:prefLabel xml:lang="en">violated</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#observedValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#CheckRun"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">observedValue</rdfs:label>
+    <skos:definition xml:lang="en">A measured score or count; never a threshold.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Pruned">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
     <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#RetirementKinds"/>
+    <skos:prefLabel xml:lang="en">pruned</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Threshold">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">Threshold</rdfs:label>
+    <skos:definition xml:lang="en">A decision boundary with its calibration. Never a score.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <skos:editorialNote xml:lang="en">prov:wasGeneratedBy its cheez:Calibration</skos:editorialNote>
+    <skos:editorialNote xml:lang="en">parameter via dcterms:type</skos:editorialNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Rule">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">Rule</rdfs:label>
+    <skos:definition xml:lang="en">A rule applied by a program run, by hash.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cheezml/core#Artifact"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Plan"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="N5a79f58f8319499b84a1b246558c8b0e">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <owl:unionOf rdf:nodeID="N467d0a9484c743b7b10097c2b29dc7e3"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#hash">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#Artifact"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">hash</rdfs:label>
+    <skos:definition xml:lang="en">Content hash; the bytes are never embedded.</skos:definition>
+    <skos:editorialNote xml:lang="en">minted: no standard hash property verified</skos:editorialNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#endpoint">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#SourceRead"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">endpoint</rdfs:label>
+    <skos:definition xml:lang="en">The remote source's address.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#asOf">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTimeStamp"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">asOf</rdfs:label>
+    <skos:definition xml:lang="en">The valid time the question was evaluated at, with its time zone.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#StoreSnapshot">
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#ArtifactKinds"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <skos:definition xml:lang="en">A snapshot of Cubby's own store, by hash.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#response">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#SourceRead"/>
+    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Artifact"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">response</rdfs:label>
+    <skos:definition xml:lang="en">The answer received, by hash.</skos:definition>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#generated"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Question">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">Question</rdfs:label>
+    <skos:definition xml:lang="en">The question a decision is about.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <skos:closeMatch rdf:resource="http://example.com/ns/dec#Question"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#DatasetRelease">
+    <skos:definition xml:lang="en">A released version of a dataset or dump (the WikiKGQA 2026 dump, a GLEIF file...), cited with schema:version and its hash.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#ArtifactKinds"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#threshold">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#CheckRun"/>
-    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Threshold"/>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#OntologyRelease">
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#ArtifactKinds"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">threshold</rdfs:label>
-    <skos:definition xml:lang="en">The threshold a check compared against.</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#CheckKinds">
-    <skos:prefLabel xml:lang="en">Check kinds</skos:prefLabel>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#thresholdValue">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#Threshold"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">thresholdValue</rdfs:label>
-    <skos:definition xml:lang="en">The boundary value.</skos:definition>
+    <skos:definition xml:lang="en">A released version of an ontology (FIBO, GO...), cited with schema:version and its hash.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/cheezml/core#hashAlgorithm">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
@@ -189,6 +254,51 @@
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
     <rdfs:label xml:lang="en">hashAlgorithm</rdfs:label>
     <skos:definition xml:lang="en">Algorithm of cheez:hash (not given in the brief).</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#check">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:nodeID="N5a79f58f8319499b84a1b246558c8b0e"/>
+    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#CheckRun"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">check</rdfs:label>
+    <skos:definition xml:lang="en">A check that ran for this record.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#storeSnapshot">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Artifact"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">storeSnapshot</rdfs:label>
+    <skos:definition xml:lang="en">The store snapshot the run read, by hash.</skos:definition>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Record">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">Record</rdfs:label>
+    <skos:definition xml:lang="en">Root node of a document the host wrote from what ran.</skos:definition>
+    <skos:editorialNote xml:lang="en">marker class</skos:editorialNote>
+    <skos:editorialNote xml:lang="en">deliberately not ⊑ prov:Entity, since activities are records too</skos:editorialNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#writtenBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#Record"/>
+    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Host"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">writtenBy</rdfs:label>
+    <skos:definition xml:lang="en">The host that wrote this record.</skos:definition>
+    <skos:editorialNote xml:lang="en">no single PROV term covers both entities and activities</skos:editorialNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Response">
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#ArtifactKinds"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <skos:definition xml:lang="en">A remote source's response, by hash.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#CheckKinds">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <skos:prefLabel xml:lang="en">Check kinds</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/cheezml/core#isSatisfiedBy">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -200,6 +310,14 @@
     <skos:editorialNote xml:lang="en">brief's is_satisfied_by</skos:editorialNote>
     <skos:editorialNote xml:lang="en">absent from the published Decision Ontology, so minted with no alignment</skos:editorialNote>
   </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#chosenOption">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#Decision"/>
+    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Option"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">chosenOption</rdfs:label>
+    <skos:definition xml:lang="en">The option the decision took.</skos:definition>
+  </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/cheezml/core#screen">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
     <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#Calibration"/>
@@ -209,89 +327,25 @@
     <skos:definition xml:lang="en">The screen that set the threshold.</skos:definition>
     <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#chosenOption">
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#ArtifactKinds">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <skos:prefLabel xml:lang="en">Artifact kinds</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#threshold">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#Decision"/>
-    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Option"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#CheckRun"/>
+    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Threshold"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">chosenOption</rdfs:label>
-    <skos:definition xml:lang="en">The option the decision took.</skos:definition>
+    <rdfs:label xml:lang="en">threshold</rdfs:label>
+    <skos:definition xml:lang="en">The threshold a check compared against.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#hash">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#Artifact"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">hash</rdfs:label>
-    <skos:definition xml:lang="en">Content hash; the bytes are never embedded.</skos:definition>
-    <skos:editorialNote xml:lang="en">minted: no standard hash property verified</skos:editorialNote>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N09870563cc7047ec8f40a854b2b995ab">
-    <rdf:first rdf:resource="http://www.w3.org/ns/prov#Activity"/>
-    <rdf:rest rdf:nodeID="Nd2cadd936eeb4f8b9ebb769026d33984"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="N2f7176a410754bc085264033c2fd79e6">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="N84d94947e16942f1a9e06061b870df16"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#validTime">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#FactVersion"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2006/time#Interval"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">validTime</rdfs:label>
-    <skos:definition xml:lang="en">Clock 1: when the statement held.</skos:definition>
-    <skos:editorialNote xml:lang="en">OWL-Time range</skos:editorialNote>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Threshold">
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Template">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">Threshold</rdfs:label>
-    <skos:definition xml:lang="en">A decision boundary with its calibration. Never a score.</skos:definition>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
-    <skos:editorialNote xml:lang="en">prov:wasGeneratedBy its cheez:Calibration</skos:editorialNote>
-    <skos:editorialNote xml:lang="en">parameter via dcterms:type</skos:editorialNote>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#check">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:nodeID="N2f7176a410754bc085264033c2fd79e6"/>
-    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#CheckRun"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">check</rdfs:label>
-    <skos:definition xml:lang="en">A check that ran for this record.</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#calibrationData">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#Calibration"/>
-    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Artifact"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">calibrationData</rdfs:label>
-    <skos:definition xml:lang="en">Data (corpus) the screen ran on.</skos:definition>
-    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Record">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">Record</rdfs:label>
-    <skos:definition xml:lang="en">Root node of a document the host wrote from what ran.</skos:definition>
-    <skos:editorialNote xml:lang="en">marker class</skos:editorialNote>
-    <skos:editorialNote xml:lang="en">deliberately not ⊑ prov:Entity, since activities are records too</skos:editorialNote>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Question">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">Question</rdfs:label>
-    <skos:definition xml:lang="en">The question a decision is about.</skos:definition>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
-    <skos:closeMatch rdf:resource="http://example.com/ns/dec#Question"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#template">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#RenderedText"/>
-    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Template"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">template</rdfs:label>
-    <skos:definition xml:lang="en">The template that produced the text.</skos:definition>
+    <rdfs:label xml:lang="en">Template</rdfs:label>
+    <skos:definition xml:lang="en">A sentence template, by hash.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cheezml/core#Artifact"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/cheezml/core#retirementReason">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
@@ -301,11 +355,22 @@
     <rdfs:label xml:lang="en">retirementReason</rdfs:label>
     <skos:definition xml:lang="en">Coded reason for a retirement.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Pruned">
-    <skos:prefLabel xml:lang="en">pruned</skos:prefLabel>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#RetirementKinds"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Option">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">Option</rdfs:label>
+    <skos:definition xml:lang="en">A candidate: one proposer's program.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <skos:closeMatch rdf:resource="http://example.com/ns/dec#Option"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#query">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#SourceRead"/>
+    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Artifact"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">query</rdfs:label>
+    <skos:definition xml:lang="en">The query sent, by hash.</skos:definition>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#used"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/cheezml/core#Calibration">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -314,38 +379,69 @@
     <skos:definition xml:lang="en">The screen run that set one or more thresholds for one encoder, data set and deployment, on a date (prov:endedAtTime).</skos:definition>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#CheckOutcomes">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Decision">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <skos:prefLabel xml:lang="en">Check outcomes</skos:prefLabel>
+    <rdfs:label xml:lang="en">Decision</rdfs:label>
+    <skos:definition xml:lang="en">The answer or the refusal.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+    <skos:closeMatch rdf:resource="http://example.com/ns/dec#Decision"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N06d393443fb1449f912b78e7d580b778">
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#template">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#RenderedText"/>
+    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Template"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">template</rdfs:label>
+    <skos:definition xml:lang="en">The template that produced the text.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Certificate">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">Certificate</rdfs:label>
+    <skos:definition xml:lang="en">VM-produced record that an answer follows from the facts and rules used, under the recorded checks. Not a claim of correctness, never a truth score.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Host">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">Host</rdfs:label>
+    <skos:definition xml:lang="en">The host process that writes every record.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#SoftwareAgent"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#isViolatedBy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#CheckRun"/>
+    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Option"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">isViolatedBy</rdfs:label>
+    <skos:definition xml:lang="en">This criterion (check run) is violated by the option.</skos:definition>
+    <skos:editorialNote xml:lang="en">brief's is_violated_by</skos:editorialNote>
+    <skos:editorialNote xml:lang="en">same note</skos:editorialNote>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Satisfied">
+    <skos:prefLabel xml:lang="en">satisfied</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckOutcomes"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Rejected">
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#RetirementKinds"/>
+    <skos:prefLabel xml:lang="en">rejected</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#SourceRead">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
+    <rdfs:label xml:lang="en">SourceRead</rdfs:label>
+    <skos:definition xml:lang="en">A read of a remote source during a run: which endpoint, which query and which answer, each by hash, with the source's licence. The run prov:wasInformedBy it.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nb6fa119f7e044169a9e4fb19f89a7eac">
     <rdf:type rdf:resource="https://schema.org/Person"/>
     <schema:name>Nicolas Cloutier</schema:name>
     <schema:affiliation>GrillCheese Research Lab</schema:affiliation>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Template">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">Template</rdfs:label>
-    <skos:definition xml:lang="en">A sentence template, by hash.</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/cheezml/core#Artifact"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#certifies">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#Certificate"/>
-    <rdfs:range rdf:resource="https://w3id.org/cheezml/cubby#Answer"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">certifies</rdfs:label>
-    <skos:definition xml:lang="en">The answer a certificate covers.</skos:definition>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#observedValue">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
-    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#CheckRun"/>
-    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">observedValue</rdfs:label>
-    <skos:definition xml:lang="en">A measured score or count; never a threshold.</skos:definition>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/cheezml/core#RenderedText">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -355,39 +451,29 @@
     <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
     <skos:editorialNote xml:lang="en">text in schema:text, source in prov:wasDerivedFrom</skos:editorialNote>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N84d94947e16942f1a9e06061b870df16">
-    <rdf:first rdf:resource="http://www.w3.org/ns/prov#Activity"/>
-    <rdf:rest rdf:nodeID="Nbd59bc6e927f4b9181ae7fe816db3bce"/>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Retirement">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#certifies">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#Certificate"/>
+    <rdfs:range rdf:resource="https://w3id.org/cheezml/cubby#Answer"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">Retirement</rdfs:label>
-    <skos:definition xml:lang="en">Retiring, rejecting or pruning something. The thing stays and is prov:invalidated by this activity. Kind via dcterms:type.</skos:definition>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+    <rdfs:label xml:lang="en">certifies</rdfs:label>
+    <skos:definition xml:lang="en">The answer a certificate covers.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Host">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#thresholdValue">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/core#Threshold"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <rdfs:label xml:lang="en">Host</rdfs:label>
-    <skos:definition xml:lang="en">The host process that writes every record.</skos:definition>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#SoftwareAgent"/>
+    <rdfs:label xml:lang="en">thresholdValue</rdfs:label>
+    <skos:definition xml:lang="en">The boundary value.</skos:definition>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Satisfied">
+  <rdf:Description rdf:about="https://w3id.org/cheezml/core#Retired">
+    <skos:prefLabel xml:lang="en">retired</skos:prefLabel>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/core"/>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckOutcomes"/>
-    <skos:prefLabel xml:lang="en">satisfied</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#RetirementKinds"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="N6c95ef7e5b0546ebb8d508acf3ebe8c4">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <owl:unionOf rdf:nodeID="N09870563cc7047ec8f40a854b2b995ab"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nd2cadd936eeb4f8b9ebb769026d33984">
-    <rdf:first rdf:resource="http://www.w3.org/ns/prov#Entity"/>
-    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
-  </rdf:Description>
-  <rdf:Description rdf:nodeID="Nbd59bc6e927f4b9181ae7fe816db3bce">
+  <rdf:Description rdf:nodeID="Nd6a11849147f41cdb1c32b20e62f27f8">
     <rdf:first rdf:resource="https://w3id.org/cheezml/core#Certificate"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
   </rdf:Description>

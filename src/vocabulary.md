@@ -1,4 +1,6 @@
-# CheezML v0.1 vocabulary (draft synthesis, 2026-11-07)
+# CheezML v0.2 vocabulary (draft, 2026-11-10)
+
+**v0.2 (2026-11-10)** adds three core terms that every domain needs (see `DOMAINS.md`): `cheez:SourceRead` (a remote source read during a run), ontology and dataset releases with their version, and `cheez:asOf` with `cheez:storeSnapshot` (the time a question was evaluated at, and the store state it read). v0.1 stays frozen under its own version IRIs.
 
 Merged from seven panel answers (GLM 5.3, Qwen 3.8 max, Claude Opus 5.5, GPT-6.1 sol pro, Kimi K3.1 pro, DeepSeek V4 pro, Gemini 4 argon) under the brief's hard rules. Grok 4.7's answer came later and changes none of the choices (`disagreements.md` §5). Only the terms the six example records need, plus the controlled code lists. Not adopted; checked with rdflib, pyld and pySHACL (see `validation.txt`).
 
@@ -14,7 +16,7 @@ Merged from seven panel answers (GLM 5.3, Qwen 3.8 max, Claude Opus 5.5, GPT-6.1
 
 | Prefix | Namespace | Notes |
 |---|---|---|
-| `cheez:` | `https://w3id.org/cheezml/core#` | module ontology IRI `https://w3id.org/cheezml/core`; versions via `owl:versionIRI` (e.g. `https://w3id.org/cheezml/core/v0.1`), never in the namespace |
+| `cheez:` | `https://w3id.org/cheezml/core#` | module ontology IRI `https://w3id.org/cheezml/core`; versions via `owl:versionIRI` (e.g. `https://w3id.org/cheezml/core/v0.2`), never in the namespace |
 | `cubby:` | `https://w3id.org/cheezml/cubby#` | same pattern |
 | `mowm:` | `https://w3id.org/cheezml/mowm#` | same pattern |
 | `cube:` | `https://w3id.org/cheezml/cubelang#` | same pattern |
@@ -64,6 +66,12 @@ Records and instances (hosts, runs, worlds, reviewers) have `urn:uuid:` ids, nev
 | `cheez:template` | property | The template that produced the text. | `cheez:RenderedText` | `cheez:Template` | | 2 |
 | `cheez:Retirement` | class | Retiring, rejecting or pruning something. The thing stays and is `prov:invalidated` by this activity. Kind via `dcterms:type`. | | | ⊑ `prov:Activity` | 7 |
 | `cheez:retirementReason` | property | Coded reason for a retirement. | `cheez:Retirement` | `skos:Concept` | | 7 |
+| `cheez:SourceRead` | class | A read of a remote source during a run: which endpoint, which query and which answer, each by hash, with the source's licence. The run `prov:wasInformedBy` it. | | | ⊑ `prov:Activity` | v0.2 |
+| `cheez:endpoint` | property | The remote source's address. | `cheez:SourceRead` | `xsd:anyURI` | | v0.2 |
+| `cheez:query` | property | The query sent, by hash. | `cheez:SourceRead` | `cheez:Artifact` | ⊑ `prov:used` | v0.2 |
+| `cheez:response` | property | The answer received, by hash. | `cheez:SourceRead` | `cheez:Artifact` | ⊑ `prov:generated` | v0.2 |
+| `cheez:asOf` | property | The valid time the question was evaluated at, with its time zone. | `prov:Activity` | `xsd:dateTimeStamp` | | v0.2 |
+| `cheez:storeSnapshot` | property | The store snapshot the run read, by hash. | `prov:Activity` | `cheez:Artifact` | ⊑ `prov:used` | v0.2 |
 
 The Decision Ontology as published puts its terms in `http://example.com/ns/dec#` (prefix `dec:`), a placeholder namespace. CheezML therefore mints its own terms and records the published ones only as `skos:closeMatch` targets.
 
@@ -143,6 +151,7 @@ The Decision Ontology as published puts its terms in `http://example.com/ns/dec#
 | `schema:text` | region text as read; rendered sentence | 3 |
 | `schema:version` | revision of a source | 2 |
 | `schema:isPartOf`, `schema:about`, `schema:name`, `schema:identifier`, `schema:DigitalDocument` | conversation, document, labels, external ids | 5 |
+| `dcterms:license` | the licence of a remote source's data (v0.2) | v0.2 |
 | `dcterms:type` | kind codes: check kind, routing mode, threshold parameter, retirement kind (note: DCMI gives it range `rdfs:Class`) | 1 |
 
 ## Controlled code lists (SKOS)
@@ -154,6 +163,7 @@ The Decision Ontology as published puts its terms in `http://example.com/ns/dec#
 | `cubby:ConflictKinds` | ValueConflict, TypeConflict, TemporalConflict, LogicalConflict, RecordedVsDerivedConflict | `cubby:conflictKind` | 6 |
 | `cubby:Proposers` | HostGrammar, EverydayTable, OvernightRuleLibrary, EpisodicMemory, LMProgramEmitter | `cubby:proposer` | 7 |
 | `cheez:CheckKinds` | 20 kinds, see Turtle below | `dcterms:type` on `cheez:CheckRun`; `cheez:retirementReason` | 6 |
+| `cheez:ArtifactKinds` | OntologyRelease, DatasetRelease, StoreSnapshot, Query, Response (v0.2) | `dcterms:type` on a `cheez:Artifact` | v0.2 |
 | `cheez:CheckOutcomes` | Satisfied, Violated | `cheez:outcome` on a check | 4 |
 | `cheez:RetirementKinds` | Retired, Rejected, Pruned | `dcterms:type` on `cheez:Retirement` | 4 |
 | `cube:RunOutcomes` | Return, Error, Ask | `cheez:outcome` on a program run | 6 |
@@ -235,6 +245,13 @@ cubby:GainCheck           a skos:Concept ; skos:inScheme cheez:CheckKinds ; skos
 mowm:ZMaxCheck            a skos:Concept ; skos:inScheme cheez:CheckKinds ; skos:definition "The parent world's depth is below z_max, so spawn_subworld may split."@en .
 mowm:AnswerSupportCheck   a skos:Concept ; skos:inScheme cheez:CheckKinds ; skos:definition "Support is at or above tau_answer (possibility oracle; inter-world query otherwise)."@en .
 mowm:ResidualCheck        a skos:Concept ; skos:inScheme cheez:CheckKinds ; skos:definition "The residual norm exceeds tau_spawn (router.py maybe_spawn)."@en .
+
+cheez:ArtifactKinds a skos:ConceptScheme ; skos:prefLabel "Artifact kinds"@en .
+cheez:OntologyRelease a skos:Concept ; skos:inScheme cheez:ArtifactKinds ; skos:definition "A released version of an ontology (FIBO, GO...), cited with schema:version and its hash."@en .
+cheez:DatasetRelease  a skos:Concept ; skos:inScheme cheez:ArtifactKinds ; skos:definition "A released version of a dataset or dump (the WikiKGQA 2026 dump, a GLEIF file...), cited with schema:version and its hash."@en .
+cheez:StoreSnapshot   a skos:Concept ; skos:inScheme cheez:ArtifactKinds ; skos:definition "A snapshot of Cubby's own store, by hash."@en .
+cheez:Query           a skos:Concept ; skos:inScheme cheez:ArtifactKinds ; skos:definition "A query sent to a remote source, by hash."@en .
+cheez:Response        a skos:Concept ; skos:inScheme cheez:ArtifactKinds ; skos:definition "A remote source's response, by hash."@en .
 
 cheez:CheckOutcomes a skos:ConceptScheme ; skos:prefLabel "Check outcomes"@en .
 cheez:Satisfied a skos:Concept ; skos:inScheme cheez:CheckOutcomes ; skos:prefLabel "satisfied"@en .

@@ -1,5 +1,6 @@
 """Build the CheezML site (docs/) from src/: one OWL ontology per module in Turtle, JSON-LD and RDF/XML, an HTML
 page per module with an anchor per term, the context, the shapes, a frozen copy under docs/<version>/, and an index.
+Frozen copies of earlier versions (docs/v0.1/ …) are never rebuilt or removed.
 
 Usage: python -I tools/build_site.py <repo-root>
 """
@@ -17,7 +18,8 @@ from rdflib.namespace import DCTERMS, OWL, RDF, RDFS, SKOS, XSD
 
 ROOT = pathlib.Path(sys.argv[1])
 SRC, OUT = ROOT / "src", ROOT / "docs"
-VERSION, CREATED, MODIFIED = "v0.1", "2026-11-07", "2026-11-09"
+VERSION, PRIOR, CREATED, MODIFIED = "v0.2", "v0.1", "2026-11-07", "2026-11-10"
+VERSION_DIR = re.compile(r"v[0-9]+(\.[0-9]+)*$")
 BASE = "https://w3id.org/cheezml/"
 LICENSE = URIRef("https://creativecommons.org/licenses/by/4.0/")
 SCHEMA = Namespace("https://schema.org/")
@@ -105,6 +107,8 @@ def build_graphs(rows, skos_ttl):
         ont = URIRef(BASE + stem)
         g.add((ont, RDF.type, OWL.Ontology))
         g.add((ont, OWL.versionIRI, URIRef(f"{BASE}{stem}/{VERSION}")))
+        if PRIOR:
+            g.add((ont, OWL.priorVersion, URIRef(f"{BASE}{stem}/{PRIOR}")))
         g.add((ont, OWL.versionInfo, Literal(f"{VERSION[1:]} (draft)")))
         g.add((ont, DCTERMS.title, Literal(title, lang="en")))
         g.add((ont, DCTERMS.description, Literal(desc, lang="en")))
@@ -248,6 +252,11 @@ def module_html(stem, g):
 
 
 def index_html(frozen=False):
+    n_pos = len(list((SRC / "examples").glob("*.jsonld")))
+    n_neg = len(list((SRC / "examples" / "negative").glob("*.jsonld")))
+    earlier = sorted(d.name for d in OUT.iterdir() if d.is_dir() and VERSION_DIR.match(d.name) and d.name != VERSION)
+    older = "" if frozen or not earlier else ("<li>Earlier versions, frozen: "
+                                              + ", ".join(f'<a href="{v}/">{v}</a>' for v in earlier) + "</li>")
     rows = "".join(f'<tr><td><a href="{m}.html">{m}</a></td><td><code>{PREFIXES[p]}</code></td>'
                    f"<td>{html.escape(d)}</td></tr>" for m, (p, _, d) in MODULES.items())
     body = f"""<p class="badge">draft {VERSION}</p><h1>CheezML</h1>
@@ -260,9 +269,9 @@ routing choice and reviewed document behind it. Nothing in a record is a claim t
 truth score, no status declared by hand, no prose rationale.</p>
 <h2>Modules</h2><div class="wrap"><table><tr><th>Module</th><th>Namespace</th><th>Covers</th></tr>{rows}</table></div>
 <h2>Files</h2><ul><li><a href="context.jsonld">context.jsonld</a>: the JSON-LD 1.1 context
-(<code>{BASE}context.jsonld</code>)</li><li><a href="shapes.ttl">shapes.ttl</a>: SHACL shapes for the six record
-types (<code>{BASE}shapes</code>)</li><li><a href="examples/">examples/</a>: six records that conform, and ten broken
-ones that must fail</li><li>{'' if frozen else f'<a href="{VERSION}/">{VERSION}/</a>: this version, frozen'}</li></ul>
+(<code>{BASE}context.jsonld</code>)</li><li><a href="shapes.ttl">shapes.ttl</a>: SHACL shapes for the record
+types (<code>{BASE}shapes</code>)</li><li><a href="examples/">examples/</a>: {n_pos} records that conform, and {n_neg}
+broken ones that must fail</li>{'' if frozen else f'<li><a href="{VERSION}/">{VERSION}/</a>: this version, frozen</li>'}{older}</ul>
 <h2>Status</h2><p>Draft {VERSION}, {MODIFIED}. Terms may still change before the first release; changed terms are
 retired with a note, never deleted. Source and tests:
 <a href="https://github.com/Grillcheese-AI/cheezml">github.com/Grillcheese-AI/cheezml</a>.</p>
@@ -294,8 +303,11 @@ def main():
     text = (SRC / "vocabulary.md").read_text(encoding="utf-8")
     skos_ttl = re.search(r"```turtle\n(.*?)```", text, re.S).group(1)
     graphs = build_graphs(parse_tables(text), skos_ttl)
-    if OUT.exists():
-        shutil.rmtree(OUT)
+    OUT.mkdir(exist_ok=True)
+    for child in OUT.iterdir():  # earlier frozen versions stay exactly as published
+        if child.is_dir() and VERSION_DIR.match(child.name) and child.name != VERSION:
+            continue
+        shutil.rmtree(child) if child.is_dir() else child.unlink()
     write_set(OUT, graphs)
     write_set(OUT / VERSION, graphs, frozen=True)
     (OUT / ".nojekyll").write_text("", encoding="utf-8")

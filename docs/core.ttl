@@ -16,15 +16,35 @@ cheez:CheckKinds a skos:ConceptScheme ;
     rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
     skos:prefLabel "Check kinds"@en .
 
+cheez:DatasetRelease a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    skos:definition "A released version of a dataset or dump (the WikiKGQA 2026 dump, a GLEIF file...), cited with schema:version and its hash."@en ;
+    skos:inScheme cheez:ArtifactKinds .
+
+cheez:OntologyRelease a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    skos:definition "A released version of an ontology (FIBO, GO...), cited with schema:version and its hash."@en ;
+    skos:inScheme cheez:ArtifactKinds .
+
 cheez:Pruned a skos:Concept ;
     rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
     skos:inScheme cheez:RetirementKinds ;
     skos:prefLabel "pruned"@en .
 
+cheez:Query a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    skos:definition "A query sent to a remote source, by hash."@en ;
+    skos:inScheme cheez:ArtifactKinds .
+
 cheez:Rejected a skos:Concept ;
     rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
     skos:inScheme cheez:RetirementKinds ;
     skos:prefLabel "rejected"@en .
+
+cheez:Response a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    skos:definition "A remote source's response, by hash."@en ;
+    skos:inScheme cheez:ArtifactKinds .
 
 cheez:Retired a skos:Concept ;
     rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
@@ -43,10 +63,22 @@ cheez:Satisfied a skos:Concept ;
     skos:inScheme cheez:CheckOutcomes ;
     skos:prefLabel "satisfied"@en .
 
+cheez:StoreSnapshot a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    skos:definition "A snapshot of Cubby's own store, by hash."@en ;
+    skos:inScheme cheez:ArtifactKinds .
+
 cheez:Violated a skos:Concept ;
     rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
     skos:inScheme cheez:CheckOutcomes ;
     skos:prefLabel "violated"@en .
+
+cheez:asOf a owl:DatatypeProperty ;
+    rdfs:label "asOf"@en ;
+    rdfs:domain prov:Activity ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range xsd:dateTimeStamp ;
+    skos:definition "The valid time the question was evaluated at, with its time zone."@en .
 
 cheez:calibrationData a owl:ObjectProperty ;
     rdfs:label "calibrationData"@en ;
@@ -92,6 +124,13 @@ cheez:encoder a owl:ObjectProperty ;
     rdfs:range cheez:Artifact ;
     rdfs:subPropertyOf prov:used ;
     skos:definition "Exact encoder an activity used; a threshold holds only for its calibration's encoder."@en .
+
+cheez:endpoint a owl:DatatypeProperty ;
+    rdfs:label "endpoint"@en ;
+    rdfs:domain cheez:SourceRead ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range xsd:anyURI ;
+    skos:definition "The remote source's address."@en .
 
 cheez:hasResult a owl:ObjectProperty ;
     rdfs:label "hasResult"@en ;
@@ -159,6 +198,22 @@ cheez:outcome a owl:ObjectProperty ;
     rdfs:range skos:Concept ;
     skos:definition "Observed, coded outcome of a check, run, review or routing decision."@en .
 
+cheez:query a owl:ObjectProperty ;
+    rdfs:label "query"@en ;
+    rdfs:domain cheez:SourceRead ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range cheez:Artifact ;
+    rdfs:subPropertyOf prov:used ;
+    skos:definition "The query sent, by hash."@en .
+
+cheez:response a owl:ObjectProperty ;
+    rdfs:label "response"@en ;
+    rdfs:domain cheez:SourceRead ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range cheez:Artifact ;
+    rdfs:subPropertyOf prov:generated ;
+    skos:definition "The answer received, by hash."@en .
+
 cheez:retirementReason a owl:ObjectProperty ;
     rdfs:label "retirementReason"@en ;
     rdfs:domain cheez:Retirement ;
@@ -173,6 +228,14 @@ cheez:screen a owl:ObjectProperty ;
     rdfs:range cheez:Artifact ;
     rdfs:subPropertyOf prov:used ;
     skos:definition "The screen that set the threshold."@en .
+
+cheez:storeSnapshot a owl:ObjectProperty ;
+    rdfs:label "storeSnapshot"@en ;
+    rdfs:domain prov:Activity ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:range cheez:Artifact ;
+    rdfs:subPropertyOf prov:used ;
+    skos:definition "The store snapshot the run read, by hash."@en .
 
 cheez:template a owl:ObjectProperty ;
     rdfs:label "template"@en ;
@@ -292,12 +355,22 @@ cheez:RetirementKinds a skos:ConceptScheme ;
     rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
     skos:prefLabel "Retirement kinds"@en .
 
+cheez:SourceRead a owl:Class ;
+    rdfs:label "SourceRead"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    rdfs:subClassOf prov:Activity ;
+    skos:definition "A read of a remote source during a run: which endpoint, which query and which answer, each by hash, with the source's licence. The run prov:wasInformedBy it."@en .
+
 cheez:Option a owl:Class ;
     rdfs:label "Option"@en ;
     rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
     rdfs:subClassOf prov:Entity ;
     skos:closeMatch dec:Option ;
     skos:definition "A candidate: one proposer's program."@en .
+
+cheez:ArtifactKinds a skos:ConceptScheme ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
+    skos:prefLabel "Artifact kinds"@en .
 
 cheez:CheckRun a owl:Class ;
     rdfs:label "CheckRun"@en ;
@@ -318,10 +391,11 @@ cheez:Artifact a owl:Class ;
             schema:name "Nicolas Cloutier" ] ;
     dcterms:description "Records, hashes, the two clocks, thresholds with their calibration, check runs, certificates, decisions and retirement."@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2026-11-09"^^xsd:date ;
+    dcterms:modified "2026-11-10"^^xsd:date ;
     dcterms:title "CheezML core"@en ;
     vann:preferredNamespacePrefix "cheez" ;
     vann:preferredNamespaceUri "https://w3id.org/cheezml/core#" ;
-    owl:versionIRI <https://w3id.org/cheezml/core/v0.1> ;
-    owl:versionInfo "0.1 (draft)" .
+    owl:priorVersion <https://w3id.org/cheezml/core/v0.1> ;
+    owl:versionIRI <https://w3id.org/cheezml/core/v0.2> ;
+    owl:versionInfo "0.2 (draft)" .
 

@@ -1,4 +1,4 @@
-# CheezML v0.1 SHACL shapes (draft synthesis, 2026-11-07)
+# CheezML v0.2 SHACL shapes (draft, 2026-11-10; v0.1 of 2026-11-07 stays frozen)
 # Six main shapes (one per example record type) plus the supporting shapes they rely on.
 # Validate with inference "none": no RDFS reasoning is assumed, so every node states its classes.
 
@@ -17,13 +17,14 @@
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
 
 <https://w3id.org/cheezml/shapes> a owl:Ontology ;
-    owl:versionIRI <https://w3id.org/cheezml/shapes/v0.1> ;
-    owl:versionInfo "0.1 (draft)" ;
+    owl:versionIRI <https://w3id.org/cheezml/shapes/v0.2> ;
+    owl:priorVersion <https://w3id.org/cheezml/shapes/v0.1> ;
+    owl:versionInfo "0.2 (draft)" ;
     dcterms:title "CheezML shapes"@en ;
     dcterms:description "SHACL shapes for the six CheezML record types and the nodes they rely on. Validate with inference none."@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:created "2026-11-07"^^xsd:date ;
-    dcterms:modified "2026-11-09"^^xsd:date .
+    dcterms:modified "2026-11-10"^^xsd:date .
 
 <https://w3id.org/cheezml/shapes>
   sh:declare
@@ -225,6 +226,25 @@ shapes:ProgramRunShape
   sh:property [
     sh:path prov:endedAtTime ; sh:maxCount 1 ; sh:datatype xsd:dateTime ;
     sh:message "A program run records at most one end time."
+  ] ;
+  sh:property [
+    sh:path cheez:storeSnapshot ; sh:maxCount 1 ; sh:class cheez:Artifact ;
+    sh:node [ sh:property [ sh:path dcterms:type ; sh:hasValue cheez:StoreSnapshot ; sh:message "The store snapshot is coded cheez:StoreSnapshot." ] ] ;
+    sh:message "A program run names at most one store snapshot, a cheez:Artifact coded cheez:StoreSnapshot."
+  ] ;
+  sh:property [
+    sh:path cheez:asOf ; sh:maxCount 1 ; sh:datatype xsd:dateTimeStamp ;
+    sh:message "A program run records at most one as-of time, with its time zone (xsd:dateTimeStamp)."
+  ] ;
+  sh:sparql [
+    a sh:SPARQLConstraint ;
+    sh:message "A run that read stored facts names the store snapshot it read (cheez:storeSnapshot) and the valid time it evaluated the question at (cheez:asOf)." ;
+    sh:prefixes <https://w3id.org/cheezml/shapes> ;
+    sh:select """
+      SELECT $this WHERE {
+        $this prov:used ?f . ?f a cheez:FactVersion .
+        FILTER (NOT EXISTS { $this cheez:storeSnapshot ?s } || NOT EXISTS { $this cheez:asOf ?t })
+      }"""
   ] .
 
 shapes:WorldShape
@@ -914,5 +934,48 @@ shapes:FieldCommitShape
       SELECT $this WHERE {
         $this prov:generated ?fv ; prov:used ?s . ?s a cubby:FieldSuggestion .
         FILTER NOT EXISTS { ?fv prov:wasDerivedFrom ?s . }
+      }"""
+  ] .
+
+#################################################################
+# v0.2: remote source reads, and ontology and dataset releases
+#################################################################
+
+shapes:SourceReadShape
+  a sh:NodeShape ;
+  sh:targetClass cheez:SourceRead ;
+  sh:property [
+    sh:path cheez:endpoint ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:anyURI ;
+    sh:message "A source read names exactly one endpoint (xsd:anyURI)."
+  ] ;
+  sh:property [
+    sh:path cheez:query ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cheez:Artifact ;
+    sh:message "A source read records exactly one query, by hash (a cheez:Artifact)."
+  ] ;
+  sh:property [
+    sh:path cheez:response ; sh:minCount 1 ; sh:maxCount 1 ; sh:class cheez:Artifact ;
+    sh:message "A source read records exactly one response, by hash (a cheez:Artifact). A read that got no answer is recorded as a failed run, not as a source read."
+  ] ;
+  sh:property [
+    sh:path prov:startedAtTime ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:dateTime ;
+    sh:message "A source read records when it was made (prov:startedAtTime)."
+  ] ;
+  sh:property [
+    sh:path dcterms:license ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+    sh:message "A source read names the licence of the data it read (dcterms:license, an IRI)."
+  ] .
+
+shapes:ReleaseShape
+  a sh:NodeShape ;
+  sh:targetClass cheez:Artifact ;
+  sh:sparql [
+    a sh:SPARQLConstraint ;
+    sh:message "An ontology or dataset release states its version (schema:version)." ;
+    sh:prefixes <https://w3id.org/cheezml/shapes> ;
+    sh:select """
+      SELECT $this WHERE {
+        $this dcterms:type ?k .
+        FILTER (?k IN (cheez:OntologyRelease, cheez:DatasetRelease))
+        FILTER NOT EXISTS { $this schema:version ?v }
       }"""
   ] .

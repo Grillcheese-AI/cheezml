@@ -1,6 +1,6 @@
 [
   {
-    "@id": "https://w3id.org/cheezml/cubby#RejectionRateCheck",
+    "@id": "https://w3id.org/cheezml/cubby#ToneCheck",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -12,7 +12,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A proposer's helper rejection rate over a window (0062)."
+        "@value": "Soft (tone) check of a story-world action, labelled soft (0060)."
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -22,14 +22,53 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/cubby#readerVersion",
+    "@id": "https://w3id.org/cheezml/cubby#TemporalConflict",
     "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+      "http://www.w3.org/2004/02/skos/core#Concept"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
-        "@id": "https://w3id.org/cheezml/cubby#DocumentRegion"
+        "@id": "https://w3id.org/cheezml/cubby"
       }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby#ConflictKinds"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "temporal"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#GainCheck",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A domain change shows a gain (0058)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#CheckKinds"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#HelperRejection",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
@@ -39,18 +78,240 @@
     "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "readerVersion"
+        "@value": "HelperRejection"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "http://www.w3.org/2001/XMLSchema#string"
+        "@id": "https://w3id.org/cheezml/core#Retirement"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Version of the reader that produced the region."
+        "@value": "The host's rejection of a helper after its sandbox run; reason = the failed gate's kind."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#ValueConflict",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby#ConflictKinds"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "value"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#ReviewerRoles",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Reviewer roles"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#FieldSuggestion",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "FieldSuggestion"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Entity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A value read or derived for a document field (prov:value); a suggestion until committed."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#ReviewOutcomes",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Review outcomes"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#ArithmeticCheck",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Exact arithmetic check (0061)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#CheckKinds"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#SmallTalkAct",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby#DialogueActs"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "small talk"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#PurchaseOrderCheck",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Exact purchase-order check (0061)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#CheckKinds"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#RelationMissing",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby#RefusalReasons"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "relation missing"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#Review",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Review"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Activity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A human review of a suggestion; reviewer and role via prov:qualifiedAssociation."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#Conflict",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby#RefusalReasons"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "conflict (kind in cubby:conflictKind)"
       }
     ]
   },
@@ -100,7 +361,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/cubby#SecondApprover",
+    "@id": "https://w3id.org/cheezml/cubby#Approved",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -111,18 +372,18 @@
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://w3id.org/cheezml/cubby#ReviewerRoles"
+        "@id": "https://w3id.org/cheezml/cubby#ReviewOutcomes"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "second approver (above the amount)"
+        "@value": "approved"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/cubby#SmallTalkAct",
+    "@id": "https://w3id.org/cheezml/cubby#EpisodicMemory",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -133,552 +394,13 @@
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://w3id.org/cheezml/cubby#DialogueActs"
+        "@id": "https://w3id.org/cheezml/cubby#Proposers"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "small talk"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#SandboxRun",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "SandboxRun"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/cheezml/cubelang#ProgramRun"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A run of a helper in a locked-down VM session; its gates are cheez:check runs."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#RefusalAct",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby#DialogueActs"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "refusal (with reason)"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#proposer",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "_:Nc7eaf5b55f104214a5909207108697e6"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "proposer"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The proposer behind an answer, refusal, option or helper."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "Values come from the code list cubby:Proposers."
-      }
-    ]
-  },
-  {
-    "@id": "_:Nc7eaf5b55f104214a5909207108697e6",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/cheezml/cubby#Answer"
-          },
-          {
-            "@id": "https://w3id.org/cheezml/cubby#Refusal"
-          },
-          {
-            "@id": "https://w3id.org/cheezml/core#Option"
-          },
-          {
-            "@id": "https://w3id.org/cheezml/cubby#Helper"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#region",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "_:N75416001702440b886d9b619c542c593"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "region"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby#DocumentRegion"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The region a suggestion or review refers to."
-      }
-    ]
-  },
-  {
-    "@id": "_:N75416001702440b886d9b619c542c593",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2002/07/owl#unionOf": [
-      {
-        "@list": [
-          {
-            "@id": "https://w3id.org/cheezml/cubby#FieldSuggestion"
-          },
-          {
-            "@id": "https://w3id.org/cheezml/cubby#Review"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#Review",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Review"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#Activity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A human review of a suggestion; reviewer and role via prov:qualifiedAssociation."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#ReviewOutcomes",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Review outcomes"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#ConflictCheck",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "No value, type, temporal, logical or recorded-against-derived conflict among the statements used (inferred from the refusal reasons)."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/core#CheckKinds"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Ontology"
-    ],
-    "http://purl.org/dc/terms/created": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2026-11-07"
-      }
-    ],
-    "http://purl.org/dc/terms/creator": [
-      {
-        "@id": "_:N348b4b7715a24b199b082d40e40c4241"
-      }
-    ],
-    "http://purl.org/dc/terms/description": [
-      {
-        "@language": "en",
-        "@value": "Conversation turns, answers and refusals with their reasons, proposers, helpers in a sandbox, and documents reviewed by a person."
-      }
-    ],
-    "http://purl.org/dc/terms/license": [
-      {
-        "@id": "https://creativecommons.org/licenses/by/4.0/"
-      }
-    ],
-    "http://purl.org/dc/terms/modified": [
-      {
-        "@type": "http://www.w3.org/2001/XMLSchema#date",
-        "@value": "2026-11-09"
-      }
-    ],
-    "http://purl.org/dc/terms/title": [
-      {
-        "@language": "en",
-        "@value": "CheezML for CubbyLLM"
-      }
-    ],
-    "http://purl.org/vocab/vann/preferredNamespacePrefix": [
-      {
-        "@value": "cubby"
-      }
-    ],
-    "http://purl.org/vocab/vann/preferredNamespaceUri": [
-      {
-        "@value": "https://w3id.org/cheezml/cubby#"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#imports": [
-      {
-        "@id": "https://w3id.org/cheezml/core"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#versionIRI": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby/v0.1"
-      }
-    ],
-    "http://www.w3.org/2002/07/owl#versionInfo": [
-      {
-        "@value": "0.1 (draft)"
-      }
-    ]
-  },
-  {
-    "@id": "_:N348b4b7715a24b199b082d40e40c4241",
-    "@type": [
-      "https://schema.org/Person"
-    ],
-    "https://schema.org/affiliation": [
-      {
-        "@value": "GrillCheese Research Lab"
-      }
-    ],
-    "https://schema.org/name": [
-      {
-        "@value": "Nicolas Cloutier"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#Turn",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Turn"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#Entity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "One conversation turn, written by the host; conversation via schema:isPartOf."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#DialogueActs",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Dialogue acts (order 0059)"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#NotCertified",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby#RefusalReasons"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "not certified"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#EntityGuardCheck",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A follow-up rewrite passes the entity guard (0059)."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/core#CheckKinds"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#ValueConflict",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby#ConflictKinds"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "value"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#ConflictKinds",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Kinds of conflict"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#DuplicateCheck",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Exact duplicate check (0061)."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/core#CheckKinds"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#turnIndex",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#DatatypeProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby#Turn"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "turnIndex"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2001/XMLSchema#integer"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Host-assigned position in the conversation."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#NumberInRegionCheck",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Every number in a field appears in its region's text (0061)."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/core#CheckKinds"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#ReproductionCheck",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A helper reproduces every verified answer in its scope (0062)."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/core#CheckKinds"
+        "@value": "episodic memory of certified chains"
       }
     ]
   },
@@ -705,51 +427,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/cubby#TemporalConflict",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby#ConflictKinds"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "temporal"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#NoNewWrongAnswerCheck",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A domain change introduces no new wrong answer (0058)."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/core#CheckKinds"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#CertifiedAnswerAct",
+    "@id": "https://w3id.org/cheezml/cubby#ClarifyingQuestionAct",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -766,7 +444,29 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "certified answer"
+        "@value": "clarifying question"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#EscapeCheck",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Escape attempts observed in the sandbox; must be 0 (0062)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#CheckKinds"
       }
     ]
   },
@@ -799,7 +499,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/cubby#Conflict",
+    "@id": "https://w3id.org/cheezml/cubby#QuestionAct",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -810,389 +510,13 @@
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://w3id.org/cheezml/cubby#RefusalReasons"
+        "@id": "https://w3id.org/cheezml/cubby#DialogueActs"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "conflict (kind in cubby:conflictKind)"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#PurchaseOrderCheck",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Exact purchase-order check (0061)."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/core#CheckKinds"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#RelationMissing",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby#RefusalReasons"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "relation missing"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#HelperRejection",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "HelperRejection"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/cheezml/core#Retirement"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The host's rejection of a helper after its sandbox run; reason = the failed gate's kind."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#NoPlan",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby#RefusalReasons"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "no plan"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#scope",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby#Helper"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "scope"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/ns/prov#Collection"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The verified answers the helper must reproduce."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#EpisodicMemory",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby#Proposers"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "episodic memory of certified chains"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#TypeConflict",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby#ConflictKinds"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "type"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#DatePrecisionCheck",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Dates used are fine enough for the question (inferred from 'dates too coarse')."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/core#CheckKinds"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#Ambiguous",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby#RefusalReasons"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "ambiguous"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#Approved",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby#ReviewOutcomes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "approved"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#Proposers",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "Proposers in use"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#HostGrammar",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby#Proposers"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "host grammar"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#FactMissing",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby#RefusalReasons"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "fact missing"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#OvernightRuleLibrary",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby#Proposers"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "overnight rule library"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#FieldSuggestion",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "FieldSuggestion"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#Entity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A value read or derived for a document field (prov:value); a suggestion until committed."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#DocumentRegion",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "DocumentRegion"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#Entity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A region of a document: text as read (schema:text), reader version, document (schema:isPartOf)."
+        "@value": "question"
       }
     ]
   },
@@ -1219,19 +543,30 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/cubby#RefusalReasons",
+    "@id": "https://w3id.org/cheezml/cubby#SandboxRun",
     "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://w3id.org/cheezml/cubby"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+    "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "Refusal reasons in use"
+        "@value": "SandboxRun"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/cheezml/cubelang#ProgramRun"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A run of a helper in a locked-down VM session; its gates are cheez:check runs."
       }
     ]
   },
@@ -1258,30 +593,68 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/cubby#Refusal",
+    "@id": "https://w3id.org/cheezml/cubby#NotCertified",
     "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
+      "http://www.w3.org/2004/02/skos/core#Concept"
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://w3id.org/cheezml/cubby"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@language": "en",
-        "@value": "Refusal"
+        "@id": "https://w3id.org/cheezml/cubby#RefusalReasons"
       }
     ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
-        "@id": "https://w3id.org/cheezml/core#Decision"
+        "@language": "en",
+        "@value": "not certified"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#DatesTooCoarse",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby#RefusalReasons"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "dates too coarse"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#ReproductionCheck",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A refusal decision with a coded reason."
+        "@value": "A helper reproduces every verified answer in its scope (0062)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#CheckKinds"
       }
     ]
   },
@@ -1308,46 +681,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/cubby#conflictKind",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#ObjectProperty"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#domain": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby#Refusal"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "conflictKind"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#range": [
-      {
-        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Kind of conflict; required exactly when the reason is cubby:Conflict."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#scopeNote": [
-      {
-        "@language": "en",
-        "@value": "Values come from the code list cubby:ConflictKinds."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#ClarifyingQuestionAct",
+    "@id": "https://w3id.org/cheezml/cubby#LMProgramEmitter",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -1358,13 +692,35 @@
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://w3id.org/cheezml/cubby#DialogueActs"
+        "@id": "https://w3id.org/cheezml/cubby#Proposers"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "clarifying question"
+        "@value": "language model's program emitter"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#EntityGuardCheck",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A follow-up rewrite passes the entity guard (0059)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#CheckKinds"
       }
     ]
   },
@@ -1397,7 +753,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/cubby#DatesTooCoarse",
+    "@id": "https://w3id.org/cheezml/cubby#OvernightRuleLibrary",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -1408,13 +764,35 @@
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://w3id.org/cheezml/cubby#RefusalReasons"
+        "@id": "https://w3id.org/cheezml/cubby#Proposers"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "dates too coarse"
+        "@value": "overnight rule library"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#NoNewWrongAnswerCheck",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A domain change introduces no new wrong answer (0058)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#CheckKinds"
       }
     ]
   },
@@ -1458,7 +836,24 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/cubby#GainCheck",
+    "@id": "https://w3id.org/cheezml/cubby#ConflictKinds",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Kinds of conflict"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#ScopeCheck",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -1470,7 +865,7 @@
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "A domain change shows a gain (0058)."
+        "@value": "A helper changes nothing outside its scope (0062)."
       }
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
@@ -1480,7 +875,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/cubby#EscapeCheck",
+    "@id": "https://w3id.org/cheezml/cubby#FollowUpAct",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -1489,20 +884,165 @@
         "@id": "https://w3id.org/cheezml/cubby"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Escape attempts observed in the sandbox; must be 0 (0062)."
-      }
-    ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://w3id.org/cheezml/core#CheckKinds"
+        "@id": "https://w3id.org/cheezml/cubby#DialogueActs"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "follow-up (with its rewrite)"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/cubby#FormatCheck",
+    "@id": "https://w3id.org/cheezml/cubby#FieldCommit",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "FieldCommit"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Activity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Host commit turning an approved suggestion into a cheez:FactVersion whose source is the reviewer."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#RefusalReasons",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Refusal reasons in use"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#readerVersion",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby#DocumentRegion"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "readerVersion"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#string"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Version of the reader that produced the region."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#Turn",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Turn"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Entity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "One conversation turn, written by the host; conversation via schema:isPartOf."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#conflictKind",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby#Refusal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "conflictKind"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Kind of conflict; required exactly when the reason is cubby:Conflict."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
+      {
+        "@language": "en",
+        "@value": "Values come from the code list cubby:ConflictKinds."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#WalkFailed",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -1511,15 +1051,78 @@
         "@id": "https://w3id.org/cheezml/cubby"
       }
     ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby#RefusalReasons"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "walk failed"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#proposer",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:N1aa9cc97cc2745d98f5a16b11e34f8dc"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "proposer"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2004/02/skos/core#Concept"
+      }
+    ],
     "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "Exact format check of a document field (0061)."
+        "@value": "The proposer behind an answer, refusal, option or helper."
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
+    "http://www.w3.org/2004/02/skos/core#scopeNote": [
       {
-        "@id": "https://w3id.org/cheezml/core#CheckKinds"
+        "@language": "en",
+        "@value": "Values come from the code list cubby:Proposers."
+      }
+    ]
+  },
+  {
+    "@id": "_:N1aa9cc97cc2745d98f5a16b11e34f8dc",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/cheezml/cubby#Answer"
+          },
+          {
+            "@id": "https://w3id.org/cheezml/cubby#Refusal"
+          },
+          {
+            "@id": "https://w3id.org/cheezml/core#Option"
+          },
+          {
+            "@id": "https://w3id.org/cheezml/cubby#Helper"
+          }
+        ]
       }
     ]
   },
@@ -1557,7 +1160,29 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/cubby#LogicalConflict",
+    "@id": "https://w3id.org/cheezml/cubby#PrerequisiteCheck",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Exact prerequisite check of a story-world action (0060)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#CheckKinds"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#NoPlan",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -1568,40 +1193,18 @@
     ],
     "http://www.w3.org/2004/02/skos/core#inScheme": [
       {
-        "@id": "https://w3id.org/cheezml/cubby#ConflictKinds"
+        "@id": "https://w3id.org/cheezml/cubby#RefusalReasons"
       }
     ],
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "logical"
+        "@value": "no plan"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/cubby#FollowUpAct",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby#DialogueActs"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "follow-up (with its rewrite)"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#ReviewerRoles",
+    "@id": "https://w3id.org/cheezml/cubby#Proposers",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#ConceptScheme"
     ],
@@ -1613,7 +1216,57 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "Reviewer roles"
+        "@value": "Proposers in use"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#DuplicateCheck",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Exact duplicate check (0061)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#CheckKinds"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#DocumentRegion",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "DocumentRegion"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Entity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A region of a document: text as read (schema:text), reader version, document (schema:isPartOf)."
       }
     ]
   },
@@ -1640,51 +1293,7 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/cubby#ArithmeticCheck",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Exact arithmetic check (0061)."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/core#CheckKinds"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#LMProgramEmitter",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby#Proposers"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "language model's program emitter"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#WalkFailed",
+    "@id": "https://w3id.org/cheezml/cubby#FactMissing",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -1701,12 +1310,12 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "walk failed"
+        "@value": "fact missing"
       }
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/cubby#QuestionAct",
+    "@id": "https://w3id.org/cheezml/cubby#RefusalAct",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
     ],
@@ -1723,101 +1332,7 @@
     "http://www.w3.org/2004/02/skos/core#prefLabel": [
       {
         "@language": "en",
-        "@value": "question"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#ScopeCheck",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A helper changes nothing outside its scope (0062)."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/core#CheckKinds"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#FieldCommit",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "FieldCommit"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#Activity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Host commit turning an approved suggestion into a cheez:FactVersion whose source is the reviewer."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#ToneCheck",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Soft (tone) check of a story-world action, labelled soft (0060)."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/core#CheckKinds"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubby#PrerequisiteCheck",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubby"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "Exact prerequisite check of a story-world action (0060)."
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/core#CheckKinds"
+        "@value": "refusal (with reason)"
       }
     ]
   },
@@ -1851,6 +1366,496 @@
       {
         "@language": "en",
         "@value": "The answer or refusal the turn delivered."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#turnIndex",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#DatatypeProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby#Turn"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "turnIndex"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/2001/XMLSchema#integer"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Host-assigned position in the conversation."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#DatePrecisionCheck",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Dates used are fine enough for the question (inferred from 'dates too coarse')."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#CheckKinds"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#SecondApprover",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby#ReviewerRoles"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "second approver (above the amount)"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#LogicalConflict",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby#ConflictKinds"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "logical"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Ontology"
+    ],
+    "http://purl.org/dc/terms/created": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2026-11-07"
+      }
+    ],
+    "http://purl.org/dc/terms/creator": [
+      {
+        "@id": "_:N4a6bf464530249a8bf150656a320dbb1"
+      }
+    ],
+    "http://purl.org/dc/terms/description": [
+      {
+        "@language": "en",
+        "@value": "Conversation turns, answers and refusals with their reasons, proposers, helpers in a sandbox, and documents reviewed by a person."
+      }
+    ],
+    "http://purl.org/dc/terms/license": [
+      {
+        "@id": "https://creativecommons.org/licenses/by/4.0/"
+      }
+    ],
+    "http://purl.org/dc/terms/modified": [
+      {
+        "@type": "http://www.w3.org/2001/XMLSchema#date",
+        "@value": "2026-11-10"
+      }
+    ],
+    "http://purl.org/dc/terms/title": [
+      {
+        "@language": "en",
+        "@value": "CheezML for CubbyLLM"
+      }
+    ],
+    "http://purl.org/vocab/vann/preferredNamespacePrefix": [
+      {
+        "@value": "cubby"
+      }
+    ],
+    "http://purl.org/vocab/vann/preferredNamespaceUri": [
+      {
+        "@value": "https://w3id.org/cheezml/cubby#"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#imports": [
+      {
+        "@id": "https://w3id.org/cheezml/core"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#priorVersion": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby/v0.1"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionIRI": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby/v0.2"
+      }
+    ],
+    "http://www.w3.org/2002/07/owl#versionInfo": [
+      {
+        "@value": "0.2 (draft)"
+      }
+    ]
+  },
+  {
+    "@id": "_:N4a6bf464530249a8bf150656a320dbb1",
+    "@type": [
+      "https://schema.org/Person"
+    ],
+    "https://schema.org/affiliation": [
+      {
+        "@value": "GrillCheese Research Lab"
+      }
+    ],
+    "https://schema.org/name": [
+      {
+        "@value": "Nicolas Cloutier"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#scope",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby#Helper"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "scope"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Collection"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The verified answers the helper must reproduce."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#NumberInRegionCheck",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Every number in a field appears in its region's text (0061)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#CheckKinds"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#HostGrammar",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby#Proposers"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "host grammar"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#FormatCheck",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "Exact format check of a document field (0061)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#CheckKinds"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#RejectionRateCheck",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A proposer's helper rejection rate over a window (0062)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#CheckKinds"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#CertifiedAnswerAct",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby#DialogueActs"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "certified answer"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#TypeConflict",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby#ConflictKinds"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "type"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#region",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#ObjectProperty"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#domain": [
+      {
+        "@id": "_:Nc38feb4baee64f4f9368c90762c6fe0c"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "region"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#range": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby#DocumentRegion"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The region a suggestion or review refers to."
+      }
+    ]
+  },
+  {
+    "@id": "_:Nc38feb4baee64f4f9368c90762c6fe0c",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2002/07/owl#unionOf": [
+      {
+        "@list": [
+          {
+            "@id": "https://w3id.org/cheezml/cubby#FieldSuggestion"
+          },
+          {
+            "@id": "https://w3id.org/cheezml/cubby#Review"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#DialogueActs",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "Dialogue acts (order 0059)"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#Ambiguous",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby#RefusalReasons"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "ambiguous"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#ConflictCheck",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "No value, type, temporal, logical or recorded-against-derived conflict among the statements used (inferred from the refusal reasons)."
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/core#CheckKinds"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubby#Refusal",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubby"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "Refusal"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "https://w3id.org/cheezml/core#Decision"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "A refusal decision with a coded reason."
       }
     ]
   }

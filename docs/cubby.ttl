@@ -404,11 +404,12 @@ cubby:RefusalReasons a skos:ConceptScheme ;
             schema:name "Nicolas Cloutier" ] ;
     dcterms:description "Conversation turns, answers and refusals with their reasons, proposers, helpers in a sandbox, and documents reviewed by a person."@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2026-11-09"^^xsd:date ;
+    dcterms:modified "2026-11-10"^^xsd:date ;
     dcterms:title "CheezML for CubbyLLM"@en ;
     vann:preferredNamespacePrefix "cubby" ;
     vann:preferredNamespaceUri "https://w3id.org/cheezml/cubby#" ;
     owl:imports <https://w3id.org/cheezml/core> ;
-    owl:versionIRI <https://w3id.org/cheezml/cubby/v0.1> ;
-    owl:versionInfo "0.1 (draft)" .
+    owl:priorVersion <https://w3id.org/cheezml/cubby/v0.1> ;
+    owl:versionIRI <https://w3id.org/cheezml/cubby/v0.2> ;
+    owl:versionInfo "0.2 (draft)" .
 

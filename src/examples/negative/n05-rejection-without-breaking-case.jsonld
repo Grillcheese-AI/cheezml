@@ -209,6 +209,24 @@
     },
     "dcterms:type": {
       "@type": "@id"
+    },
+    "cheez:query": {
+      "@type": "@id"
+    },
+    "cheez:response": {
+      "@type": "@id"
+    },
+    "cheez:storeSnapshot": {
+      "@type": "@id"
+    },
+    "cheez:endpoint": {
+      "@type": "xsd:anyURI"
+    },
+    "cheez:asOf": {
+      "@type": "xsd:dateTimeStamp"
+    },
+    "dcterms:license": {
+      "@type": "@id"
     }
   },
   "@graph": [

@@ -3,7 +3,11 @@
   "@graph": [
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000201",
-      "@type": ["cheez:Record", "cubby:Turn", "prov:Entity"],
+      "@type": [
+        "cheez:Record",
+        "cubby:Turn",
+        "prov:Entity"
+      ],
       "cheez:writtenBy": "urn:uuid:00000000-0000-0000-0000-000000000001",
       "cubby:dialogueAct": "cubby:RefusalAct",
       "cubby:turnIndex": 6,
@@ -13,13 +17,20 @@
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000202",
-      "@type": ["cheez:Question", "prov:Entity"],
+      "@type": [
+        "cheez:Question",
+        "prov:Entity"
+      ],
       "cheez:option": "urn:uuid:00000000-0000-0000-0000-000000000204",
       "cheez:hasResult": "urn:uuid:00000000-0000-0000-0000-000000000203"
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000203",
-      "@type": ["cubby:Refusal", "cheez:Decision", "prov:Entity"],
+      "@type": [
+        "cubby:Refusal",
+        "cheez:Decision",
+        "prov:Entity"
+      ],
       "cubby:refusalReason": "cubby:FactMissing",
       "cubby:proposer": "cubby:EverydayTable",
       "prov:wasGeneratedBy": "urn:uuid:00000000-0000-0000-0000-000000000205",
@@ -27,14 +38,21 @@
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000204",
-      "@type": ["cube:Program", "cheez:Option", "prov:Entity"],
+      "@type": [
+        "cube:Program",
+        "cheez:Option",
+        "prov:Entity"
+      ],
       "cheez:hash": "PLACEHOLDER: program hash",
       "cheez:hashAlgorithm": "PLACEHOLDER: hash algorithm",
       "cubby:proposer": "cubby:EverydayTable"
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000205",
-      "@type": ["cube:ProgramRun", "prov:Activity"],
+      "@type": [
+        "cube:ProgramRun",
+        "prov:Activity"
+      ],
       "prov:wasAssociatedWith": "urn:uuid:00000000-0000-0000-0000-000000000002",
       "prov:used": "urn:uuid:00000000-0000-0000-0000-000000000204",
       "cheez:outcome": "cube:Return",
@@ -43,24 +61,36 @@
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000206",
-      "@type": ["cheez:RenderedText", "prov:Entity"],
+      "@type": [
+        "cheez:RenderedText",
+        "prov:Entity"
+      ],
       "cheez:template": "urn:uuid:00000000-0000-0000-0000-000000000207",
       "prov:wasDerivedFrom": "urn:uuid:00000000-0000-0000-0000-000000000203",
       "schema:text": "PLACEHOLDER: sentence produced by the template from the code cubby:FactMissing"
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000207",
-      "@type": ["cheez:Template", "prov:Entity"],
+      "@type": [
+        "cheez:Template",
+        "prov:Entity"
+      ],
       "cheez:hash": "PLACEHOLDER: template hash",
       "cheez:hashAlgorithm": "PLACEHOLDER: hash algorithm"
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000001",
-      "@type": ["cheez:Host", "prov:SoftwareAgent"]
+      "@type": [
+        "cheez:Host",
+        "prov:SoftwareAgent"
+      ]
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000002",
-      "@type": ["cube:VM", "prov:SoftwareAgent"]
+      "@type": [
+        "cube:VM",
+        "prov:SoftwareAgent"
+      ]
     }
   ]
 }

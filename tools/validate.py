@@ -1,4 +1,4 @@
-"""Validate the CheezML v0.1 synthesis: shapes parse, positives conform, negatives fail for their stated reason,
+"""Validate CheezML: shapes parse, positives conform, negatives fail for their stated reason,
 IRIs stay inside the allowed namespaces, a second JSON-LD processor agrees, and every CheezML term used is defined."""
 import glob
 import io
@@ -31,10 +31,15 @@ ALLOWED = (
     "http://purl.org/dc/terms/",
     "http://www.w3.org/2001/XMLSchema#",
     "http://www.w3.org/ns/shacl#",
+    "http://creativecommons.org/",  # licence IRIs (v0.2, dcterms:license)
+    "https://creativecommons.org/",
 )
 RDF_TYPE = str(RDF.type)  # produced by the JSON-LD "@type" keyword itself
 
 EXPECT = {
+    "n01c-run-without-snapshot": "names the store snapshot it read",
+    "n07-source-read-without-response": "exactly one response",
+    "n07b-release-without-version": "states its version",
     "n01-certificate-by-agreement": "Only the VM certifies",
     "n01b-certificate-truth-score": "no truth score",
     "n02-refusal-without-reason": "exactly one reason code",
@@ -150,11 +155,11 @@ for f in pos_files:
 allpos = rdflib.Graph()
 for f in pos_files:
     allpos.parse(f, format="json-ld")
-p("\nTARGET COVERAGE (focus nodes per targeted shape across the six positives)")
+p("\nTARGET COVERAGE (focus nodes per targeted shape across the positives)")
 MAIN = ["shapes:TurnShape", "shapes:CertifiedAnswerTurnShape", "shapes:AnswerShape", "shapes:CertificateShape",
         "shapes:CertificateConsistencyShape", "shapes:RefusalShape", "shapes:RefusalConflictShape",
         "shapes:RoutingDecisionShape", "shapes:RoutingBestShape", "shapes:RoutingRunnerUpShape", "shapes:RoutingOutcomeShape",
-        "shapes:WorldSplitShape", "shapes:HelperRejectionShape", "shapes:FieldCommitShape"]
+        "shapes:WorldSplitShape", "shapes:HelperRejectionShape", "shapes:FieldCommitShape", "shapes:SourceReadShape"]
 zero = []
 for s in sorted(targeted, key=lambda x: sg.namespace_manager.qname(x)):
     qn = sg.namespace_manager.qname(s)

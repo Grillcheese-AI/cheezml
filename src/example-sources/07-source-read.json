@@ -1,0 +1,119 @@
+{
+  "@context": "@@CONTEXT@@",
+  "@graph": [
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000701",
+      "@type": [
+        "cube:ProgramRun",
+        "prov:Activity"
+      ],
+      "prov:wasAssociatedWith": "urn:uuid:00000000-0000-0000-0000-000000000002",
+      "prov:used": [
+        "urn:uuid:00000000-0000-0000-0000-000000000705",
+        "urn:uuid:00000000-0000-0000-0000-000000000708",
+        "urn:uuid:00000000-0000-0000-0000-000000000707"
+      ],
+      "prov:wasInformedBy": "urn:uuid:00000000-0000-0000-0000-000000000702",
+      "cheez:outcome": "cube:Return",
+      "cheez:storeSnapshot": "urn:uuid:00000000-0000-0000-0000-000000000712",
+      "cheez:asOf": "2019-06-01T00:00:00Z",
+      "prov:startedAtTime": "2026-11-10T15:00:01Z",
+      "prov:endedAtTime": "2026-11-10T15:00:03Z"
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000702",
+      "@type": [
+        "cheez:SourceRead",
+        "prov:Activity"
+      ],
+      "cheez:endpoint": "https://query.wikidata.org/sparql",
+      "cheez:query": "urn:uuid:00000000-0000-0000-0000-000000000703",
+      "cheez:response": "urn:uuid:00000000-0000-0000-0000-000000000704",
+      "prov:startedAtTime": "2026-11-10T15:00:02Z",
+      "dcterms:license": "http://creativecommons.org/publicdomain/zero/1.0/"
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000703",
+      "@type": [
+        "cheez:Artifact",
+        "prov:Entity"
+      ],
+      "dcterms:type": "cheez:Query",
+      "cheez:hash": "PLACEHOLDER: query hash",
+      "cheez:hashAlgorithm": "PLACEHOLDER: hash algorithm"
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000704",
+      "@type": [
+        "cheez:Artifact",
+        "prov:Entity"
+      ],
+      "dcterms:type": "cheez:Response",
+      "cheez:hash": "PLACEHOLDER: response hash",
+      "cheez:hashAlgorithm": "PLACEHOLDER: hash algorithm"
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000705",
+      "@type": [
+        "cube:Program",
+        "prov:Entity"
+      ],
+      "cheez:hash": "PLACEHOLDER: program hash",
+      "cheez:hashAlgorithm": "PLACEHOLDER: hash algorithm"
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000707",
+      "@type": [
+        "cheez:FactVersion",
+        "prov:Entity"
+      ],
+      "prov:hadPrimarySource": "urn:uuid:00000000-0000-0000-0000-000000000709",
+      "cheez:validTime": {
+        "@type": "time:Interval",
+        "time:hasBeginning": {
+          "@type": "time:Instant",
+          "time:inXSDDateTimeStamp": "2019-01-01T00:00:00Z"
+        },
+        "time:hasEnd": {
+          "@type": "time:Instant",
+          "time:inXSDDateTimeStamp": "2021-06-30T00:00:00Z"
+        }
+      },
+      "prov:generatedAtTime": "2026-10-30T09:12:00Z"
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000709",
+      "@type": "prov:Entity",
+      "schema:identifier": "PLACEHOLDER: source identifier",
+      "schema:version": "PLACEHOLDER: source revision"
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000708",
+      "@type": [
+        "cheez:Artifact",
+        "prov:Entity"
+      ],
+      "dcterms:type": "cheez:OntologyRelease",
+      "schema:version": "PLACEHOLDER: ontology release",
+      "cheez:hash": "PLACEHOLDER: release hash",
+      "cheez:hashAlgorithm": "PLACEHOLDER: hash algorithm"
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000712",
+      "@type": [
+        "cheez:Artifact",
+        "prov:Entity"
+      ],
+      "dcterms:type": "cheez:StoreSnapshot",
+      "cheez:hash": "PLACEHOLDER: store snapshot hash",
+      "cheez:hashAlgorithm": "PLACEHOLDER: hash algorithm"
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000002",
+      "@type": [
+        "cube:VM",
+        "prov:SoftwareAgent"
+      ]
+    }
+  ]
+}

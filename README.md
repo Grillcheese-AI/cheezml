@@ -11,8 +11,17 @@ reviewed document behind it. Nothing in a record is a claim the system makes abo
 - **Over a conventional model:** logs, if kept at all, come in a different shape per component and record what the
   model says it did. A CheezML record that disagrees with its own numbers fails validation.
 
-**Status:** draft v0.1 (2026-11-09). Terms may change before the first release. A changed term is retired with a
+**Status:** draft v0.2 (2026-11-10). Terms may change before the first release. A changed term is retired with a
 note, never deleted.
+
+**Versions:**
+- **v0.2** adds three things every domain needs, in core: `cheez:SourceRead` (a remote source read during a run:
+  endpoint, query, answer and licence), ontology and dataset releases with their version, and `cheez:asOf` with
+  `cheez:storeSnapshot` (the date a question was evaluated at, and the store state it read). A run that read stored
+  facts without naming both fails validation.
+- **v0.1** stays frozen under `docs/v0.1/` and its own version IRIs.
+
+The domains CheezML covers, and the rule for adding one, are in [`DOMAINS.md`](DOMAINS.md).
 
 ## Identifiers
 
@@ -25,7 +34,7 @@ note, never deleted.
 | shapes | `shapes:` | `https://w3id.org/cheezml/shapes#` | `https://w3id.org/cheezml/shapes` |
 
 - Versions are never in a namespace. Each ontology has an `owl:versionIRI` such as
-  `https://w3id.org/cheezml/core/v0.1`.
+  `https://w3id.org/cheezml/core/v0.2`.
 - The JSON-LD context is `https://w3id.org/cheezml/context.jsonld`.
 - Records and instances have `urn:uuid:` ids, never ids in a vocabulary namespace.
 - Standard vocabularies are reused as published: PROV-O, schema.org, OWL-Time, SKOS and DCMI terms.
@@ -43,8 +52,9 @@ redirects to it, with content negotiation (HTML for a browser, Turtle, JSON-LD o
 
 ## Layout
 - `src/`: the source. `vocabulary.md` (the term tables and the SKOS code lists), `context.jsonld`, `shapes.ttl`,
-  `examples/` (six records that conform, and in `negative/` ten that must fail) and `example-sources/`.
-- `docs/`: the built site, one page and three RDF files per module, plus a frozen copy per version.
+  `examples/` (seven records that conform, and in `negative/` thirteen that must fail) and `example-sources/`.
+- `docs/`: the built site, one page and three RDF files per module, plus a frozen copy per version. A frozen copy of an
+  earlier version is never rebuilt.
 - `tools/`: the build and the checks.
 
 ## Build and check
@@ -53,7 +63,7 @@ Python 3 with `rdflib` (7.6 or later) and `pyshacl` (0.40 or later); `pyld` is o
 
 ```sh
 python -I tools/build_examples.py src src/example-sources
-python -I tools/validate.py src            # 6 examples conform, 10 broken ones fail with their message
+python -I tools/validate.py src            # 7 examples conform, 13 broken ones fail with their message
 python -I tools/build_site.py .
 python -I tools/check_site.py .            # formats agree, every term used is declared and documented
 ```

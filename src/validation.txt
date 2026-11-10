@@ -1,39 +1,42 @@
-shapes.ttl: parsed, 1167 triples, 33 named node shapes (28 with targets), 148 property constraints (nested included), 17 SPARQL constraints
+shapes.ttl: parsed, 1227 triples, 35 named node shapes (30 with targets), 156 property constraints (nested included), 19 SPARQL constraints
   property constraints without sh:message: 0; SPARQL constraints without sh:message: 0
   named shapes with node-level constraints but no sh:message: 0
 
 POSITIVE EXAMPLES (must conform)
-  01-certified-answer.jsonld: triples=78 (pyld 78), context inline=True, conforms=True, results=0, IRIs outside allowed=0, PLACEHOLDER in IRI=0, ill-typed literals=0  -> PASS
+  01-certified-answer.jsonld: triples=85 (pyld 85), context inline=True, conforms=True, results=0, IRIs outside allowed=0, PLACEHOLDER in IRI=0, ill-typed literals=0  -> PASS
   02-refusal.jsonld: triples=46 (pyld 46), context inline=True, conforms=True, results=0, IRIs outside allowed=0, PLACEHOLDER in IRI=0, ill-typed literals=0  -> PASS
   03-routing-spawn.jsonld: triples=70 (pyld 70), context inline=True, conforms=True, results=0, IRIs outside allowed=0, PLACEHOLDER in IRI=0, ill-typed literals=0  -> PASS
   04-world-split.jsonld: triples=63 (pyld 63), context inline=True, conforms=True, results=0, IRIs outside allowed=0, PLACEHOLDER in IRI=0, ill-typed literals=0  -> PASS
   05-helper-rejected.jsonld: triples=53 (pyld 53), context inline=True, conforms=True, results=0, IRIs outside allowed=0, PLACEHOLDER in IRI=0, ill-typed literals=0  -> PASS
   06-invoice-review.jsonld: triples=97 (pyld 97), context inline=True, conforms=True, results=0, IRIs outside allowed=0, PLACEHOLDER in IRI=0, ill-typed literals=0  -> PASS
+  07-source-read.jsonld: triples=61 (pyld 61), context inline=True, conforms=True, results=0, IRIs outside allowed=0, PLACEHOLDER in IRI=0, ill-typed literals=0  -> PASS
 
-TARGET COVERAGE (focus nodes per targeted shape across the six positives)
+TARGET COVERAGE (focus nodes per targeted shape across the positives)
   shapes:AnswerShape: 1
-  shapes:ArtifactShape: 14
+  shapes:ArtifactShape: 20
   shapes:CalibrationShape: 2
   shapes:CertificateConsistencyShape: 1
   shapes:CertificateShape: 1
   shapes:CertifiedAnswerTurnShape: 2
   shapes:CheckRunShape: 12
   shapes:DocumentRegionShape: 1
-  shapes:FactVersionShape: 2
+  shapes:FactVersionShape: 3
   shapes:FieldCommitShape: 1
   shapes:FieldSuggestionShape: 1
   shapes:HelperRejectionShape: 1
-  shapes:ProgramRunShape: 3
+  shapes:ProgramRunShape: 4
   shapes:RecordShape: 7
   shapes:RefusalConflictShape: 1
   shapes:RefusalShape: 1
   shapes:RefusalTurnShape: 2
+  shapes:ReleaseShape: 13
   shapes:RenderedTextShape: 1
   shapes:ReviewShape: 1
   shapes:RoutingBestShape: 1
   shapes:RoutingDecisionShape: 1
   shapes:RoutingOutcomeShape: 1
   shapes:RoutingRunnerUpShape: 1
+  shapes:SourceReadShape: 1
   shapes:ThresholdShape: 3
   shapes:TurnShape: 2
   shapes:WorldShape: 5
@@ -48,6 +51,8 @@ NEGATIVE EXAMPLES (must not conform, for the stated reason)
       message: The certifying run must be a VM run that returned, used the chosen program, and read at least one statement version with its source and revision.
   n01b-certificate-truth-score: conforms=False, top-level results=1, expected message found=True, results with default message=0, IRIs outside allowed=0  -> PASS
       message: A certificate holds only its writer, the answer it certifies, the VM run, its checks and its time: no truth score, no rationale, no status.
+  n01c-run-without-snapshot: conforms=False, top-level results=1, expected message found=True, results with default message=0, IRIs outside allowed=0  -> PASS
+      message: A run that read stored facts names the store snapshot it read (cheez:storeSnapshot) and the valid time it evaluated the question at (cheez:asOf).
   n02-refusal-without-reason: conforms=False, top-level results=1, expected message found=True, results with default message=0, IRIs outside allowed=0  -> PASS
       message: A refusal records exactly one reason code from cubby:RefusalReasons.
   n02b-conflict-without-kind: conforms=False, top-level results=1, expected message found=True, results with default message=0, IRIs outside allowed=0  -> PASS
@@ -66,8 +71,12 @@ NEGATIVE EXAMPLES (must not conform, for the stated reason)
       message: The committed fact version's source must be the reviewer of an approving review that this commit used.
   n06b-number-not-in-region: conforms=False, top-level results=1, expected message found=True, results with default message=0, IRIs outside allowed=0  -> PASS
       message: The field value must appear in its region's text as read.
+  n07-source-read-without-response: conforms=False, top-level results=1, expected message found=True, results with default message=0, IRIs outside allowed=0  -> PASS
+      message: A source read records exactly one response, by hash (a cheez:Artifact). A read that got no answer is recorded as a failed run, not as a source read.
+  n07b-release-without-version: conforms=False, top-level results=1, expected message found=True, results with default message=0, IRIs outside allowed=0  -> PASS
+      message: An ontology or dataset release states its version (schema:version).
 
-VOCABULARY COVERAGE: vocabulary.md Turtle blocks parsed (234 triples); CheezML IRIs used in examples=107, in shapes=140; undefined in vocabulary.md: examples=0, shapes=0
+VOCABULARY COVERAGE: vocabulary.md Turtle blocks parsed (251 triples); CheezML IRIs used in examples=117, in shapes=147; undefined in vocabulary.md: examples=0, shapes=0
   skos:closeMatch alignment targets: ['http://example.com/ns/dec#Decision', 'http://example.com/ns/dec#Option', 'http://example.com/ns/dec#Question', 'http://example.com/ns/dec#has_result', 'http://example.com/ns/dec#involves_choosing']
 
 RESULT: ALL CHECKS PASS

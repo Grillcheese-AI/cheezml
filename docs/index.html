@@ -14,7 +14,7 @@ padding:.05rem .4rem;color:var(--muted)}dl{display:grid;grid-template-columns:ma
 margin:.4rem 0}dt{color:var(--muted)}dd{margin:0}.term{border-left:2px solid var(--rule);padding-left:.9rem}
 table{border-collapse:collapse;width:100%}td,th{text-align:left;padding:.35rem .5rem;border-bottom:1px solid
 var(--rule);vertical-align:top}.wrap{overflow-x:auto}nav a{margin-right:.8rem}
-</style></head><body><main><nav class="muted"><a href="./">CheezML</a><a href="core.html">core</a><a href="cubby.html">cubby</a><a href="mowm.html">mowm</a><a href="cubelang.html">cubelang</a></nav><p class="badge">draft v0.1</p><h1>CheezML</h1>
+</style></head><body><main><nav class="muted"><a href="./">CheezML</a><a href="core.html">core</a><a href="cubby.html">cubby</a><a href="mowm.html">mowm</a><a href="cubelang.html">cubelang</a></nav><p class="badge">draft v0.2</p><h1>CheezML</h1>
 <p>One record vocabulary for <a href="https://github.com/Grillcheese-AI/CubbyLLM">CubbyLLM</a>, MoWM and CubeLang:
 an answer and its certificate, a refusal and its reason, a routing choice, a world split, a rejected helper, a
 document field reviewed by a person. Each record is written by the host from what actually ran, so it can only say
@@ -24,10 +24,10 @@ routing choice and reviewed document behind it. Nothing in a record is a claim t
 truth score, no status declared by hand, no prose rationale.</p>
 <h2>Modules</h2><div class="wrap"><table><tr><th>Module</th><th>Namespace</th><th>Covers</th></tr><tr><td><a href="core.html">core</a></td><td><code>https://w3id.org/cheezml/core#</code></td><td>Records, hashes, the two clocks, thresholds with their calibration, check runs, certificates, decisions and retirement.</td></tr><tr><td><a href="cubby.html">cubby</a></td><td><code>https://w3id.org/cheezml/cubby#</code></td><td>Conversation turns, answers and refusals with their reasons, proposers, helpers in a sandbox, and documents reviewed by a person.</td></tr><tr><td><a href="mowm.html">mowm</a></td><td><code>https://w3id.org/cheezml/mowm#</code></td><td>Worlds, routing decisions (route or spawn) and world splits at depth z + 1.</td></tr><tr><td><a href="cubelang.html">cubelang</a></td><td><code>https://w3id.org/cheezml/cubelang#</code></td><td>Programs by hash and VM runs with their outcome (return, error or ask).</td></tr></table></div>
 <h2>Files</h2><ul><li><a href="context.jsonld">context.jsonld</a>: the JSON-LD 1.1 context
-(<code>https://w3id.org/cheezml/context.jsonld</code>)</li><li><a href="shapes.ttl">shapes.ttl</a>: SHACL shapes for the six record
-types (<code>https://w3id.org/cheezml/shapes</code>)</li><li><a href="examples/">examples/</a>: six records that conform, and ten broken
-ones that must fail</li><li><a href="v0.1/">v0.1/</a>: this version, frozen</li></ul>
-<h2>Status</h2><p>Draft v0.1, 2026-11-09. Terms may still change before the first release; changed terms are
+(<code>https://w3id.org/cheezml/context.jsonld</code>)</li><li><a href="shapes.ttl">shapes.ttl</a>: SHACL shapes for the record
+types (<code>https://w3id.org/cheezml/shapes</code>)</li><li><a href="examples/">examples/</a>: 7 records that conform, and 13
+broken ones that must fail</li><li><a href="v0.2/">v0.2/</a>: this version, frozen</li><li>Earlier versions, frozen: <a href="v0.1/">v0.1</a></li></ul>
+<h2>Status</h2><p>Draft v0.2, 2026-11-10. Terms may still change before the first release; changed terms are
 retired with a note, never deleted. Source and tests:
 <a href="https://github.com/Grillcheese-AI/cheezml">github.com/Grillcheese-AI/cheezml</a>.</p>
 <p class="muted">Nicolas Cloutier, GrillCheese Research Lab. <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>.</p></main></body></html>

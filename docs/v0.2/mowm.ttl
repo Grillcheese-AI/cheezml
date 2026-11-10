@@ -1,0 +1,264 @@
+@prefix cheez: <https://w3id.org/cheezml/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix mowm: <https://w3id.org/cheezml/mowm#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+mowm:AbsoluteFloor a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    skos:inScheme mowm:Parameters ;
+    skos:prefLabel "absolute floor (bridge)"@en .
+
+mowm:AnswerSupportCheck a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    skos:definition "Support is at or above tau_answer (possibility oracle; inter-world query otherwise)."@en ;
+    skos:inScheme cheez:CheckKinds .
+
+mowm:BestMemberRouting a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    skos:inScheme mowm:RoutingModes ;
+    skos:prefLabel "by best member"@en .
+
+mowm:BindComposeMerge a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    skos:inScheme mowm:MergeStrategies ;
+    skos:prefLabel "BindComposeMerge"@en .
+
+mowm:CentroidRouting a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    skos:inScheme mowm:RoutingModes ;
+    skos:prefLabel "by centroid"@en .
+
+mowm:ResidualCheck a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    skos:definition "The residual norm exceeds tau_spawn (router.py maybe_spawn)."@en ;
+    skos:inScheme cheez:CheckKinds .
+
+mowm:Route a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    skos:inScheme mowm:RoutingOutcomes ;
+    skos:prefLabel "route"@en .
+
+mowm:Spawn a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    skos:inScheme mowm:RoutingOutcomes ;
+    skos:prefLabel "spawn"@en .
+
+mowm:Tau a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    skos:inScheme mowm:Parameters ;
+    skos:prefLabel "tau (world spawn confidence)"@en .
+
+mowm:TauAnswer a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    skos:inScheme mowm:Parameters ;
+    skos:prefLabel "tau_answer"@en .
+
+mowm:TauMargin a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    skos:inScheme mowm:Parameters ;
+    skos:prefLabel "tau_margin"@en .
+
+mowm:TauPruneSteps a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    skos:inScheme mowm:Parameters ;
+    skos:prefLabel "tau_prune_steps"@en .
+
+mowm:TauSpawn a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    skos:inScheme mowm:Parameters ;
+    skos:prefLabel "tau_spawn"@en .
+
+mowm:WordTableEncoder a owl:Class ;
+    rdfs:label "WordTableEncoder"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    rdfs:subClassOf cheez:Artifact ;
+    skos:definition "The word-table text encoder (FastWordEncoder), by the hash of its table; the only encoder allowed on the routing path."@en .
+
+mowm:WorldSpawn a owl:Class ;
+    rdfs:label "WorldSpawn"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    rdfs:subClassOf prov:Activity ;
+    skos:definition "A spawn that ran and generated one new world (prov:generated); prov:wasInformedBy the decision."@en .
+
+mowm:ZMaxCheck a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    skos:definition "The parent world's depth is below z_max, so spawn_subworld may split."@en ;
+    skos:inScheme cheez:CheckKinds .
+
+mowm:bestScore a owl:DatatypeProperty ;
+    rdfs:label "bestScore"@en ;
+    rdfs:domain mowm:RoutingDecision ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Its score (a score, not a threshold)."@en .
+
+mowm:bestWorld a owl:ObjectProperty ;
+    rdfs:label "bestWorld"@en ;
+    rdfs:domain mowm:RoutingDecision ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    rdfs:range mowm:World ;
+    skos:definition "The highest-scoring world."@en .
+
+mowm:floorThreshold a owl:ObjectProperty ;
+    rdfs:label "floorThreshold"@en ;
+    rdfs:domain mowm:RoutingDecision ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    rdfs:range cheez:Threshold ;
+    skos:definition "The calibrated absolute floor compared with the best score."@en .
+
+mowm:margin a owl:DatatypeProperty ;
+    rdfs:label "margin"@en ;
+    rdfs:domain mowm:RoutingDecision ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Best score minus runner-up score."@en .
+
+mowm:marginThreshold a owl:ObjectProperty ;
+    rdfs:label "marginThreshold"@en ;
+    rdfs:domain mowm:RoutingDecision ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    rdfs:range cheez:Threshold ;
+    skos:definition "The calibrated tau_margin compared with the margin."@en .
+
+mowm:mergeStrategy a owl:ObjectProperty ;
+    rdfs:label "mergeStrategy"@en ;
+    rdfs:domain mowm:World ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    rdfs:range skos:Concept ;
+    skos:definition "How the world's HYLA transition deltas are merged."@en ;
+    skos:scopeNote "Values come from the code list mowm:MergeStrategies."@en .
+
+mowm:parentWorld a owl:ObjectProperty ;
+    rdfs:label "parentWorld"@en ;
+    rdfs:domain mowm:World ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    rdfs:range mowm:World ;
+    rdfs:subPropertyOf prov:wasDerivedFrom ;
+    skos:definition "The world this sub-world was split from."@en .
+
+mowm:queryVector a owl:ObjectProperty ;
+    rdfs:label "queryVector"@en ;
+    rdfs:domain mowm:RoutingDecision ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    rdfs:range cheez:Artifact ;
+    skos:definition "The encoded query, by hash."@en .
+
+mowm:residual a owl:ObjectProperty ;
+    rdfs:label "residual"@en ;
+    rdfs:domain mowm:WorldSplit ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    rdfs:range cheez:Artifact ;
+    skos:definition "The residual the child handles, by hash."@en .
+
+mowm:routedTo a owl:ObjectProperty ;
+    rdfs:label "routedTo"@en ;
+    rdfs:domain mowm:RoutingDecision ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    rdfs:range mowm:World ;
+    skos:definition "The world routed to (outcome Route only)."@en .
+
+mowm:runnerUpScore a owl:DatatypeProperty ;
+    rdfs:label "runnerUpScore"@en ;
+    rdfs:domain mowm:RoutingDecision ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    rdfs:range xsd:decimal ;
+    skos:definition "Its score."@en .
+
+mowm:runnerUpWorld a owl:ObjectProperty ;
+    rdfs:label "runnerUpWorld"@en ;
+    rdfs:domain mowm:RoutingDecision ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    rdfs:range mowm:World ;
+    skos:definition "The second-highest world."@en .
+
+mowm:tau a owl:ObjectProperty ;
+    rdfs:label "tau"@en ;
+    rdfs:domain mowm:World ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    rdfs:range cheez:Threshold ;
+    skos:definition "The world's confidence threshold for spawning sub-worlds."@en .
+
+mowm:worldCount a owl:DatatypeProperty ;
+    rdfs:label "worldCount"@en ;
+    rdfs:domain mowm:RoutingDecision ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    rdfs:range xsd:integer ;
+    skos:definition "Worlds in the pool when the decision ran."@en .
+
+mowm:worldId a owl:DatatypeProperty ;
+    rdfs:label "worldId"@en ;
+    rdfs:domain mowm:World ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    rdfs:range xsd:integer ;
+    skos:definition "Counter-issued numeric id: world counter from 1000, router counter from 5000. Never computed from the parent's id."@en .
+
+mowm:zDepth a owl:DatatypeProperty ;
+    rdfs:label "zDepth"@en ;
+    rdfs:domain mowm:World ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    rdfs:range xsd:integer ;
+    skos:definition "Depth z on the Z axis."@en .
+
+mowm:zMax a owl:DatatypeProperty ;
+    rdfs:label "zMax"@en ;
+    rdfs:domain mowm:World ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    rdfs:range xsd:integer ;
+    skos:definition "Maximum depth; spawn_subworld refuses at z_max."@en .
+
+mowm:MergeStrategies a skos:ConceptScheme ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    skos:prefLabel "HYLA merge strategies"@en .
+
+mowm:WorldSplit a owl:Class ;
+    rdfs:label "WorldSplit"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    rdfs:subClassOf prov:Activity ;
+    skos:definition "Creation of a sub-world at z+1 from a parent (prov:used) to handle a residual."@en .
+
+mowm:RoutingModes a skos:ConceptScheme ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    skos:prefLabel "Routing modes"@en .
+
+mowm:RoutingOutcomes a skos:ConceptScheme ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    skos:prefLabel "Routing outcomes"@en .
+
+mowm:Parameters a skos:ConceptScheme ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    skos:prefLabel "Threshold parameters"@en .
+
+mowm:RoutingDecision a owl:Class ;
+    rdfs:label "RoutingDecision"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    rdfs:subClassOf prov:Activity ;
+    skos:definition "One bridge routing decision (bridges/cubby_bridge.py): route or spawn. Mode via dcterms:type."@en .
+
+mowm:World a owl:Class ;
+    rdfs:label "World"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/mowm> ;
+    rdfs:subClassOf prov:Entity ;
+    skos:definition "A world tree node (world.py)."@en .
+
+<https://w3id.org/cheezml/mowm> a owl:Ontology ;
+    dcterms:created "2026-11-07"^^xsd:date ;
+    dcterms:creator [ a schema:Person ;
+            schema:affiliation "GrillCheese Research Lab" ;
+            schema:name "Nicolas Cloutier" ] ;
+    dcterms:description "Worlds, routing decisions (route or spawn) and world splits at depth z + 1."@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2026-11-10"^^xsd:date ;
+    dcterms:title "CheezML for MoWM"@en ;
+    vann:preferredNamespacePrefix "mowm" ;
+    vann:preferredNamespaceUri "https://w3id.org/cheezml/mowm#" ;
+    owl:imports <https://w3id.org/cheezml/core> ;
+    owl:priorVersion <https://w3id.org/cheezml/mowm/v0.1> ;
+    owl:versionIRI <https://w3id.org/cheezml/mowm/v0.2> ;
+    owl:versionInfo "0.2 (draft)" .
+

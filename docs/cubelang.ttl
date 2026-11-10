@@ -54,11 +54,12 @@ cube:RunOutcomes a skos:ConceptScheme ;
             schema:name "Nicolas Cloutier" ] ;
     dcterms:description "Programs by hash and VM runs with their outcome (return, error or ask)."@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-    dcterms:modified "2026-11-09"^^xsd:date ;
+    dcterms:modified "2026-11-10"^^xsd:date ;
     dcterms:title "CheezML for CubeLang"@en ;
     vann:preferredNamespacePrefix "cube" ;
     vann:preferredNamespaceUri "https://w3id.org/cheezml/cubelang#" ;
     owl:imports <https://w3id.org/cheezml/core> ;
-    owl:versionIRI <https://w3id.org/cheezml/cubelang/v0.1> ;
-    owl:versionInfo "0.1 (draft)" .
+    owl:priorVersion <https://w3id.org/cheezml/cubelang/v0.1> ;
+    owl:versionIRI <https://w3id.org/cheezml/cubelang/v0.2> ;
+    owl:versionInfo "0.2 (draft)" .
 

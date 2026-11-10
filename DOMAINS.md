@@ -14,10 +14,10 @@ constraints that exist nowhere else.
 
 **Asked for by domain, but belongs in core:**
 
-| Need | Example from a domain | Core term (to add in v0.2) |
+| Need | Example from a domain | Core term (in v0.2) |
 |---|---|---|
 | A remote source read during a run: the endpoint, the query, the answer | a federated SPARQL call to UniProt; a live Wikidata lookup (order 0007) | `cheez:SourceRead`: endpoint, query hash, response hash, time, licence |
-| The exact release of an ontology or dataset used | GO's release; FIBO's quarterly release; the WikiKGQA 2026 dump | `prov:used` a `cheez:Artifact` with its version and hash, typed as ontology or dataset |
+| The exact release of an ontology or dataset used | GO's release; FIBO's quarterly release; the WikiKGQA 2026 dump | `prov:used` a `cheez:Artifact` with its version and hash, coded `cheez:OntologyRelease` or `cheez:DatasetRelease` |
 | The time the question was asked about, and the store state read | "who was CEO in 2019"; a shipment's status last Tuesday | `cheez:asOf` (the valid time evaluated) and `cheez:storeSnapshot` (the snapshot's hash) on the run |
 
 The two clocks are already core: valid time (`time:Interval`) and recorded time (PROV's generation and
@@ -58,9 +58,9 @@ about two periods (Allen's relations, order 0057) also stay in core.
 | Law | `czlaw` | candidate | none | statutes with in-force dates; repeal maps (licences to check) | each provision's in-force interval, the repeal or replacement it follows, the jurisdiction |
 | Biomedical | `czbio` | candidate | none | GO and UniProt (CC BY 4.0); SNOMED CT (licensed per country; Canada is a member) | the sub-graph releases used, the ontology versions, the federated endpoints read (through core's `cheez:SourceRead`). Health answers need their own review before any user sees one |
 
-## Next steps (on Nick's yes)
-1. Add the three core terms (`cheez:SourceRead`, the ontology or dataset version, `cheez:asOf` with the store
-   snapshot) in v0.2, with shapes and examples.
+## Next steps
+1. **Done in v0.2 (2026-11-10):** the three core terms (`cheez:SourceRead`, the ontology or dataset version,
+   `cheez:asOf` with the store snapshot), with shapes, one new example and three broken ones.
 2. `czfin` with order 0058's finance world, then `czauto`. Each new module adds one line to the w3id rules
    (`ids/cheezml/.htaccess`).
 3. The candidates (`czsci`, `czlaw`, `czbio`) become modules only when an order covers them.

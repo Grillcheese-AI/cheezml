@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF
+   xmlns:dcterms="http://purl.org/dc/terms/"
+   xmlns:owl="http://www.w3.org/2002/07/owl#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+   xmlns:schema="https://schema.org/"
+   xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+   xmlns:vann="http://purl.org/vocab/vann/"
+>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#TauPruneSteps">
+    <skos:prefLabel xml:lang="en">tau_prune_steps</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/mowm#Parameters"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#Parameters">
+    <skos:prefLabel xml:lang="en">Threshold parameters</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#queryVector">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/mowm#RoutingDecision"/>
+    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Artifact"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <rdfs:label xml:lang="en">queryVector</rdfs:label>
+    <skos:definition xml:lang="en">The encoded query, by hash.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#marginThreshold">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/mowm#RoutingDecision"/>
+    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Threshold"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <rdfs:label xml:lang="en">marginThreshold</rdfs:label>
+    <skos:definition xml:lang="en">The calibrated tau_margin compared with the margin.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#zMax">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/mowm#World"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <rdfs:label xml:lang="en">zMax</rdfs:label>
+    <skos:definition xml:lang="en">Maximum depth; spawn_subworld refuses at z_max.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#WorldSpawn">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <rdfs:label xml:lang="en">WorldSpawn</rdfs:label>
+    <skos:definition xml:lang="en">A spawn that ran and generated one new world (prov:generated); prov:wasInformedBy the decision.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#RoutingDecision">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <rdfs:label xml:lang="en">RoutingDecision</rdfs:label>
+    <skos:definition xml:lang="en">One bridge routing decision (bridges/cubby_bridge.py): route or spawn. Mode via dcterms:type.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#TauAnswer">
+    <skos:prefLabel xml:lang="en">tau_answer</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/mowm#Parameters"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+    <owl:versionIRI rdf:resource="https://w3id.org/cheezml/mowm/v0.2"/>
+    <owl:priorVersion rdf:resource="https://w3id.org/cheezml/mowm/v0.1"/>
+    <owl:versionInfo>0.2 (draft)</owl:versionInfo>
+    <dcterms:title xml:lang="en">CheezML for MoWM</dcterms:title>
+    <dcterms:description xml:lang="en">Worlds, routing decisions (route or spawn) and world splits at depth z + 1.</dcterms:description>
+    <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-07</dcterms:created>
+    <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-10</dcterms:modified>
+    <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
+    <dcterms:creator rdf:nodeID="Nf3273530d5834fcfab98c61db6e7e7a0"/>
+    <vann:preferredNamespacePrefix>mowm</vann:preferredNamespacePrefix>
+    <vann:preferredNamespaceUri>https://w3id.org/cheezml/mowm#</vann:preferredNamespaceUri>
+    <owl:imports rdf:resource="https://w3id.org/cheezml/core"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#BestMemberRouting">
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/mowm#RoutingModes"/>
+    <skos:prefLabel xml:lang="en">by best member</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#worldCount">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/mowm#RoutingDecision"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <rdfs:label xml:lang="en">worldCount</rdfs:label>
+    <skos:definition xml:lang="en">Worlds in the pool when the decision ran.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#ResidualCheck">
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <skos:definition xml:lang="en">The residual norm exceeds tau_spawn (router.py maybe_spawn).</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#ZMaxCheck">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <skos:definition xml:lang="en">The parent world's depth is below z_max, so spawn_subworld may split.</skos:definition>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Nf3273530d5834fcfab98c61db6e7e7a0">
+    <rdf:type rdf:resource="https://schema.org/Person"/>
+    <schema:name>Nicolas Cloutier</schema:name>
+    <schema:affiliation>GrillCheese Research Lab</schema:affiliation>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#WordTableEncoder">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <rdfs:label xml:lang="en">WordTableEncoder</rdfs:label>
+    <skos:definition xml:lang="en">The word-table text encoder (FastWordEncoder), by the hash of its table; the only encoder allowed on the routing path.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cheezml/core#Artifact"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#AbsoluteFloor">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <skos:prefLabel xml:lang="en">absolute floor (bridge)</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/mowm#Parameters"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#RoutingOutcomes">
+    <skos:prefLabel xml:lang="en">Routing outcomes</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#TauMargin">
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/mowm#Parameters"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <skos:prefLabel xml:lang="en">tau_margin</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#margin">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/mowm#RoutingDecision"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <rdfs:label xml:lang="en">margin</rdfs:label>
+    <skos:definition xml:lang="en">Best score minus runner-up score.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#parentWorld">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/mowm#World"/>
+    <rdfs:range rdf:resource="https://w3id.org/cheezml/mowm#World"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <rdfs:label xml:lang="en">parentWorld</rdfs:label>
+    <skos:definition xml:lang="en">The world this sub-world was split from.</skos:definition>
+    <rdfs:subPropertyOf rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#floorThreshold">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/mowm#RoutingDecision"/>
+    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Threshold"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <rdfs:label xml:lang="en">floorThreshold</rdfs:label>
+    <skos:definition xml:lang="en">The calibrated absolute floor compared with the best score.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#Spawn">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/mowm#RoutingOutcomes"/>
+    <skos:prefLabel xml:lang="en">spawn</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#CentroidRouting">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/mowm#RoutingModes"/>
+    <skos:prefLabel xml:lang="en">by centroid</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#mergeStrategy">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/mowm#World"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <skos:scopeNote xml:lang="en">Values come from the code list mowm:MergeStrategies.</skos:scopeNote>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <rdfs:label xml:lang="en">mergeStrategy</rdfs:label>
+    <skos:definition xml:lang="en">How the world's HYLA transition deltas are merged.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#tau">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/mowm#World"/>
+    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Threshold"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <rdfs:label xml:lang="en">tau</rdfs:label>
+    <skos:definition xml:lang="en">The world's confidence threshold for spawning sub-worlds.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#Tau">
+    <skos:prefLabel xml:lang="en">tau (world spawn confidence)</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/mowm#Parameters"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#runnerUpScore">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/mowm#RoutingDecision"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <rdfs:label xml:lang="en">runnerUpScore</rdfs:label>
+    <skos:definition xml:lang="en">Its score.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#WorldSplit">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <rdfs:label xml:lang="en">WorldSplit</rdfs:label>
+    <skos:definition xml:lang="en">Creation of a sub-world at z+1 from a parent (prov:used) to handle a residual.</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Activity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#routedTo">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/mowm#RoutingDecision"/>
+    <rdfs:range rdf:resource="https://w3id.org/cheezml/mowm#World"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <rdfs:label xml:lang="en">routedTo</rdfs:label>
+    <skos:definition xml:lang="en">The world routed to (outcome Route only).</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#MergeStrategies">
+    <skos:prefLabel xml:lang="en">HYLA merge strategies</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#runnerUpWorld">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/mowm#RoutingDecision"/>
+    <rdfs:range rdf:resource="https://w3id.org/cheezml/mowm#World"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <rdfs:label xml:lang="en">runnerUpWorld</rdfs:label>
+    <skos:definition xml:lang="en">The second-highest world.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#World">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <rdfs:label xml:lang="en">World</rdfs:label>
+    <skos:definition xml:lang="en">A world tree node (world.py).</skos:definition>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Entity"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#worldId">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/mowm#World"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <rdfs:label xml:lang="en">worldId</rdfs:label>
+    <skos:definition xml:lang="en">Counter-issued numeric id: world counter from 1000, router counter from 5000. Never computed from the parent's id.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#Route">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/mowm#RoutingOutcomes"/>
+    <skos:prefLabel xml:lang="en">route</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#bestScore">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/mowm#RoutingDecision"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <rdfs:label xml:lang="en">bestScore</rdfs:label>
+    <skos:definition xml:lang="en">Its score (a score, not a threshold).</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#BindComposeMerge">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <skos:prefLabel xml:lang="en">BindComposeMerge</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/mowm#MergeStrategies"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#zDepth">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/mowm#World"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <rdfs:label xml:lang="en">zDepth</rdfs:label>
+    <skos:definition xml:lang="en">Depth z on the Z axis.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#bestWorld">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/mowm#RoutingDecision"/>
+    <rdfs:range rdf:resource="https://w3id.org/cheezml/mowm#World"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <rdfs:label xml:lang="en">bestWorld</rdfs:label>
+    <skos:definition xml:lang="en">The highest-scoring world.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#residual">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+    <rdfs:domain rdf:resource="https://w3id.org/cheezml/mowm#WorldSplit"/>
+    <rdfs:range rdf:resource="https://w3id.org/cheezml/core#Artifact"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <rdfs:label xml:lang="en">residual</rdfs:label>
+    <skos:definition xml:lang="en">The residual the child handles, by hash.</skos:definition>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#AnswerSupportCheck">
+    <skos:definition xml:lang="en">Support is at or above tau_answer (possibility oracle; inter-world query otherwise).</skos:definition>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/core#CheckKinds"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#RoutingModes">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <skos:prefLabel xml:lang="en">Routing modes</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/mowm#TauSpawn">
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/mowm#Parameters"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/mowm"/>
+    <skos:prefLabel xml:lang="en">tau_spawn</skos:prefLabel>
+  </rdf:Description>
+</rdf:RDF>

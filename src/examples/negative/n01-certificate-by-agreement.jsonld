@@ -209,6 +209,24 @@
     },
     "dcterms:type": {
       "@type": "@id"
+    },
+    "cheez:query": {
+      "@type": "@id"
+    },
+    "cheez:response": {
+      "@type": "@id"
+    },
+    "cheez:storeSnapshot": {
+      "@type": "@id"
+    },
+    "cheez:endpoint": {
+      "@type": "xsd:anyURI"
+    },
+    "cheez:asOf": {
+      "@type": "xsd:dateTimeStamp"
+    },
+    "dcterms:license": {
+      "@type": "@id"
     }
   },
   "@graph": [
@@ -288,7 +306,9 @@
       ],
       "cheez:outcome": "cube:Return",
       "prov:startedAtTime": "2026-11-07T14:00:01Z",
-      "prov:endedAtTime": "2026-11-07T14:00:02Z"
+      "prov:endedAtTime": "2026-11-07T14:00:02Z",
+      "cheez:storeSnapshot": "urn:uuid:00000000-0000-0000-0000-000000000191",
+      "cheez:asOf": "2026-11-07T14:00:01Z"
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000107",
@@ -358,6 +378,16 @@
         "cube:VM",
         "prov:SoftwareAgent"
       ]
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000191",
+      "@type": [
+        "cheez:Artifact",
+        "prov:Entity"
+      ],
+      "dcterms:type": "cheez:StoreSnapshot",
+      "cheez:hash": "PLACEHOLDER: store snapshot hash",
+      "cheez:hashAlgorithm": "PLACEHOLDER: hash algorithm"
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000199",

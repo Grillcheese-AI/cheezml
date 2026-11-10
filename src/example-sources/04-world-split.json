@@ -3,7 +3,11 @@
   "@graph": [
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000401",
-      "@type": ["cheez:Record", "mowm:WorldSplit", "prov:Activity"],
+      "@type": [
+        "cheez:Record",
+        "mowm:WorldSplit",
+        "prov:Activity"
+      ],
       "cheez:writtenBy": "urn:uuid:00000000-0000-0000-0000-000000000001",
       "prov:used": "urn:uuid:00000000-0000-0000-0000-000000000402",
       "prov:generated": "urn:uuid:00000000-0000-0000-0000-000000000403",
@@ -14,7 +18,10 @@
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000402",
-      "@type": ["mowm:World", "prov:Entity"],
+      "@type": [
+        "mowm:World",
+        "prov:Entity"
+      ],
       "mowm:worldId": 1004,
       "mowm:zDepth": 1,
       "mowm:zMax": 3,
@@ -23,7 +30,10 @@
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000403",
-      "@type": ["mowm:World", "prov:Entity"],
+      "@type": [
+        "mowm:World",
+        "prov:Entity"
+      ],
       "mowm:worldId": 1019,
       "mowm:zDepth": 2,
       "mowm:zMax": 3,
@@ -32,13 +42,19 @@
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000404",
-      "@type": ["cheez:Artifact", "prov:Entity"],
+      "@type": [
+        "cheez:Artifact",
+        "prov:Entity"
+      ],
       "cheez:hash": "PLACEHOLDER: residual block-code hash",
       "cheez:hashAlgorithm": "PLACEHOLDER: hash algorithm"
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000405",
-      "@type": ["cheez:CheckRun", "prov:Activity"],
+      "@type": [
+        "cheez:CheckRun",
+        "prov:Activity"
+      ],
       "dcterms:type": "mowm:ZMaxCheck",
       "cheez:outcome": "cheez:Satisfied",
       "prov:used": "urn:uuid:00000000-0000-0000-0000-000000000402",
@@ -46,14 +62,20 @@
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000410",
-      "@type": ["cheez:Threshold", "prov:Entity"],
+      "@type": [
+        "cheez:Threshold",
+        "prov:Entity"
+      ],
       "dcterms:type": "mowm:Tau",
       "cheez:thresholdValue": "0.60",
       "prov:wasGeneratedBy": "urn:uuid:00000000-0000-0000-0000-000000000411"
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000411",
-      "@type": ["cheez:Calibration", "prov:Activity"],
+      "@type": [
+        "cheez:Calibration",
+        "prov:Activity"
+      ],
       "cheez:screen": "urn:uuid:00000000-0000-0000-0000-000000000412",
       "cheez:calibrationData": "urn:uuid:00000000-0000-0000-0000-000000000413",
       "cheez:encoder": "urn:uuid:00000000-0000-0000-0000-000000000414",
@@ -62,19 +84,28 @@
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000412",
-      "@type": ["cheez:Artifact", "prov:Entity"],
+      "@type": [
+        "cheez:Artifact",
+        "prov:Entity"
+      ],
       "cheez:hash": "PLACEHOLDER: calibration screen hash",
       "cheez:hashAlgorithm": "PLACEHOLDER: hash algorithm"
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000413",
-      "@type": ["cheez:Artifact", "prov:Entity"],
+      "@type": [
+        "cheez:Artifact",
+        "prov:Entity"
+      ],
       "cheez:hash": "PLACEHOLDER: calibration data hash",
       "cheez:hashAlgorithm": "PLACEHOLDER: hash algorithm"
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000414",
-      "@type": ["cheez:Artifact", "prov:Entity"],
+      "@type": [
+        "cheez:Artifact",
+        "prov:Entity"
+      ],
       "schema:name": "HYLA encoder",
       "cheez:hash": "PLACEHOLDER: HYLA encoder weights hash",
       "cheez:hashAlgorithm": "PLACEHOLDER: hash algorithm"
@@ -86,7 +117,10 @@
     },
     {
       "@id": "urn:uuid:00000000-0000-0000-0000-000000000001",
-      "@type": ["cheez:Host", "prov:SoftwareAgent"]
+      "@type": [
+        "cheez:Host",
+        "prov:SoftwareAgent"
+      ]
     }
   ]
 }

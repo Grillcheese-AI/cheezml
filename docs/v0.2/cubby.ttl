@@ -1,0 +1,415 @@
+@prefix cheez: <https://w3id.org/cheezml/core#> .
+@prefix cubby: <https://w3id.org/cheezml/cubby#> .
+@prefix cube: <https://w3id.org/cheezml/cubelang#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <https://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+cubby:Ambiguous a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:RefusalReasons ;
+    skos:prefLabel "ambiguous"@en .
+
+cubby:Approved a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:ReviewOutcomes ;
+    skos:prefLabel "approved"@en .
+
+cubby:ArithmeticCheck a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "Exact arithmetic check (0061)."@en ;
+    skos:inScheme cheez:CheckKinds .
+
+cubby:CertifiedAnswerAct a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:DialogueActs ;
+    skos:prefLabel "certified answer"@en .
+
+cubby:ClarifyingQuestionAct a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:DialogueActs ;
+    skos:prefLabel "clarifying question"@en .
+
+cubby:Conflict a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:RefusalReasons ;
+    skos:prefLabel "conflict (kind in cubby:conflictKind)"@en .
+
+cubby:ConflictCheck a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "No value, type, temporal, logical or recorded-against-derived conflict among the statements used (inferred from the refusal reasons)."@en ;
+    skos:inScheme cheez:CheckKinds .
+
+cubby:DatePrecisionCheck a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "Dates used are fine enough for the question (inferred from 'dates too coarse')."@en ;
+    skos:inScheme cheez:CheckKinds .
+
+cubby:DatesTooCoarse a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:RefusalReasons ;
+    skos:prefLabel "dates too coarse"@en .
+
+cubby:DuplicateCheck a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "Exact duplicate check (0061)."@en ;
+    skos:inScheme cheez:CheckKinds .
+
+cubby:EntityGuardCheck a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "A follow-up rewrite passes the entity guard (0059)."@en ;
+    skos:inScheme cheez:CheckKinds .
+
+cubby:EpisodicMemory a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:Proposers ;
+    skos:prefLabel "episodic memory of certified chains"@en .
+
+cubby:EscapeCheck a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "Escape attempts observed in the sandbox; must be 0 (0062)."@en ;
+    skos:inScheme cheez:CheckKinds .
+
+cubby:EverydayTable a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:Proposers ;
+    skos:prefLabel "everyday table"@en .
+
+cubby:FactMissing a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:RefusalReasons ;
+    skos:prefLabel "fact missing"@en .
+
+cubby:FieldCommit a owl:Class ;
+    rdfs:label "FieldCommit"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    rdfs:subClassOf prov:Activity ;
+    skos:definition "Host commit turning an approved suggestion into a cheez:FactVersion whose source is the reviewer."@en .
+
+cubby:FirstApprover a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:ReviewerRoles ;
+    skos:prefLabel "first approver"@en .
+
+cubby:FollowUpAct a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:DialogueActs ;
+    skos:prefLabel "follow-up (with its rewrite)"@en .
+
+cubby:FormatCheck a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "Exact format check of a document field (0061)."@en ;
+    skos:inScheme cheez:CheckKinds .
+
+cubby:GainCheck a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "A domain change shows a gain (0058)."@en ;
+    skos:inScheme cheez:CheckKinds .
+
+cubby:HostGrammar a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:Proposers ;
+    skos:prefLabel "host grammar"@en .
+
+cubby:LMProgramEmitter a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:Proposers ;
+    skos:prefLabel "language model's program emitter"@en .
+
+cubby:LogicalConflict a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:ConflictKinds ;
+    skos:prefLabel "logical"@en .
+
+cubby:NoNewWrongAnswerCheck a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "A domain change introduces no new wrong answer (0058)."@en ;
+    skos:inScheme cheez:CheckKinds .
+
+cubby:NoPlan a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:RefusalReasons ;
+    skos:prefLabel "no plan"@en .
+
+cubby:NotCertified a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:RefusalReasons ;
+    skos:prefLabel "not certified"@en .
+
+cubby:NumberInRegionCheck a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "Every number in a field appears in its region's text (0061)."@en ;
+    skos:inScheme cheez:CheckKinds .
+
+cubby:OvernightRuleLibrary a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:Proposers ;
+    skos:prefLabel "overnight rule library"@en .
+
+cubby:PrerequisiteCheck a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "Exact prerequisite check of a story-world action (0060)."@en ;
+    skos:inScheme cheez:CheckKinds .
+
+cubby:PurchaseOrderCheck a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "Exact purchase-order check (0061)."@en ;
+    skos:inScheme cheez:CheckKinds .
+
+cubby:QuestionAct a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:DialogueActs ;
+    skos:prefLabel "question"@en .
+
+cubby:RecordedVsDerivedConflict a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:ConflictKinds ;
+    skos:prefLabel "recorded against derived"@en .
+
+cubby:RefusalAct a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:DialogueActs ;
+    skos:prefLabel "refusal (with reason)"@en .
+
+cubby:RejectionRateCheck a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "A proposer's helper rejection rate over a window (0062)."@en ;
+    skos:inScheme cheez:CheckKinds .
+
+cubby:RelationMissing a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:RefusalReasons ;
+    skos:prefLabel "relation missing"@en .
+
+cubby:ReproductionCheck a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "A helper reproduces every verified answer in its scope (0062)."@en ;
+    skos:inScheme cheez:CheckKinds .
+
+cubby:SandboxRun a owl:Class ;
+    rdfs:label "SandboxRun"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    rdfs:subClassOf cube:ProgramRun ;
+    skos:definition "A run of a helper in a locked-down VM session; its gates are cheez:check runs."@en .
+
+cubby:ScopeCheck a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "A helper changes nothing outside its scope (0062)."@en ;
+    skos:inScheme cheez:CheckKinds .
+
+cubby:SecondApprover a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:ReviewerRoles ;
+    skos:prefLabel "second approver (above the amount)"@en .
+
+cubby:SmallTalkAct a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:DialogueActs ;
+    skos:prefLabel "small talk"@en .
+
+cubby:SupplierCheck a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "Exact supplier check (0061)."@en ;
+    skos:inScheme cheez:CheckKinds .
+
+cubby:TemporalConflict a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:ConflictKinds ;
+    skos:prefLabel "temporal"@en .
+
+cubby:ToneCheck a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "Soft (tone) check of a story-world action, labelled soft (0060)."@en ;
+    skos:inScheme cheez:CheckKinds .
+
+cubby:TypeConflict a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:ConflictKinds ;
+    skos:prefLabel "type"@en .
+
+cubby:UnreadableSource a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:RefusalReasons ;
+    skos:prefLabel "unreadable source (order 0061)"@en .
+
+cubby:ValueConflict a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:ConflictKinds ;
+    skos:prefLabel "value"@en .
+
+cubby:WalkFailed a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:inScheme cubby:RefusalReasons ;
+    skos:prefLabel "walk failed"@en .
+
+cubby:breakingCase a owl:ObjectProperty ;
+    rdfs:label "breakingCase"@en ;
+    rdfs:domain cubby:HelperRejection ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    rdfs:range prov:Entity ;
+    skos:definition "The case that broke the helper."@en .
+
+cubby:conflictKind a owl:ObjectProperty ;
+    rdfs:label "conflictKind"@en ;
+    rdfs:domain cubby:Refusal ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    rdfs:range skos:Concept ;
+    skos:definition "Kind of conflict; required exactly when the reason is cubby:Conflict."@en ;
+    skos:scopeNote "Values come from the code list cubby:ConflictKinds."@en .
+
+cubby:decision a owl:ObjectProperty ;
+    rdfs:label "decision"@en ;
+    rdfs:domain cubby:Turn ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    rdfs:range cheez:Decision ;
+    skos:definition "The answer or refusal the turn delivered."@en .
+
+cubby:dialogueAct a owl:ObjectProperty ;
+    rdfs:label "dialogueAct"@en ;
+    rdfs:domain cubby:Turn ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    rdfs:range skos:Concept ;
+    skos:definition "The turn's dialogue act."@en ;
+    skos:editorialNote "ISO 24617-2 mapping pending (IRIs not known)"@en ;
+    skos:scopeNote "Values come from the code list cubby:DialogueActs."@en .
+
+cubby:proposer a owl:ObjectProperty ;
+    rdfs:label "proposer"@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( cubby:Answer cubby:Refusal cheez:Option cubby:Helper ) ] ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    rdfs:range skos:Concept ;
+    skos:definition "The proposer behind an answer, refusal, option or helper."@en ;
+    skos:scopeNote "Values come from the code list cubby:Proposers."@en .
+
+cubby:readerVersion a owl:DatatypeProperty ;
+    rdfs:label "readerVersion"@en ;
+    rdfs:domain cubby:DocumentRegion ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    rdfs:range xsd:string ;
+    skos:definition "Version of the reader that produced the region."@en .
+
+cubby:refusalReason a owl:ObjectProperty ;
+    rdfs:label "refusalReason"@en ;
+    rdfs:domain cubby:Refusal ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    rdfs:range skos:Concept ;
+    skos:definition "Why the question was refused."@en ;
+    skos:scopeNote "Values come from the code list cubby:RefusalReasons."@en .
+
+cubby:region a owl:ObjectProperty ;
+    rdfs:label "region"@en ;
+    rdfs:domain [ a owl:Class ;
+            owl:unionOf ( cubby:FieldSuggestion cubby:Review ) ] ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    rdfs:range cubby:DocumentRegion ;
+    skos:definition "The region a suggestion or review refers to."@en .
+
+cubby:scope a owl:ObjectProperty ;
+    rdfs:label "scope"@en ;
+    rdfs:domain cubby:Helper ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    rdfs:range prov:Collection ;
+    skos:definition "The verified answers the helper must reproduce."@en .
+
+cubby:turnIndex a owl:DatatypeProperty ;
+    rdfs:label "turnIndex"@en ;
+    rdfs:domain cubby:Turn ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    rdfs:range xsd:integer ;
+    skos:definition "Host-assigned position in the conversation."@en .
+
+cubby:Answer a owl:Class ;
+    rdfs:label "Answer"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    rdfs:subClassOf cheez:Decision ;
+    skos:definition "A delivered answer (value in prov:value); always has a certificate."@en .
+
+cubby:FieldSuggestion a owl:Class ;
+    rdfs:label "FieldSuggestion"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    rdfs:subClassOf prov:Entity ;
+    skos:definition "A value read or derived for a document field (prov:value); a suggestion until committed."@en .
+
+cubby:HelperRejection a owl:Class ;
+    rdfs:label "HelperRejection"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    rdfs:subClassOf cheez:Retirement ;
+    skos:definition "The host's rejection of a helper after its sandbox run; reason = the failed gate's kind."@en .
+
+cubby:Review a owl:Class ;
+    rdfs:label "Review"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    rdfs:subClassOf prov:Activity ;
+    skos:definition "A human review of a suggestion; reviewer and role via prov:qualifiedAssociation."@en .
+
+cubby:ReviewOutcomes a skos:ConceptScheme ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:prefLabel "Review outcomes"@en .
+
+cubby:DocumentRegion a owl:Class ;
+    rdfs:label "DocumentRegion"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    rdfs:subClassOf prov:Entity ;
+    skos:definition "A region of a document: text as read (schema:text), reader version, document (schema:isPartOf)."@en .
+
+cubby:Helper a owl:Class ;
+    rdfs:label "Helper"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    rdfs:subClassOf cube:Program ;
+    skos:definition "A helper program proposed by Cubby's own proposers (order 0062)."@en .
+
+cubby:ReviewerRoles a skos:ConceptScheme ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:prefLabel "Reviewer roles"@en .
+
+cubby:Refusal a owl:Class ;
+    rdfs:label "Refusal"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    rdfs:subClassOf cheez:Decision ;
+    skos:definition "A refusal decision with a coded reason."@en .
+
+cubby:Turn a owl:Class ;
+    rdfs:label "Turn"@en ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    rdfs:subClassOf prov:Entity ;
+    skos:definition "One conversation turn, written by the host; conversation via schema:isPartOf."@en .
+
+cubby:ConflictKinds a skos:ConceptScheme ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:prefLabel "Kinds of conflict"@en .
+
+cubby:Proposers a skos:ConceptScheme ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:prefLabel "Proposers in use"@en .
+
+cubby:DialogueActs a skos:ConceptScheme ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:prefLabel "Dialogue acts (order 0059)"@en .
+
+cubby:RefusalReasons a skos:ConceptScheme ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:prefLabel "Refusal reasons in use"@en .
+
+<https://w3id.org/cheezml/cubby> a owl:Ontology ;
+    dcterms:created "2026-11-07"^^xsd:date ;
+    dcterms:creator [ a schema:Person ;
+            schema:affiliation "GrillCheese Research Lab" ;
+            schema:name "Nicolas Cloutier" ] ;
+    dcterms:description "Conversation turns, answers and refusals with their reasons, proposers, helpers in a sandbox, and documents reviewed by a person."@en ;
+    dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
+    dcterms:modified "2026-11-10"^^xsd:date ;
+    dcterms:title "CheezML for CubbyLLM"@en ;
+    vann:preferredNamespacePrefix "cubby" ;
+    vann:preferredNamespaceUri "https://w3id.org/cheezml/cubby#" ;
+    owl:imports <https://w3id.org/cheezml/core> ;
+    owl:priorVersion <https://w3id.org/cheezml/cubby/v0.1> ;
+    owl:versionIRI <https://w3id.org/cheezml/cubby/v0.2> ;
+    owl:versionInfo "0.2 (draft)" .
+
