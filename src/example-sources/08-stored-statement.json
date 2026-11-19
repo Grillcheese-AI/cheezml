@@ -1,0 +1,204 @@
+{
+  "@context": "@@CONTEXT@@",
+  "@graph": [
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000801",
+      "@type": [
+        "cheez:Record",
+        "cubby:Turn",
+        "prov:Entity"
+      ],
+      "cheez:writtenBy": "urn:uuid:00000000-0000-0000-0000-000000000001",
+      "cubby:dialogueAct": "cubby:CertifiedAnswerAct",
+      "cubby:turnIndex": 4,
+      "schema:isPartOf": "urn:uuid:00000000-0000-0000-0000-000000000003",
+      "cubby:decision": "urn:uuid:00000000-0000-0000-0000-000000000803",
+      "prov:generatedAtTime": "2026-11-07T14:00:02Z"
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000802",
+      "@type": [
+        "cheez:Question",
+        "prov:Entity"
+      ],
+      "cheez:option": "urn:uuid:00000000-0000-0000-0000-000000000805",
+      "cheez:hasResult": "urn:uuid:00000000-0000-0000-0000-000000000803"
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000803",
+      "@type": [
+        "cubby:Answer",
+        "cheez:Decision",
+        "prov:Entity"
+      ],
+      "prov:value": "PLACEHOLDER: answer value",
+      "cubby:proposer": "cubby:HostGrammar",
+      "cheez:chosenOption": "urn:uuid:00000000-0000-0000-0000-000000000805",
+      "prov:wasGeneratedBy": "urn:uuid:00000000-0000-0000-0000-000000000806"
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000804",
+      "@type": [
+        "cheez:Record",
+        "cheez:Certificate",
+        "prov:Entity"
+      ],
+      "cheez:writtenBy": "urn:uuid:00000000-0000-0000-0000-000000000001",
+      "cheez:certifies": "urn:uuid:00000000-0000-0000-0000-000000000803",
+      "prov:wasGeneratedBy": "urn:uuid:00000000-0000-0000-0000-000000000806",
+      "cheez:check": [
+        "urn:uuid:00000000-0000-0000-0000-000000000810",
+        "urn:uuid:00000000-0000-0000-0000-000000000811"
+      ],
+      "prov:generatedAtTime": "2026-11-07T14:00:02Z"
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000805",
+      "@type": [
+        "cube:Program",
+        "cheez:Option",
+        "prov:Entity"
+      ],
+      "cheez:hash": "PLACEHOLDER: program hash",
+      "cheez:hashAlgorithm": "PLACEHOLDER: hash algorithm",
+      "cubby:proposer": "cubby:HostGrammar"
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000806",
+      "@type": [
+        "cube:ProgramRun",
+        "prov:Activity"
+      ],
+      "prov:wasAssociatedWith": "urn:uuid:00000000-0000-0000-0000-000000000002",
+      "prov:used": [
+        "urn:uuid:00000000-0000-0000-0000-000000000805",
+        "urn:uuid:00000000-0000-0000-0000-000000000807",
+        "urn:uuid:00000000-0000-0000-0000-000000000812",
+        "urn:uuid:00000000-0000-0000-0000-000000000809"
+      ],
+      "cheez:outcome": "cube:Return",
+      "prov:startedAtTime": "2026-11-07T14:00:01Z",
+      "prov:endedAtTime": "2026-11-07T14:00:02Z",
+      "cheez:storeSnapshot": "urn:uuid:00000000-0000-0000-0000-000000000891",
+      "cheez:asOf": "2026-11-07T14:00:01Z"
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000807",
+      "@type": [
+        "cheez:FactVersion",
+        "prov:Entity"
+      ],
+      "rdf:subject": "wd:Q0",
+      "rdf:predicate": "wdt:P0",
+      "rdf:object": {
+        "@id": "wd:Q1"
+      },
+      "wikibase:rank": "wikibase:NormalRank",
+      "schema:identifier": "PLACEHOLDER: statement id",
+      "prov:hadPrimarySource": "urn:uuid:00000000-0000-0000-0000-000000000808",
+      "cheez:validTime": {
+        "@type": "time:Interval"
+      },
+      "prov:generatedAtTime": "2025-12-18T18:39:28Z"
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000808",
+      "@type": "prov:Entity",
+      "schema:identifier": "PLACEHOLDER: entity id",
+      "schema:version": "PLACEHOLDER: entity revision"
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000809",
+      "@type": [
+        "cheez:Rule",
+        "prov:Entity"
+      ],
+      "cheez:hash": "PLACEHOLDER: rule hash",
+      "cheez:hashAlgorithm": "PLACEHOLDER: hash algorithm"
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000810",
+      "@type": [
+        "cheez:CheckRun",
+        "prov:Activity"
+      ],
+      "dcterms:type": "cubby:ConflictCheck",
+      "cheez:outcome": "cheez:Satisfied",
+      "cheez:isSatisfiedBy": "urn:uuid:00000000-0000-0000-0000-000000000805",
+      "prov:used": [
+        "urn:uuid:00000000-0000-0000-0000-000000000807",
+        "urn:uuid:00000000-0000-0000-0000-000000000812"
+      ],
+      "prov:endedAtTime": "2026-11-07T14:00:02Z"
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000811",
+      "@type": [
+        "cheez:CheckRun",
+        "prov:Activity"
+      ],
+      "dcterms:type": "cubby:DatePrecisionCheck",
+      "cheez:outcome": "cheez:Satisfied",
+      "cheez:isSatisfiedBy": "urn:uuid:00000000-0000-0000-0000-000000000805",
+      "prov:used": [
+        "urn:uuid:00000000-0000-0000-0000-000000000807",
+        "urn:uuid:00000000-0000-0000-0000-000000000812"
+      ],
+      "prov:endedAtTime": "2026-11-07T14:00:02Z"
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000001",
+      "@type": [
+        "cheez:Host",
+        "prov:SoftwareAgent"
+      ]
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000002",
+      "@type": [
+        "cube:VM",
+        "prov:SoftwareAgent"
+      ]
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000891",
+      "@type": [
+        "cheez:Artifact",
+        "prov:Entity"
+      ],
+      "dcterms:type": "cheez:StoreSnapshot",
+      "cheez:hash": "PLACEHOLDER: store snapshot hash",
+      "cheez:hashAlgorithm": "PLACEHOLDER: hash algorithm"
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000812",
+      "@type": [
+        "cheez:FactVersion",
+        "prov:Entity"
+      ],
+      "rdf:subject": "wd:Q0",
+      "rdf:predicate": "wdt:P0",
+      "rdf:object": {
+        "@id": "wd:Q2"
+      },
+      "wikibase:rank": "wikibase:PreferredRank",
+      "schema:identifier": "PLACEHOLDER: statement id",
+      "prov:hadPrimarySource": "urn:uuid:00000000-0000-0000-0000-000000000808",
+      "cheez:validTime": {
+        "@type": "time:Interval",
+        "time:hasBeginning": {
+          "@type": "time:Instant",
+          "time:inXSDDateTimeStamp": "2020-01-01T00:00:00Z",
+          "prov:wasDerivedFrom": "urn:uuid:00000000-0000-0000-0000-000000000813"
+        }
+      },
+      "prov:generatedAtTime": "2025-12-18T18:39:28Z"
+    },
+    {
+      "@id": "urn:uuid:00000000-0000-0000-0000-000000000813",
+      "@type": "prov:Entity",
+      "rdf:predicate": "wdt:P0",
+      "schema:identifier": "PLACEHOLDER: the start-time qualifier of the statement"
+    }
+  ]
+}

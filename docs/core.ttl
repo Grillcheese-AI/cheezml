@@ -263,7 +263,7 @@ cheez:validTime a owl:ObjectProperty ;
     rdfs:domain cheez:FactVersion ;
     rdfs:isDefinedBy <https://w3id.org/cheezml/core> ;
     rdfs:range time:Interval ;
-    skos:definition "Clock 1: when the statement held."@en ;
+    skos:definition "Clock 1: when the statement held. Its beginning is stated only where the source states one (2026-11-19)."@en ;
     skos:editorialNote "OWL-Time range"@en .
 
 cheez:writtenBy a owl:ObjectProperty ;

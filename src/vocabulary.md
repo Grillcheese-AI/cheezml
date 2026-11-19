@@ -38,7 +38,7 @@ Records and instances (hosts, runs, worlds, reviewers) have `urn:uuid:` ids, nev
 | `cheez:hashAlgorithm` | property | Algorithm of `cheez:hash` (not given in the brief). | `cheez:Artifact` | `xsd:string` | | 3 |
 | `cheez:Rule` | class | A rule applied by a program run, by hash. | | | ⊑ `cheez:Artifact`, `prov:Plan` | 6 |
 | `cheez:FactVersion` | class | One version of a stored statement, with both clocks; a correction closes it and never overwrites it. | | | ⊑ `prov:Entity`; recorded time = `prov:generatedAtTime`, closure = `prov:invalidatedAtTime`, successor `prov:wasRevisionOf` | 7 |
-| `cheez:validTime` | property | Clock 1: when the statement held. | `cheez:FactVersion` | `time:Interval` | OWL-Time range | 7 |
+| `cheez:validTime` | property | Clock 1: when the statement held. Its beginning is stated only where the source states one (2026-11-19). | `cheez:FactVersion` | `time:Interval` | OWL-Time range | 7 |
 | `cheez:Threshold` | class | A decision boundary with its calibration. Never a score. | | | ⊑ `prov:Entity`; `prov:wasGeneratedBy` its `cheez:Calibration`; parameter via `dcterms:type` | 7 |
 | `cheez:thresholdValue` | property | The boundary value. | `cheez:Threshold` | `xsd:decimal` | | 7 |
 | `cheez:Calibration` | class | The screen run that set one or more thresholds for one encoder, data set and deployment, on a date (`prov:endedAtTime`). | | | ⊑ `prov:Activity` | 5 |
@@ -152,7 +152,21 @@ The Decision Ontology as published puts its terms in `http://example.com/ns/dec#
 | `schema:version` | revision of a source | 2 |
 | `schema:isPartOf`, `schema:about`, `schema:name`, `schema:identifier`, `schema:DigitalDocument` | conversation, document, labels, external ids | 5 |
 | `dcterms:license` | the licence of a remote source's data (v0.2) | v0.2 |
+| `rdf:subject`, `rdf:predicate`, `rdf:object` | a stored statement's subject item, property and value, on its fact version (2026-11-19) | 1 |
+| `wikibase:rank` (`wikibase:PreferredRank`, `wikibase:NormalRank`, `wikibase:DeprecatedRank`) | a stored statement's rank, as Wikibase's RDF gives it (2026-11-19) | 1 |
+| `schema:identifier` on a fact version | the store's statement id, where the store keeps one (2026-11-19) | 1 |
 | `dcterms:type` | kind codes: check kind, routing mode, threshold parameter, retirement kind (note: DCMI gives it range `rdfs:Class`) | 1 |
+
+**A stored statement (2026-11-19).** A fact version read from a statement store (a Wikidata snapshot) says which
+statement it is with terms already published, so nothing is minted: RDF's reification properties `rdf:subject`,
+`rdf:predicate` and `rdf:object` for the statement (the item and property by their Wikidata IRIs, `wd:` and
+`wdt:`), Wikibase's own `wikibase:rank` and its three rank individuals for the rank, `schema:identifier` for the
+store's statement id, and, as before, `prov:hadPrimarySource` with `schema:version` for the entity's revision.
+`shapes:StoredStatementShape` requires subject, property, value, rank and revision on any fact version that has
+`rdf:subject`. Its valid-time beginning, when present, names what of the source stated it
+(`prov:wasDerivedFrom`, a start-time qualifier): most statements state no beginning, and none is ever filled in by
+hand (Nick, 2026-11-19). Example `08-stored-statement`; negatives `n08` (no rank) and `n08b` (a beginning the
+source did not state).
 
 ## Controlled code lists (SKOS)
 

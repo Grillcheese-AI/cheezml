@@ -1,4 +1,4 @@
-shapes.ttl: parsed, 1227 triples, 35 named node shapes (30 with targets), 156 property constraints (nested included), 19 SPARQL constraints
+shapes.ttl: parsed, 1278 triples, 36 named node shapes (30 with targets), 162 property constraints (nested included), 20 SPARQL constraints
   property constraints without sh:message: 0; SPARQL constraints without sh:message: 0
   named shapes with node-level constraints but no sh:message: 0
 
@@ -10,26 +10,27 @@ POSITIVE EXAMPLES (must conform)
   05-helper-rejected.jsonld: triples=53 (pyld 53), context inline=True, conforms=True, results=0, IRIs outside allowed=0, PLACEHOLDER in IRI=0, ill-typed literals=0  -> PASS
   06-invoice-review.jsonld: triples=97 (pyld 97), context inline=True, conforms=True, results=0, IRIs outside allowed=0, PLACEHOLDER in IRI=0, ill-typed literals=0  -> PASS
   07-source-read.jsonld: triples=61 (pyld 61), context inline=True, conforms=True, results=0, IRIs outside allowed=0, PLACEHOLDER in IRI=0, ill-typed literals=0  -> PASS
+  08-stored-statement.jsonld: triples=108 (pyld 108), context inline=True, conforms=True, results=0, IRIs outside allowed=0, PLACEHOLDER in IRI=0, ill-typed literals=0  -> PASS
 
 TARGET COVERAGE (focus nodes per targeted shape across the positives)
-  shapes:AnswerShape: 1
-  shapes:ArtifactShape: 20
+  shapes:AnswerShape: 2
+  shapes:ArtifactShape: 23
   shapes:CalibrationShape: 2
-  shapes:CertificateConsistencyShape: 1
-  shapes:CertificateShape: 1
-  shapes:CertifiedAnswerTurnShape: 2
-  shapes:CheckRunShape: 12
+  shapes:CertificateConsistencyShape: 2
+  shapes:CertificateShape: 2
+  shapes:CertifiedAnswerTurnShape: 3
+  shapes:CheckRunShape: 14
   shapes:DocumentRegionShape: 1
-  shapes:FactVersionShape: 3
+  shapes:FactVersionShape: 5
   shapes:FieldCommitShape: 1
   shapes:FieldSuggestionShape: 1
   shapes:HelperRejectionShape: 1
-  shapes:ProgramRunShape: 4
-  shapes:RecordShape: 7
+  shapes:ProgramRunShape: 5
+  shapes:RecordShape: 9
   shapes:RefusalConflictShape: 1
   shapes:RefusalShape: 1
-  shapes:RefusalTurnShape: 2
-  shapes:ReleaseShape: 13
+  shapes:RefusalTurnShape: 3
+  shapes:ReleaseShape: 14
   shapes:RenderedTextShape: 1
   shapes:ReviewShape: 1
   shapes:RoutingBestShape: 1
@@ -38,7 +39,7 @@ TARGET COVERAGE (focus nodes per targeted shape across the positives)
   shapes:RoutingRunnerUpShape: 1
   shapes:SourceReadShape: 1
   shapes:ThresholdShape: 3
-  shapes:TurnShape: 2
+  shapes:TurnShape: 3
   shapes:WorldShape: 5
   shapes:WorldSpawnShape: 1
   shapes:WorldSplitShape: 1
@@ -75,6 +76,11 @@ NEGATIVE EXAMPLES (must not conform, for the stated reason)
       message: A source read records exactly one response, by hash (a cheez:Artifact). A read that got no answer is recorded as a failed run, not as a source read.
   n07b-release-without-version: conforms=False, top-level results=1, expected message found=True, results with default message=0, IRIs outside allowed=0  -> PASS
       message: An ontology or dataset release states its version (schema:version).
+  n08-stored-statement-without-rank: conforms=False, top-level results=1, expected message found=True, results with default message=0, IRIs outside allowed=0  -> PASS
+      message: A stored statement states its rank (wikibase:rank: preferred, normal or deprecated).
+  n08b-beginning-not-stated-by-the-source: conforms=False, top-level results=1, expected message found=True, results with default message=0, IRIs outside allowed=0  -> PASS
+      message: A fact version read from a statement store states the statement: subject, property, value and rank.
+      message: A stored statement's valid-time beginning names what of the source stated it (prov:wasDerivedFrom); a date the source did not give is never written by hand.
 
 VOCABULARY COVERAGE: vocabulary.md Turtle blocks parsed (251 triples); CheezML IRIs used in examples=117, in shapes=147; undefined in vocabulary.md: examples=0, shapes=0
   skos:closeMatch alignment targets: ['http://example.com/ns/dec#Decision', 'http://example.com/ns/dec#Option', 'http://example.com/ns/dec#Question', 'http://example.com/ns/dec#has_result', 'http://example.com/ns/dec#involves_choosing']

@@ -15,6 +15,7 @@
 @prefix cube:    <https://w3id.org/cheezml/cubelang#> .
 @prefix shapes:  <https://w3id.org/cheezml/shapes#> .
 @prefix owl:     <http://www.w3.org/2002/07/owl#> .
+@prefix wikibase: <http://wikiba.se/ontology#> .
 
 <https://w3id.org/cheezml/shapes> a owl:Ontology ;
     owl:versionIRI <https://w3id.org/cheezml/shapes/v0.2> ;
@@ -24,7 +25,7 @@
     dcterms:description "SHACL shapes for the six CheezML record types and the nodes they rely on. Validate with inference none."@en ;
     dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
     dcterms:created "2026-11-07"^^xsd:date ;
-    dcterms:modified "2026-11-10"^^xsd:date .
+    dcterms:modified "2026-11-19"^^xsd:date .
 
 <https://w3id.org/cheezml/shapes>
   sh:declare
@@ -36,7 +37,8 @@
     [ sh:prefix "cheez"   ; sh:namespace "https://w3id.org/cheezml/core#"^^xsd:anyURI ] ,
     [ sh:prefix "cubby"   ; sh:namespace "https://w3id.org/cheezml/cubby#"^^xsd:anyURI ] ,
     [ sh:prefix "mowm"    ; sh:namespace "https://w3id.org/cheezml/mowm#"^^xsd:anyURI ] ,
-    [ sh:prefix "cube"    ; sh:namespace "https://w3id.org/cheezml/cubelang#"^^xsd:anyURI ] .
+    [ sh:prefix "cube"    ; sh:namespace "https://w3id.org/cheezml/cubelang#"^^xsd:anyURI ] ,
+    [ sh:prefix "time"    ; sh:namespace "http://www.w3.org/2006/time#"^^xsd:anyURI ] .
 
 #################################################################
 # Supporting shapes
@@ -158,7 +160,7 @@ shapes:FactVersionShape
   sh:targetClass cheez:FactVersion ;
   sh:property [
     sh:path cheez:validTime ; sh:minCount 1 ; sh:maxCount 1 ; sh:node shapes:IntervalShape ;
-    sh:message "Clock 1: a fact version records when it held, as one OWL-Time interval with a beginning instant."
+    sh:message "Clock 1: a fact version records when it held, as one OWL-Time interval (its beginning only where the source states one)."
   ] ;
   sh:property [
     sh:path prov:generatedAtTime ; sh:minCount 1 ; sh:maxCount 1 ; sh:datatype xsd:dateTime ;
@@ -173,13 +175,53 @@ shapes:FactVersionShape
     sh:message "Every fact version names its source (prov:hadPrimarySource)."
   ] .
 
+shapes:StoredStatementShape
+  a sh:NodeShape ;
+  sh:targetSubjectsOf rdf:subject ;
+  sh:message "A fact version read from a statement store states the statement: subject, property, value and rank." ;
+  sh:property [
+    sh:path rdf:subject ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+    sh:message "A stored statement names one subject item (rdf:subject), by IRI."
+  ] ;
+  sh:property [
+    sh:path rdf:predicate ; sh:minCount 1 ; sh:maxCount 1 ; sh:nodeKind sh:IRI ;
+    sh:message "A stored statement names one property (rdf:predicate), by IRI."
+  ] ;
+  sh:property [
+    sh:path rdf:object ; sh:minCount 1 ; sh:maxCount 1 ;
+    sh:message "A stored statement names one value (rdf:object)."
+  ] ;
+  sh:property [
+    sh:path wikibase:rank ; sh:minCount 1 ; sh:maxCount 1 ;
+    sh:in ( wikibase:PreferredRank wikibase:NormalRank wikibase:DeprecatedRank ) ;
+    sh:message "A stored statement states its rank (wikibase:rank: preferred, normal or deprecated)."
+  ] ;
+  sh:property [
+    sh:path schema:identifier ; sh:maxCount 1 ;
+    sh:message "A stored statement has at most one statement id (schema:identifier); where the store keeps none, it is left out."
+  ] ;
+  sh:property [
+    sh:path ( prov:hadPrimarySource schema:version ) ; sh:minCount 1 ;
+    sh:message "A stored statement's source states the revision of the entity it was read from (schema:version)."
+  ] ;
+  sh:sparql [
+    a sh:SPARQLConstraint ;
+    sh:prefixes <https://w3id.org/cheezml/shapes> ;
+    sh:message "A stored statement's valid-time beginning names what of the source stated it (prov:wasDerivedFrom); a date the source did not give is never written by hand." ;
+    sh:select """
+      SELECT $this WHERE {
+        $this cheez:validTime/time:hasBeginning ?b .
+        FILTER NOT EXISTS { ?b prov:wasDerivedFrom ?q }
+      }"""
+  ] .
+
 shapes:IntervalShape
   a sh:NodeShape ;
   sh:class time:Interval ;
   sh:message "A valid time is a time:Interval." ;
   sh:property [
-    sh:path time:hasBeginning ; sh:minCount 1 ; sh:maxCount 1 ; sh:node shapes:InstantShape ;
-    sh:message "A valid-time interval has exactly one beginning instant."
+    sh:path time:hasBeginning ; sh:maxCount 1 ; sh:node shapes:InstantShape ;
+    sh:message "A valid-time interval has at most one beginning instant, and none where the source states none (2026-11-19)."
   ] ;
   sh:property [
     sh:path time:hasEnd ; sh:maxCount 1 ; sh:node shapes:InstantShape ;

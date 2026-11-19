@@ -20,6 +20,7 @@ POS = {
     "05-helper-rejected": "05-helper-rejected.json",
     "06-invoice-review": "06-invoice-review.json",
     "07-source-read": "07-source-read.json",
+    "08-stored-statement": "08-stored-statement.json",
 }
 
 U = "urn:uuid:00000000-0000-0000-0000-000000000"
@@ -130,6 +131,17 @@ negs["n07-source-read-without-response"] = d
 d = copy.deepcopy(positives["07-source-read"])
 del node(d, "708")["schema:version"]
 negs["n07b-release-without-version"] = d
+
+# 8 (2026-11-19). a stored statement's fact version without its rank
+d = copy.deepcopy(positives["08-stored-statement"])
+del node(d, "807")["wikibase:rank"]
+negs["n08-stored-statement-without-rank"] = d
+
+# 8b (2026-11-19, Nick's yes). a valid-time beginning written by hand: no qualifier of the statement gave it
+d = copy.deepcopy(positives["08-stored-statement"])
+node(d, "807")["cheez:validTime"] = {"@type": "time:Interval", "time:hasBeginning": {
+    "@type": "time:Instant", "time:inXSDDateTimeStamp": "2025-12-18T18:39:28Z"}}
+negs["n08b-beginning-not-stated-by-the-source"] = d
 
 for name, d in negs.items():
     write(os.path.join(NEG, name + ".jsonld"), d)

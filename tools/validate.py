@@ -33,6 +33,10 @@ ALLOWED = (
     "http://www.w3.org/ns/shacl#",
     "http://creativecommons.org/",  # licence IRIs (v0.2, dcterms:license)
     "https://creativecommons.org/",
+    "http://www.w3.org/1999/02/22-rdf-syntax-ns#",  # rdf:subject / predicate / object of a stored statement
+    "http://wikiba.se/ontology#",  # wikibase:rank (2026-11-19)
+    "http://www.wikidata.org/entity/",  # a stored statement's subject and item values
+    "http://www.wikidata.org/prop/direct/",  # its property
 )
 RDF_TYPE = str(RDF.type)  # produced by the JSON-LD "@type" keyword itself
 
@@ -50,6 +54,8 @@ EXPECT = {
     "n05-rejection-without-breaking-case": "kept with the case that broke it",
     "n06-commit-without-source": "names its source",
     "n06b-number-not-in-region": "must appear in its region's text",
+    "n08-stored-statement-without-rank": "states its rank",
+    "n08b-beginning-not-stated-by-the-source": "never written by hand",
 }
 
 failures = []

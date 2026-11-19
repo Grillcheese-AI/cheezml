@@ -12,6 +12,10 @@
     "skos": "http://www.w3.org/2004/02/skos/core#",
     "dcterms": "http://purl.org/dc/terms/",
     "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "wikibase": "http://wikiba.se/ontology#",
+    "wd": "http://www.wikidata.org/entity/",
+    "wdt": "http://www.wikidata.org/prop/direct/",
     "cheez:writtenBy": {
       "@type": "@id"
     },
@@ -226,6 +230,15 @@
       "@type": "xsd:dateTimeStamp"
     },
     "dcterms:license": {
+      "@type": "@id"
+    },
+    "rdf:subject": {
+      "@type": "@id"
+    },
+    "rdf:predicate": {
+      "@type": "@id"
+    },
+    "wikibase:rank": {
       "@type": "@id"
     }
   }

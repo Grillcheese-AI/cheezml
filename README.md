@@ -19,6 +19,10 @@ note, never deleted.
   endpoint, query, answer and licence), ontology and dataset releases with their version, and `cheez:asOf` with
   `cheez:storeSnapshot` (the date a question was evaluated at, and the store state it read). A run that read stored
   facts without naming both fails validation.
+- **v0.2, changed 2026-11-19** (Nick's yes, 2026-11-19): a fact version's valid-time beginning is optional where the
+  source states none (it was required); a stored statement states its subject, property, value and rank with
+  published terms (`rdf:subject` / `rdf:predicate` / `rdf:object`, `wikibase:rank`) and its entity's revision.
+  The old requirement is retired, with this note.
 - **v0.1** stays frozen under `docs/v0.1/` and its own version IRIs.
 
 The domains CheezML covers, and the rule for adding one, are in [`DOMAINS.md`](DOMAINS.md).
@@ -52,7 +56,7 @@ redirects to it, with content negotiation (HTML for a browser, Turtle, JSON-LD o
 
 ## Layout
 - `src/`: the source. `vocabulary.md` (the term tables and the SKOS code lists), `context.jsonld`, `shapes.ttl`,
-  `examples/` (seven records that conform, and in `negative/` thirteen that must fail) and `example-sources/`. `brand/` holds
+  `examples/` (eight records that conform, and in `negative/` fifteen that must fail) and `example-sources/`. `brand/` holds
   the Cubby mark shown on the site.
 - `docs/`: the built site, one page and three RDF files per module, plus a frozen copy per version. A frozen copy of an
   earlier version is never rebuilt.
@@ -64,7 +68,7 @@ Python 3 with `rdflib` (7.6 or later) and `pyshacl` (0.40 or later); `pyld` is o
 
 ```sh
 python -I tools/build_examples.py src src/example-sources
-python -I tools/validate.py src            # 7 examples conform, 13 broken ones fail with their message
+python -I tools/validate.py src            # 8 examples conform, 15 broken ones fail with their message
 python -I tools/build_site.py .
 python -I tools/check_site.py .            # formats agree, every term used is declared and documented
 ```
