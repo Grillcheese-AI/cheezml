@@ -188,7 +188,11 @@ source did not state).
 | `cubby:ReviewOutcomes` | Approved | `cheez:outcome` on a review | 3 |
 | `cubby:ReviewerRoles` | FirstApprover, SecondApprover | `prov:hadRole` | 4 |
 
-Check kinds `cubby:ConflictCheck` and `cubby:DatePrecisionCheck` are inferred from the refusal reasons (conflict, dates too coarse); confirm them against the host's real check list. The brief names no other review outcome, reviewer role or merge strategy, so none is added.
+Check kinds `cubby:ConflictCheck` and `cubby:DatePrecisionCheck` are inferred from the refusal reasons (conflict, dates too coarse); confirm them against the host's real check list. **Confirmed against the host (2026-11-19, CubbyLLM 0076):** a walked answer passes five checks before it is said: the
+answer's class (`cubby:AnswerClassCheck`), the question's tense and year (`cubby:TenseCheck`), a snapshot's time
+(`cubby:SnapshotTimeCheck`), the time rule on undated values (`cubby:TimeRuleCheck`) and values the sources hold
+two of (`cubby:ConflictCheck`, as defined). `cubby:DatePrecisionCheck` stays for the refusal reason it was inferred
+from. The brief names no other review outcome, reviewer role or merge strategy, so none is added.
 
 ```turtle
 @prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
@@ -241,6 +245,10 @@ cubby:LMProgramEmitter     a skos:Concept ; skos:inScheme cubby:Proposers ; skos
 cheez:CheckKinds a skos:ConceptScheme ; skos:prefLabel "Check kinds"@en .
 cubby:ConflictCheck       a skos:Concept ; skos:inScheme cheez:CheckKinds ; skos:definition "No value, type, temporal, logical or recorded-against-derived conflict among the statements used (inferred from the refusal reasons)."@en .
 cubby:DatePrecisionCheck  a skos:Concept ; skos:inScheme cheez:CheckKinds ; skos:definition "Dates used are fine enough for the question (inferred from 'dates too coarse')."@en .
+cubby:AnswerClassCheck    a skos:Concept ; skos:inScheme cheez:CheckKinds ; skos:definition "The answer is of the class the question asks for (CubbyLLM 0047; the host's check, 2026-11-19)."@en .
+cubby:TenseCheck          a skos:Concept ; skos:inScheme cheez:CheckKinds ; skos:definition "The question's tense and year agree with the dates of the facts used (CubbyLLM 0012; the host's check, 2026-11-19)."@en .
+cubby:SnapshotTimeCheck   a skos:Concept ; skos:inScheme cheez:CheckKinds ; skos:definition "A value that changes, read from a dated snapshot, is asked about the snapshot's time and said as of it (CubbyLLM 0014; the host's check, 2026-11-19)."@en .
+cubby:TimeRuleCheck       a skos:Concept ; skos:inScheme cheez:CheckKinds ; skos:definition "An undated value that changes is not given for a year the source does not date (CubbyLLM 0015; the host's check, 2026-11-19)."@en .
 cubby:EntityGuardCheck    a skos:Concept ; skos:inScheme cheez:CheckKinds ; skos:definition "A follow-up rewrite passes the entity guard (0059)."@en .
 cubby:PrerequisiteCheck   a skos:Concept ; skos:inScheme cheez:CheckKinds ; skos:definition "Exact prerequisite check of a story-world action (0060)."@en .
 cubby:ToneCheck           a skos:Concept ; skos:inScheme cheez:CheckKinds ; skos:definition "Soft (tone) check of a story-world action, labelled soft (0060)."@en .

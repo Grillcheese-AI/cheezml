@@ -73,7 +73,8 @@ shapes:CheckRunShape
   sh:targetClass cheez:CheckRun ;
   sh:property [
     sh:path dcterms:type ; sh:minCount 1 ; sh:maxCount 1 ;
-    sh:in ( cubby:ConflictCheck cubby:DatePrecisionCheck cubby:EntityGuardCheck cubby:PrerequisiteCheck cubby:ToneCheck
+    sh:in ( cubby:ConflictCheck cubby:DatePrecisionCheck cubby:AnswerClassCheck cubby:TenseCheck cubby:SnapshotTimeCheck
+            cubby:TimeRuleCheck cubby:EntityGuardCheck cubby:PrerequisiteCheck cubby:ToneCheck
             cubby:NumberInRegionCheck cubby:FormatCheck cubby:ArithmeticCheck cubby:PurchaseOrderCheck cubby:SupplierCheck cubby:DuplicateCheck
             cubby:ReproductionCheck cubby:ScopeCheck cubby:EscapeCheck cubby:RejectionRateCheck
             cubby:NoNewWrongAnswerCheck cubby:GainCheck

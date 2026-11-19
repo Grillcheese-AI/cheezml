@@ -1,62 +1,32 @@
 [
   {
-    "@id": "https://w3id.org/cheezml/cubelang#Ask",
+    "@id": "https://w3id.org/cheezml/cubelang#Program",
     "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
+      "http://www.w3.org/2002/07/owl#Class"
     ],
     "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
       {
         "@id": "https://w3id.org/cheezml/cubelang"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/cubelang#RunOutcomes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+    "http://www.w3.org/2000/01/rdf-schema#label": [
       {
         "@language": "en",
-        "@value": "ASK (suspended; resumed by re-execution over run-proto)"
+        "@value": "Program"
       }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubelang#RunOutcomes",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
     ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
       {
-        "@id": "https://w3id.org/cheezml/cubelang"
+        "@id": "https://w3id.org/cheezml/core#Artifact"
+      },
+      {
+        "@id": "http://www.w3.org/ns/prov#Plan"
       }
     ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+    "http://www.w3.org/2004/02/skos/core#definition": [
       {
         "@language": "en",
-        "@value": "VM execution outcomes"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubelang#Return",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubelang"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/cubelang#RunOutcomes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "return"
+        "@value": "A CubeLang program, by hash."
       }
     ]
   },
@@ -89,6 +59,23 @@
     ]
   },
   {
+    "@id": "https://w3id.org/cheezml/cubelang#RunOutcomes",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubelang"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "VM execution outcomes"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/cheezml/cubelang#Error",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
@@ -107,37 +94,6 @@
       {
         "@language": "en",
         "@value": "error"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubelang#Program",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubelang"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "Program"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "https://w3id.org/cheezml/core#Artifact"
-      },
-      {
-        "@id": "http://www.w3.org/ns/prov#Plan"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "A CubeLang program, by hash."
       }
     ]
   },
@@ -170,6 +126,50 @@
     ]
   },
   {
+    "@id": "https://w3id.org/cheezml/cubelang#Ask",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubelang"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/cubelang#RunOutcomes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "ASK (suspended; resumed by re-execution over run-proto)"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubelang#Return",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubelang"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/cubelang#RunOutcomes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "return"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/cheezml/cubelang",
     "@type": [
       "http://www.w3.org/2002/07/owl#Ontology"
@@ -182,7 +182,7 @@
     ],
     "http://purl.org/dc/terms/creator": [
       {
-        "@id": "_:Nb3d4233924034e068a7a4a74292e6278"
+        "@id": "_:N57077397512b4a7e9dcf185dfbbe5642"
       }
     ],
     "http://purl.org/dc/terms/description": [
@@ -240,7 +240,7 @@
     ]
   },
   {
-    "@id": "_:Nb3d4233924034e068a7a4a74292e6278",
+    "@id": "_:N57077397512b4a7e9dcf185dfbbe5642",
     "@type": [
       "https://schema.org/Person"
     ],

@@ -8,17 +8,18 @@
    xmlns:skos="http://www.w3.org/2004/02/skos/core#"
    xmlns:vann="http://purl.org/vocab/vann/"
 >
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubelang#Error">
-    <skos:prefLabel xml:lang="en">error</skos:prefLabel>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubelang#RunOutcomes"/>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubelang#Program">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubelang"/>
+    <rdfs:label xml:lang="en">Program</rdfs:label>
+    <skos:definition xml:lang="en">A CubeLang program, by hash.</skos:definition>
+    <rdfs:subClassOf rdf:resource="https://w3id.org/cheezml/core#Artifact"/>
+    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Plan"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubelang#Return">
-    <skos:prefLabel xml:lang="en">return</skos:prefLabel>
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubelang#RunOutcomes">
+    <skos:prefLabel xml:lang="en">VM execution outcomes</skos:prefLabel>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubelang"/>
-    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubelang#RunOutcomes"/>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/cheezml/cubelang">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
@@ -30,24 +31,27 @@
     <dcterms:created rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-07</dcterms:created>
     <dcterms:modified rdf:datatype="http://www.w3.org/2001/XMLSchema#date">2026-11-10</dcterms:modified>
     <dcterms:license rdf:resource="https://creativecommons.org/licenses/by/4.0/"/>
-    <dcterms:creator rdf:nodeID="Nb3d4233924034e068a7a4a74292e6278"/>
+    <dcterms:creator rdf:nodeID="N57077397512b4a7e9dcf185dfbbe5642"/>
     <vann:preferredNamespacePrefix>cube</vann:preferredNamespacePrefix>
     <vann:preferredNamespaceUri>https://w3id.org/cheezml/cubelang#</vann:preferredNamespaceUri>
     <owl:imports rdf:resource="https://w3id.org/cheezml/core"/>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubelang#Program">
-    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
-    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubelang"/>
-    <rdfs:label xml:lang="en">Program</rdfs:label>
-    <skos:definition xml:lang="en">A CubeLang program, by hash.</skos:definition>
-    <rdfs:subClassOf rdf:resource="https://w3id.org/cheezml/core#Artifact"/>
-    <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#Plan"/>
+  <rdf:Description rdf:nodeID="N57077397512b4a7e9dcf185dfbbe5642">
+    <rdf:type rdf:resource="https://schema.org/Person"/>
+    <schema:name>Nicolas Cloutier</schema:name>
+    <schema:affiliation>GrillCheese Research Lab</schema:affiliation>
   </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubelang#Ask">
-    <skos:prefLabel xml:lang="en">ASK (suspended; resumed by re-execution over run-proto)</skos:prefLabel>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubelang#Error">
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubelang#RunOutcomes"/>
     <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubelang"/>
+    <skos:prefLabel xml:lang="en">error</skos:prefLabel>
+  </rdf:Description>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubelang#Ask">
     <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubelang#RunOutcomes"/>
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
+    <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubelang"/>
+    <skos:prefLabel xml:lang="en">ASK (suspended; resumed by re-execution over run-proto)</skos:prefLabel>
   </rdf:Description>
   <rdf:Description rdf:about="https://w3id.org/cheezml/cubelang#ProgramRun">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
@@ -63,14 +67,10 @@
     <skos:definition xml:lang="en">The CubeLang VM: the only agent whose runs can produce a certificate.</skos:definition>
     <rdfs:subClassOf rdf:resource="http://www.w3.org/ns/prov#SoftwareAgent"/>
   </rdf:Description>
-  <rdf:Description rdf:nodeID="Nb3d4233924034e068a7a4a74292e6278">
-    <rdf:type rdf:resource="https://schema.org/Person"/>
-    <schema:name>Nicolas Cloutier</schema:name>
-    <schema:affiliation>GrillCheese Research Lab</schema:affiliation>
-  </rdf:Description>
-  <rdf:Description rdf:about="https://w3id.org/cheezml/cubelang#RunOutcomes">
-    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#ConceptScheme"/>
+  <rdf:Description rdf:about="https://w3id.org/cheezml/cubelang#Return">
+    <rdf:type rdf:resource="http://www.w3.org/2004/02/skos/core#Concept"/>
     <rdfs:isDefinedBy rdf:resource="https://w3id.org/cheezml/cubelang"/>
-    <skos:prefLabel xml:lang="en">VM execution outcomes</skos:prefLabel>
+    <skos:prefLabel xml:lang="en">return</skos:prefLabel>
+    <skos:inScheme rdf:resource="https://w3id.org/cheezml/cubelang#RunOutcomes"/>
   </rdf:Description>
 </rdf:RDF>
