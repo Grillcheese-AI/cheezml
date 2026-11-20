@@ -173,7 +173,7 @@ source did not state).
 | Scheme | Codes | Used by | Support |
 |---|---|---|---|
 | `cubby:DialogueActs` | QuestionAct, CertifiedAnswerAct, RefusalAct, ClarifyingQuestionAct, FollowUpAct, SmallTalkAct | `cubby:dialogueAct` | 7 |
-| `cubby:RefusalReasons` | NoPlan, RelationMissing, FactMissing, WalkFailed, NotCertified, Ambiguous, Conflict, DatesTooCoarse, UnreadableSource | `cubby:refusalReason` | 7 |
+| `cubby:RefusalReasons` | NoPlan, RelationMissing, FactMissing, WalkFailed, NotCertified, Ambiguous, Conflict, DatesTooCoarse, UnreadableSource, NameNotFound | `cubby:refusalReason` | 7 |
 | `cubby:ConflictKinds` | ValueConflict, TypeConflict, TemporalConflict, LogicalConflict, RecordedVsDerivedConflict | `cubby:conflictKind` | 6 |
 | `cubby:Proposers` | HostGrammar, EverydayTable, OvernightRuleLibrary, EpisodicMemory, LMProgramEmitter | `cubby:proposer` | 7 |
 | `cheez:CheckKinds` | 20 kinds, see Turtle below | `dcterms:type` on `cheez:CheckRun`; `cheez:retirementReason` | 6 |
@@ -230,6 +230,7 @@ cubby:RefusalReasons a skos:ConceptScheme ; skos:prefLabel "Refusal reasons in u
 cubby:NoPlan           a skos:Concept ; skos:inScheme cubby:RefusalReasons ; skos:prefLabel "no plan"@en .
 cubby:RelationMissing  a skos:Concept ; skos:inScheme cubby:RefusalReasons ; skos:prefLabel "relation missing"@en .
 cubby:FactMissing      a skos:Concept ; skos:inScheme cubby:RefusalReasons ; skos:prefLabel "fact missing"@en .
+cubby:NameNotFound     a skos:Concept ; skos:inScheme cubby:RefusalReasons ; skos:prefLabel "name not found"@en ; skos:definition "The thing the question names is found under no item of the store or the worlds (the host's entity_unresolved; CubbyLLM 0076, Nick's yes 2026-11-19). A name found under several items not told apart is cubby:Ambiguous."@en .
 cubby:WalkFailed       a skos:Concept ; skos:inScheme cubby:RefusalReasons ; skos:prefLabel "walk failed"@en .
 cubby:NotCertified     a skos:Concept ; skos:inScheme cubby:RefusalReasons ; skos:prefLabel "not certified"@en .
 cubby:Ambiguous        a skos:Concept ; skos:inScheme cubby:RefusalReasons ; skos:prefLabel "ambiguous"@en .

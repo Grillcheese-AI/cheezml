@@ -152,6 +152,12 @@ cubby:LogicalConflict a skos:Concept ;
     skos:inScheme cubby:ConflictKinds ;
     skos:prefLabel "logical"@en .
 
+cubby:NameNotFound a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "The thing the question names is found under no item of the store or the worlds (the host's entity_unresolved; CubbyLLM 0076, Nick's yes 2026-11-19). A name found under several items not told apart is cubby:Ambiguous."@en ;
+    skos:inScheme cubby:RefusalReasons ;
+    skos:prefLabel "name not found"@en .
+
 cubby:NamesakeNameStep a skos:Concept ;
     rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
     skos:definition "Of the items sharing the name, the ones kept by what the question asks of them (its relations and cue words, each item's kinds); the others are set aside."@en ;

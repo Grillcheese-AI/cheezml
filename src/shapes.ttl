@@ -492,7 +492,7 @@ shapes:RefusalShape
   sh:message "A refusal holds only coded fields (reason, conflict kind, proposer, run, checks, time): no prose rationale, no truth score." ;
   sh:property [
     sh:path cubby:refusalReason ; sh:minCount 1 ; sh:maxCount 1 ;
-    sh:in ( cubby:NoPlan cubby:RelationMissing cubby:FactMissing cubby:WalkFailed cubby:NotCertified cubby:Ambiguous
+    sh:in ( cubby:NoPlan cubby:RelationMissing cubby:FactMissing cubby:NameNotFound cubby:WalkFailed cubby:NotCertified cubby:Ambiguous
             cubby:Conflict cubby:DatesTooCoarse cubby:UnreadableSource ) ;
     sh:message "A refusal records exactly one reason code from cubby:RefusalReasons."
   ] ;
