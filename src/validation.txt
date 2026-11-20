@@ -82,7 +82,7 @@ NEGATIVE EXAMPLES (must not conform, for the stated reason)
       message: A fact version read from a statement store states the statement: subject, property, value and rank.
       message: A stored statement's valid-time beginning names what of the source stated it (prov:wasDerivedFrom); a date the source did not give is never written by hand.
 
-VOCABULARY COVERAGE: vocabulary.md Turtle blocks parsed (263 triples); CheezML IRIs used in examples=117, in shapes=151; undefined in vocabulary.md: examples=0, shapes=0
+VOCABULARY COVERAGE: vocabulary.md Turtle blocks parsed (284 triples); CheezML IRIs used in examples=117, in shapes=151; undefined in vocabulary.md: examples=0, shapes=0
   skos:closeMatch alignment targets: ['http://example.com/ns/dec#Decision', 'http://example.com/ns/dec#Option', 'http://example.com/ns/dec#Question', 'http://example.com/ns/dec#has_result', 'http://example.com/ns/dec#involves_choosing']
 
 RESULT: ALL CHECKS PASS

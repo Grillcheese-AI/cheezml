@@ -11,6 +11,11 @@
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 
+cubby:AliasNameStep a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "The asked name is one of an item's aliases."@en ;
+    skos:inScheme cubby:NameSteps .
+
 cubby:Ambiguous a skos:Concept ;
     rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
     skos:inScheme cubby:RefusalReasons ;
@@ -102,6 +107,16 @@ cubby:FirstApprover a skos:Concept ;
     skos:inScheme cubby:ReviewerRoles ;
     skos:prefLabel "first approver"@en .
 
+cubby:FirstByIdNameStep a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "Several items kept, every one giving the same answer: the first in id order is said."@en ;
+    skos:inScheme cubby:NameSteps .
+
+cubby:FoldNameStep a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "The asked name equals an item's label once case, accents and punctuation are folded."@en ;
+    skos:inScheme cubby:NameSteps .
+
 cubby:FollowUpAct a skos:Concept ;
     rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
     skos:inScheme cubby:DialogueActs ;
@@ -127,10 +142,20 @@ cubby:LMProgramEmitter a skos:Concept ;
     skos:inScheme cubby:Proposers ;
     skos:prefLabel "language model's program emitter"@en .
 
+cubby:LabelNameStep a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "The asked name is an item's label as written."@en ;
+    skos:inScheme cubby:NameSteps .
+
 cubby:LogicalConflict a skos:Concept ;
     rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
     skos:inScheme cubby:ConflictKinds ;
     skos:prefLabel "logical"@en .
+
+cubby:NamesakeNameStep a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "Of the items sharing the name, the ones kept by what the question asks of them (its relations and cue words, each item's kinds); the others are set aside."@en ;
+    skos:inScheme cubby:NameSteps .
 
 cubby:NoNewWrongAnswerCheck a skos:Concept ;
     rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
@@ -156,6 +181,11 @@ cubby:OvernightRuleLibrary a skos:Concept ;
     rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
     skos:inScheme cubby:Proposers ;
     skos:prefLabel "overnight rule library"@en .
+
+cubby:PlaceQualifierNameStep a skos:Concept ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "The item kept is the one in the place the question names."@en ;
+    skos:inScheme cubby:NameSteps .
 
 cubby:PrerequisiteCheck a skos:Concept ;
     rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
@@ -412,6 +442,11 @@ cubby:Proposers a skos:ConceptScheme ;
 cubby:DialogueActs a skos:ConceptScheme ;
     rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
     skos:prefLabel "Dialogue acts (order 0059)"@en .
+
+cubby:NameSteps a skos:ConceptScheme ;
+    rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;
+    skos:definition "How the name a question asks reached the item an answer is about, one step at a time: each step a cheez:Question over the items it kept (cheez:Option, schema:about the item) and its cheez:Decision, coded here (CubbyLLM 0054 and 0076, the host's name statement)."@en ;
+    skos:prefLabel "Name steps"@en .
 
 cubby:RefusalReasons a skos:ConceptScheme ;
     rdfs:isDefinedBy <https://w3id.org/cheezml/cubby> ;

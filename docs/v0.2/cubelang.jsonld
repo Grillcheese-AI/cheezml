@@ -31,101 +31,6 @@
     ]
   },
   {
-    "@id": "https://w3id.org/cheezml/cubelang#VM",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubelang"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "VM"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#SoftwareAgent"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "The CubeLang VM: the only agent whose runs can produce a certificate."
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubelang#RunOutcomes",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubelang"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "VM execution outcomes"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubelang#Error",
-    "@type": [
-      "http://www.w3.org/2004/02/skos/core#Concept"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubelang"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#inScheme": [
-      {
-        "@id": "https://w3id.org/cheezml/cubelang#RunOutcomes"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#prefLabel": [
-      {
-        "@language": "en",
-        "@value": "error"
-      }
-    ]
-  },
-  {
-    "@id": "https://w3id.org/cheezml/cubelang#ProgramRun",
-    "@type": [
-      "http://www.w3.org/2002/07/owl#Class"
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
-      {
-        "@id": "https://w3id.org/cheezml/cubelang"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#label": [
-      {
-        "@language": "en",
-        "@value": "ProgramRun"
-      }
-    ],
-    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
-      {
-        "@id": "http://www.w3.org/ns/prov#Activity"
-      }
-    ],
-    "http://www.w3.org/2004/02/skos/core#definition": [
-      {
-        "@language": "en",
-        "@value": "One VM execution; outcome cube:Return, cube:Error or cube:Ask (suspended, resumed by re-execution over run-proto)."
-      }
-    ]
-  },
-  {
     "@id": "https://w3id.org/cheezml/cubelang#Ask",
     "@type": [
       "http://www.w3.org/2004/02/skos/core#Concept"
@@ -170,6 +75,23 @@
     ]
   },
   {
+    "@id": "https://w3id.org/cheezml/cubelang#RunOutcomes",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#ConceptScheme"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubelang"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "VM execution outcomes"
+      }
+    ]
+  },
+  {
     "@id": "https://w3id.org/cheezml/cubelang",
     "@type": [
       "http://www.w3.org/2002/07/owl#Ontology"
@@ -182,7 +104,7 @@
     ],
     "http://purl.org/dc/terms/creator": [
       {
-        "@id": "_:N57077397512b4a7e9dcf185dfbbe5642"
+        "@id": "_:Nfbeade98d09a4393bcd17ff3ca86a6f1"
       }
     ],
     "http://purl.org/dc/terms/description": [
@@ -240,7 +162,7 @@
     ]
   },
   {
-    "@id": "_:N57077397512b4a7e9dcf185dfbbe5642",
+    "@id": "_:Nfbeade98d09a4393bcd17ff3ca86a6f1",
     "@type": [
       "https://schema.org/Person"
     ],
@@ -252,6 +174,84 @@
     "https://schema.org/name": [
       {
         "@value": "Nicolas Cloutier"
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubelang#ProgramRun",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubelang"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "ProgramRun"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#Activity"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "One VM execution; outcome cube:Return, cube:Error or cube:Ask (suspended, resumed by re-execution over run-proto)."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubelang#VM",
+    "@type": [
+      "http://www.w3.org/2002/07/owl#Class"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubelang"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#label": [
+      {
+        "@language": "en",
+        "@value": "VM"
+      }
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#subClassOf": [
+      {
+        "@id": "http://www.w3.org/ns/prov#SoftwareAgent"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#definition": [
+      {
+        "@language": "en",
+        "@value": "The CubeLang VM: the only agent whose runs can produce a certificate."
+      }
+    ]
+  },
+  {
+    "@id": "https://w3id.org/cheezml/cubelang#Error",
+    "@type": [
+      "http://www.w3.org/2004/02/skos/core#Concept"
+    ],
+    "http://www.w3.org/2000/01/rdf-schema#isDefinedBy": [
+      {
+        "@id": "https://w3id.org/cheezml/cubelang"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#inScheme": [
+      {
+        "@id": "https://w3id.org/cheezml/cubelang#RunOutcomes"
+      }
+    ],
+    "http://www.w3.org/2004/02/skos/core#prefLabel": [
+      {
+        "@language": "en",
+        "@value": "error"
       }
     ]
   }

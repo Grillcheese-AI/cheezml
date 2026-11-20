@@ -187,6 +187,7 @@ source did not state).
 | `mowm:MergeStrategies` | BindComposeMerge | `mowm:mergeStrategy` | 7 |
 | `cubby:ReviewOutcomes` | Approved | `cheez:outcome` on a review | 3 |
 | `cubby:ReviewerRoles` | FirstApprover, SecondApprover | `prov:hadRole` | 4 |
+| `cubby:NameSteps` | FoldNameStep, LabelNameStep, AliasNameStep, NamesakeNameStep, FirstByIdNameStep, PlaceQualifierNameStep | `dcterms:type` on a name step's `cheez:Decision` | 2026-11-19 |
 
 Check kinds `cubby:ConflictCheck` and `cubby:DatePrecisionCheck` are inferred from the refusal reasons (conflict, dates too coarse); confirm them against the host's real check list. **Confirmed against the host (2026-11-19, CubbyLLM 0076):** a walked answer passes five checks before it is said: the
 answer's class (`cubby:AnswerClassCheck`), the question's tense and year (`cubby:TenseCheck`), a snapshot's time
@@ -216,6 +217,14 @@ cubby:RefusalAct            a skos:Concept ; skos:inScheme cubby:DialogueActs ; 
 cubby:ClarifyingQuestionAct a skos:Concept ; skos:inScheme cubby:DialogueActs ; skos:prefLabel "clarifying question"@en .
 cubby:FollowUpAct           a skos:Concept ; skos:inScheme cubby:DialogueActs ; skos:prefLabel "follow-up (with its rewrite)"@en .
 cubby:SmallTalkAct          a skos:Concept ; skos:inScheme cubby:DialogueActs ; skos:prefLabel "small talk"@en .
+
+cubby:NameSteps a skos:ConceptScheme ; skos:prefLabel "Name steps"@en ; skos:definition "How the name a question asks reached the item an answer is about, one step at a time: each step a cheez:Question over the items it kept (cheez:Option, schema:about the item) and its cheez:Decision, coded here (CubbyLLM 0054 and 0076, the host's name statement)."@en .
+cubby:FoldNameStep           a skos:Concept ; skos:inScheme cubby:NameSteps ; skos:definition "The asked name equals an item's label once case, accents and punctuation are folded."@en .
+cubby:LabelNameStep          a skos:Concept ; skos:inScheme cubby:NameSteps ; skos:definition "The asked name is an item's label as written."@en .
+cubby:AliasNameStep          a skos:Concept ; skos:inScheme cubby:NameSteps ; skos:definition "The asked name is one of an item's aliases."@en .
+cubby:NamesakeNameStep       a skos:Concept ; skos:inScheme cubby:NameSteps ; skos:definition "Of the items sharing the name, the ones kept by what the question asks of them (its relations and cue words, each item's kinds); the others are set aside."@en .
+cubby:FirstByIdNameStep      a skos:Concept ; skos:inScheme cubby:NameSteps ; skos:definition "Several items kept, every one giving the same answer: the first in id order is said."@en .
+cubby:PlaceQualifierNameStep a skos:Concept ; skos:inScheme cubby:NameSteps ; skos:definition "The item kept is the one in the place the question names."@en .
 
 cubby:RefusalReasons a skos:ConceptScheme ; skos:prefLabel "Refusal reasons in use"@en .
 cubby:NoPlan           a skos:Concept ; skos:inScheme cubby:RefusalReasons ; skos:prefLabel "no plan"@en .
